@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-white p-5 pt-10 h-72 mt-60 relative">
+	<div class="bg-white p-5 pt-10 h-72 mt-54 relative">
 		<div class="flex justify-between ">
 			<div class="text-left ml-10">
 				<p class="text-red-700 text-2xl font-semibold mb-5">Top Game Store</p>

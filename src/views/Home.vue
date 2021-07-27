@@ -4,13 +4,16 @@
 
 		<!-- NOTICIAS -->
 		<div class="container mt-20 grid grid-cols-4  justify-items-center">
-			<a href="#" class="w-80 h-64 border-b-2 border-red-700 hover:border-yellow-400 duration-300">
+			<router-link
+				to="/MH-analisis"
+				class="w-80 h-64 border-b-2 border-red-700 hover:border-yellow-400 duration-300"
+			>
 				<img src="../assets/MH.jpg" alt="Monster Hunter stories 2 imagen" class="rounded-lg w-full h-40" />
 				<div>
 					<p class="font-bold text-lg my-5">Análisis</p>
 					<p class="text-xs font-normal">Nintendo Switch</p>
 				</div>
-			</a>
+			</router-link>
 
 			<div class="w-80 h-64 border-b-2 border-red-700">
 				<img src="../assets/NBA.jpg" alt="NBA 2K22 imagen" class="rounded-lg w-full h-40" />

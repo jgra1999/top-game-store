@@ -15,10 +15,8 @@ export default {
 </script>
 
 <style>
-html {
-	scroll-behavior: smooth;
-}
 #app {
 	font-family: 'Noto Sans SC', sans-serif;
+	background: #f7f7f7;
 }
 </style>
