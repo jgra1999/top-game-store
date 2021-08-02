@@ -1,14 +1,27 @@
 <template>
-	<nav class="fixed z-20 flex items-center justify-between bg-red-700 w-full h-14">
+	<nav class="fixed z-20 flex items-center justify-between bg-red-700 w-screen h-14">
 		<div class="flex items-center">
+			<button class="lg:hidden">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="18"
+					height="18"
+					viewBox="0 0 24 24"
+					class="fill-current text-white ml-3"
+				>
+					<path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
+				</svg>
+			</button>
 			<router-link to="/">
 				<img
 					src="../assets/logo-original.png"
 					alt="logo top games"
-					class="w-16 h-16 md:w-32 h-32 mt-3 ml-3"
+					class="w-24 h-24 md:w-32 md:h-32 mt-3  md:ml-3"
 				/>
 			</router-link>
-			<ul class="text-white flex items-center">
+
+			<!-- CATEGORIAS -->
+			<ul class="text-white hidden lg:flex items-center ">
 				<li class="ml-5 mt-2 cursor-pointer hover:border-b-2 h-8">
 					<div class="flex items-center" @click="dropMenu" id="categoriaJuegos">
 						Juegos
@@ -79,17 +92,19 @@
 				</li>
 			</ul>
 		</div>
+
+		<!-- LOGIN, SEARCH, CARRITO -->
 		<div class="flex items-center mr-6 ">
 			<div>
 				<a
 					href="#"
-					class=" rounded-full  font-bold text-white py-1 px-5 border-2 hover:bg-white hover:text-red-700 duration-300 "
+					class=" rounded-full font-bold text-xs md:text-base text-white py-1 px-5 border-2 active:bg-white active:text-red-700 lg:hover:bg-white lg:hover:text-red-700 lg:duration-300  "
 					>Login</a
 				>
 			</div>
 
 			<svg
-				class="fill-current text-gray-200 hover:text-white cursor-pointer mx-4"
+				class="fill-current text-gray-200 hover:text-white cursor-pointer mx-4 w-5 h-5"
 				xmlns="http://www.w3.org/2000/svg"
 				width="25"
 				height="25"
@@ -100,7 +115,7 @@
 				/>
 			</svg>
 			<svg
-				class="fill-current text-gray-200 hover:text-white cursor-pointer"
+				class="fill-current text-gray-200 hover:text-white cursor-pointer w-4 h-4"
 				xmlns="http://www.w3.org/2000/svg"
 				width="20"
 				height="20"
@@ -117,15 +132,15 @@
 	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden" id="dropJuegos">
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
 			<div class="text-center ">
-				<img src="@/assets/logo-ps5.png" alt="" class="w-60" />
+				<img src="@/assets/logo-ps5.png" alt="" class=" w-48 xl:w-60" />
 				<p class="mt-4 text-white font-bold">Juegos de PS5</p>
 			</div>
 			<div class="text-center ">
-				<img src="@/assets/logo-ps4.png" alt="" class="w-64" />
+				<img src="@/assets/logo-ps4.png" alt="" class=" w-48 xl:w-64" />
 				<p class="mt-4 text-white font-bold">Juegos de PS4</p>
 			</div>
 			<div class="flex flex-col items-center ">
-				<img src="@/assets/logo-nintendo.png" alt="" class="w-60" />
+				<img src="@/assets/logo-nintendo.png" alt="" class=" w-48 xl:w-60" />
 				<p class="mt-4 text-white font-bold">Juegos de Switch</p>
 			</div>
 		</div>

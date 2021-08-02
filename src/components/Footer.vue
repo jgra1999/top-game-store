@@ -1,7 +1,7 @@
 <template>
 	<div class="bg-white p-5 pt-10 h-72 mt-54 relative">
-		<div class="flex justify-between ">
-			<div class="text-left ml-10">
+		<div class="flex flex-col md:flex-row md:justify-between ">
+			<div class="text-left md:ml-10">
 				<p class="text-red-700 text-2xl font-semibold mb-5">Top Game Store</p>
 				<p class="font-semibold hover:text-red-700 duration-300 cursor-pointer opcion">Inicio</p>
 				<p class="font-semibold  hover:text-red-700 duration-300 cursor-pointer opcion">¿Quienes Somos?</p>
@@ -15,16 +15,16 @@
 				</div>
 			</div>
 
-			<div>
+			<div class="my-10 md:my-0">
 				<p class="text-red-700 text-2xl font-semibold mb-5">Consolas</p>
 				<p class="font-semibold hover:text-red-700 duration-300 cursor-pointer opcion">PS4</p>
 				<p class="font-semibold  hover:text-red-700 duration-300 cursor-pointer opcion">PS5</p>
 				<p class="font-semibold  hover:text-red-700 duration-300 cursor-pointer opcion">Switch</p>
 			</div>
 
-			<div class="mr-10">
+			<div class="md:mr-10">
 				<p class="text-red-700 text-2xl font-semibold mb-5">Redes Sociales</p>
-				<div class="text-center">
+				<div class="text-left md:text-center">
 					<svg
 						class="inline-block fill-current hover:text-red-700"
 						xmlns="http://www.w3.org/2000/svg"

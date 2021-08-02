@@ -40,6 +40,8 @@ module.exports = {
 			height: ['hover', 'focus'],
 			width: ['hover', 'focus'],
 			borderWidth: ['hover', 'focus'],
+			backgroundColor: ['active'],
+			textColor: ['active'],
 		},
 	},
 	plugins: [],
