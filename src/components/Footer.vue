@@ -1,32 +1,46 @@
 <template>
-	<div class="bg-white p-5 pt-10 h-72 mt-54 relative">
-		<div class="flex flex-col md:flex-row md:justify-between ">
+	<div class="bg-white p-5 pt-10 h-54 relative">
+		<div class="flex flex-col sm:flex-row sm:justify-between ">
 			<div class="text-left md:ml-10">
-				<p class="text-red-700 text-2xl font-semibold mb-5">Top Game Store</p>
-				<p class="font-semibold hover:text-red-700 duration-300 cursor-pointer opcion">Inicio</p>
-				<p class="font-semibold  hover:text-red-700 duration-300 cursor-pointer opcion">¿Quienes Somos?</p>
+				<p class="text-red-700 text-lg md:text-2xl font-semibold mb-5">Top Game Store</p>
+				<p class="font-semibold text-xs md:text-base hover:text-red-700 duration-300 cursor-pointer opcion">
+					Inicio
+				</p>
+				<p
+					class="font-semibold  text-xs md:text-base hover:text-red-700 duration-300 cursor-pointer opcion my-1"
+				>
+					¿Quienes Somos?
+				</p>
 				<div class="flex items-center">
-					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+					<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" class="w-3 h-3">
 						<path
 							d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"
 						/>
 					</svg>
-					<p class="font-semibold">0414-5831111</p>
+					<p class="text-xs md:text-base font-semibold">0414-5831111</p>
 				</div>
 			</div>
 
-			<div class="my-10 md:my-0">
-				<p class="text-red-700 text-2xl font-semibold mb-5">Consolas</p>
-				<p class="font-semibold hover:text-red-700 duration-300 cursor-pointer opcion">PS4</p>
-				<p class="font-semibold  hover:text-red-700 duration-300 cursor-pointer opcion">PS5</p>
-				<p class="font-semibold  hover:text-red-700 duration-300 cursor-pointer opcion">Switch</p>
+			<div class="my-5 sm:my-0">
+				<p class="text-red-700 text-lg md:text-2xl font-semibold mb-5">Consolas</p>
+				<p class="font-semibold text-xs md:text-base hover:text-red-700 duration-300 cursor-pointer opcion">
+					PS4
+				</p>
+				<p
+					class="font-semibold  text-xs md:text-base hover:text-red-700 duration-300 cursor-pointer opcion my-1"
+				>
+					PS5
+				</p>
+				<p class="font-semibold  text-xs md:text-base hover:text-red-700 duration-300 cursor-pointer opcion">
+					Switch
+				</p>
 			</div>
 
 			<div class="md:mr-10">
-				<p class="text-red-700 text-2xl font-semibold mb-5">Redes Sociales</p>
-				<div class="text-left md:text-center">
+				<p class="text-red-700 text-lg md:text-2xl font-semibold mb-5">Redes Sociales</p>
+				<div class="text-left sm:text-center">
 					<svg
-						class="inline-block fill-current hover:text-red-700"
+						class="inline-block fill-current hover:text-red-700 w-5 h-5"
 						xmlns="http://www.w3.org/2000/svg"
 						width="20"
 						height="20"
@@ -38,7 +52,7 @@
 					</svg>
 
 					<svg
-						class="inline-block mx-5 fill-current hover:text-red-700"
+						class="inline-block mx-5 fill-current hover:text-red-700 w-5 h-5"
 						xmlns="http://www.w3.org/2000/svg"
 						width="20"
 						height="20"
@@ -50,7 +64,7 @@
 					</svg>
 
 					<svg
-						class="inline-block fill-current hover:text-red-700"
+						class="inline-block fill-current hover:text-red-700 w-5 h-5"
 						xmlns="http://www.w3.org/2000/svg"
 						width="20"
 						height="20"
@@ -63,7 +77,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="text-center mt-20 text-xs font-semibold">
+		<div class="text-center mt-12 md:mt-20 text-xs font-semibold">
 			©Top Game Store c.a - ©Todos los derechos reservados - 2021
 		</div>
 	</div>

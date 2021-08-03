@@ -94,7 +94,7 @@
 		</div>
 
 		<!-- LOGIN, SEARCH, CARRITO -->
-		<div class="flex items-center mr-6 ">
+		<div class="flex items-center mr-8 ">
 			<div>
 				<a
 					href="#"
