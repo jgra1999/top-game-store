@@ -1,10 +1,11 @@
 <template>
-	<div class="flex justify-center relative">
+	<div class="flex justify-center relative min-h-80">
 		<img src="@/assets/wallpaper-MH.jpg" alt="" />
 		<Ficha />
 	</div>
-	<div class="container mx-auto m-40 w-4/5 text-lg">
-		<p class="font-bold">
+	<FichaPhone />
+	<div class="container mx-auto my-20 lg:my-40 w-4/5 text-lg">
+		<p class="font-bold text-sm md:text-base ">
 			A lo largo de los últimos meses, Capcom ha tratado a Monster Hunter Rise y Monster Hunter Stories 2 como
 			iguales. El primero es una entrega troncal y además tuvo muy buena acogida, por lo que las expectativas
 			por este JRPG por turnos estaban por las nubes. Pero ha cumplido, sí.
@@ -12,7 +13,7 @@
 
 		<br />
 
-		<p>
+		<p class="text-sm md:text-base">
 			Los juegos de Monster Hunter tienen un poder de sugestión casi febril allá por donde pisan. Sí, es una
 			experiencia complementaria, pero es una que sorprende mucho, para bien, porque no solo adapta con mucho
 			acierto la fórmula MH tradicional sino que además logra cierto componente de adicción muy específico que
@@ -27,7 +28,7 @@
 
 		<br />
 
-		<p>
+		<p class="text-sm md:text-base">
 			Si estás al día con Monster Hunter, es probable que este te vaya a gustar. Si eres tan apasionado que te
 			has visto el anime "Ride On" encontrarás aún más referencias que los que se conforman con los juegos
 			principales.
@@ -36,14 +37,16 @@
 		<br />
 
 		<div class="my-10">
-			<h3 class="text-4xl font-bold mb-10  border-b-4 border-red-700 pb-4">
+			<h3
+				class="text-2xl md:text-3xl  lg:text-4xl  lg:text-4xl font-bold mb-10  border-b-4 border-red-700 pb-4"
+			>
 				Una historia expresiva, ligera y en constante evolución
 			</h3>
 
 			<img src="@/assets/img1.png" alt="" />
 		</div>
 
-		<p>
+		<p class="text-sm md:text-base">
 			Muchos estarán en total desacuerdo conmigo y hacen bien, pero las <strong>historias</strong> de los
 			juegos de Monster Hunter siempre me han sabido a poco: "monstruo malo amenaza al ecosistema, mátalo",
 			"un mercader se ha asustado porque ha visto algo en el bosque, averigua qué es y mátalo". Por supuesto,
@@ -58,9 +61,9 @@
 
 		<br />
 
-		<div class="flex">
+		<div class="flex flex-col items-center lg:flex-row">
 			<div>
-				<p>
+				<p class="text-sm md:text-base">
 					Cada escena cinemática está cuidadosamente animada, completamente doblada y subtitulada, con
 					personajes muy expresivos y en algunas ocasiones, con el tipo de juegos de luces y cámaras que
 					esperarías de una película de animación japonesa. Eso no quita el hecho de que unos personajes están
@@ -73,7 +76,7 @@
 
 				<br />
 
-				<p>
+				<p class="text-sm md:text-base">
 					Sin ánimos de hacer spoilers a nadie, me limitaré a decir que en la segunda mitad del juego aparecen
 					personajes y pasan cosas más emocionantes, porque francamente a la historia le cuesta un poco
 					arrancar. Así que sí, con sus más y sus menos lo cierto es que la historia de Monster Hunter Stories
@@ -85,16 +88,16 @@
 					porque siento que están ahí un poco a la fuerza por hacerte subir de nivel y poco más.
 				</p>
 			</div>
-			<img src="@/assets/navirou.png" alt="" class="h-100" />
+			<img src="@/assets/navirou.png" alt="" class="h-60 lg:h-100" />
 		</div>
 
 		<br />
 
-		<h3 class="text-4xl font-bold my-10  border-b-4 border-red-700 pb-4">
+		<h3 class="text-2xl md:text-3xl  lg:text-4xl font-bold my-10  border-b-4 border-red-700 pb-4">
 			Por turnos, pero fiel a la fórmula Monster Hunter
 		</h3>
 
-		<p>
+		<p class="text-sm md:text-base">
 			Si sabes jugar a los juegos troncales de Monster Hunter, entonces básicamente sabes jugar a Stories 2.
 			De la misma manera, te haces a la idea de que Qurupeco prefiere los ataques técnicos solo porque ya
 			sabes que reacciona así en el juego original. Luego te haces con el monstruo en cuestión, llenas el
@@ -105,7 +108,7 @@
 
 		<br />
 
-		<p>
+		<p class="text-sm md:text-base">
 			Es increíble la precisión con la que se han perfilado todos estos detalles de los juegos originales, lo
 			natural que se siente todo para alguien que viene de los juegos de acción y que además de todo esto, sea
 			divertido. Creo que la clave de todo es perseguir las sensaciones de los juegos originales y huir de los
@@ -114,12 +117,11 @@
 			tu tanque tenga más salud». Lo demás lo apañas rápidamente mandando a los monstruos del establo a hacer
 			expediciones, completando desafíos o submisiones.
 		</p>
-
 		<div class="flex justify-center my-5">
 			<img src="@/assets/img4.png" alt="" />
 		</div>
 
-		<p>
+		<p class="text-sm md:text-base">
 			No existe Monstie lo suficientemente poderoso como para solucionarte todas las papeletas: incluso si
 			puedes dirigir muchas de sus acciones, al final dependes de que cumpla su rol y hay monstruos que te
 			ponen contra las cuerdas, obligándote a cambiar de criatura sí o sí. De forma similar, a veces hay que
@@ -138,18 +140,18 @@
 
 		<br />
 
-		<p>
+		<p class="text-sm md:text-base">
 			Probablemente no sea exagerado decir que las guaridas de monstruos son decepcionantemente parecidas,
 			tanto a nivel visual como mecánico. Por ejemplo, sabes que monstruos como Nargacuga o Anjanath pueden
 			gastar un turno para cargarse y atacar con una técnica característica el turno siguiente, pero otros
 			como Rathian pueden usar técnicas ágiles, poderosas y técnicas indistintamente.
 		</p>
 
-		<h3 class="text-4xl font-bold my-10 border-b-4 border-red-700 pb-4">
+		<h3 class="text-2xl md:text-3xl  lg:text-4xl font-bold my-10 border-b-4 border-red-700 pb-4">
 			Jugando a largo plazo: progresión y multijugador
 		</h3>
 
-		<p>
+		<p class="text-sm md:text-base">
 			Como decía al comienzo del análisis, los juegos de Monster Hunter tradicionalmente duran cientos de
 			horas porque más allá de su campaña principal, el juego se presta por completo a ser rejugado hasta el
 			infinito. Lo mismo para los monstruos. Una vez tengas todas las especies en tu establo, persigue la
@@ -162,7 +164,7 @@
 
 		<br />
 
-		<p>
+		<p class="text-sm md:text-base">
 			Al recoger un huevo, el color y la forma te dice también qué criatura hay dentro, y como decía
 			anteriormente cada región solo acoge unas cuantas especies. Esta posibilidad de predicción, unida a la
 			transferencia de genes, hace que Monster Hunter Stories 2 sea un muy buen contendiente dentro del género
@@ -172,7 +174,7 @@
 
 		<br />
 
-		<p class="font-bold">
+		<p class="font-bold text-sm md:text-base">
 			Monster Hunter Stories 2: Wings of Ruin es primero una adaptación súper acertada de los juegos
 			tradicionales al formato JRPG, y segundo, un juego que se sostiene muy bien por sí mismo. Con sus más y
 			sus menos, la historia se disfruta mucho gracias a unos personajes muy expresivos y unas cinemáticas muy
@@ -199,10 +201,11 @@
 </template>
 
 <script>
-import Ficha from '@/components/Ficha.vue';
+import Ficha from '@/components/FichaTecnica/Ficha.vue';
+import FichaPhone from '@/components/FichaTecnica/FichaPhone.vue';
 import Footer from '@/components/Footer.vue';
 export default {
-	components: { Ficha, Footer },
+	components: { Ficha, FichaPhone, Footer },
 };
 </script>
 

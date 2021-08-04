@@ -1,8 +1,8 @@
 <template>
 	<div class="relative flex justify-center md:hidden">
-		<img src="../assets/slide-tlf.jpg" alt="slider gow" />
+		<img src="../../assets/slide-tlf.jpg" alt="slider gow" />
 		<div class="absolute left-auto  bottom-10 sm:bottom-24 text-center">
-			<img class="w-64 h-16 mx-auto sm:w-72 sm:h-20" src="../assets/FIFA_22_logo.png" alt="logo gow" />
+			<img class="w-64 h-16 mx-auto sm:w-72 sm:h-20" src="../../assets/FIFA_22_logo.png" alt="logo gow" />
 			<p class="w-80 text-xs sm:text-base sm:w-100 my-10">
 				FIFA 22 cuenta con la nueva e innovadora tecnología de juego HyperMotion, la cual acerca cada partido
 				a lo que ves en la vida real.

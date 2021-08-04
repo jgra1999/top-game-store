@@ -22,7 +22,7 @@
 			</router-link>
 
 			<div
-				class=" absolute w-64 h-56 border-b-2 border-red-700 hover:border-yellow-400 duration-300 -right-56 opacity-50 sm:w-72 sm:h-56 
+				class=" absolute overflow-hidden w-64 h-56 border-b-2 border-red-700 hover:border-yellow-400 duration-300 -right-56 opacity-50 sm:w-72 sm:h-56 
 				md:w-64 md:h-56 md:static md:opacity-100 lg:w-64 xl:w-72  xl:h-60"
 			>
 				<img src="../assets/NBA.jpg" alt="NBA 2K22 imagen" class="rounded-lg w-full h-36 md:h-32 xl:h-40  " />
@@ -63,9 +63,11 @@
 		<div class="mt-10 relative">
 			<img src="../assets/fondo-hades.jpg" alt="" class="hidden md:block" />
 			<img src="../assets/fondo-hades-phone.jpg" alt="" class="md:hidden" />
-			<div class="absolute bottom-12 left-5 md:bottom-24 w-96 md:w-64  lg:w-96 xl:w-100 lg:top-12 xl:top-20 ">
-				<h2 class="text-white text-4xl md:text-3xl lg:text-5xl font-bold">HADES</h2>
-				<h3 class="text-white text-lg lg:text-3xl font-normal mt-5">PROXIMO LANZAMIENTO</h3>
+			<div
+				class="absolute bottom-12 left-5 md:bottom-24 w-96 md:w-64  lg:w-96 xl:w-100 2xl:w-104 lg:top-12 xl:top-24"
+			>
+				<h2 class="text-white text-4xl md:text-3xl lg:text-5xl xl:text-6xl font-bold">HADES</h2>
+				<h3 class="text-white text-lg lg:text-3xl xl:text-4xl font-normal mt-5">PROXIMO LANZAMIENTO</h3>
 				<p class="text-xs xl:text-base text-white my-8">
 					Desarrollado y editado por Supergiant Games para PC, Switch, PlayStation 4, Xbox One, PlayStation 5
 					y Xbox Series, es una aventura de acción tipo roguelike ambientada en la antigua Grecia, en la que
@@ -227,8 +229,8 @@
 
 <script>
 // @ is an alias to /src
-import Slider from '@/components/Slider.vue';
-import SliderPhone from '@/components/SliderPhone.vue';
+import Slider from '@/components/Carrousel/Slider.vue';
+import SliderPhone from '@/components/Carrousel/SliderPhone.vue';
 import Producto from '@/components/Producto.vue';
 import Footer from '@/components/Footer.vue';
 

@@ -2,6 +2,14 @@ module.exports = {
 	purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
 	darkMode: false, // or 'media' or 'class'
 	theme: {
+		minHeight: {
+			'0': '0',
+			'80': '20rem',
+			'1/4': '25%',
+			'1/2': '50%',
+			'3/4': '75%',
+			full: '100%',
+		},
 		extend: {
 			spacing: {
 				'52.5': '13.5rem',

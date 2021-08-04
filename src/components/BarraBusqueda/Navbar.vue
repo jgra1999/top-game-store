@@ -1,20 +1,21 @@
 <template>
-	<nav class="fixed z-20 flex items-center justify-between bg-red-700 w-screen h-14">
+	<nav class="fixed z-20 flex items-center justify-between bg-red-700 w-screen h-14  ">
 		<div class="flex items-center">
-			<button class="lg:hidden">
+			<button class="lg:hidden" id="sidebar-btn">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="18"
 					height="18"
 					viewBox="0 0 24 24"
 					class="fill-current text-white ml-3"
+					@click="sideBar"
 				>
 					<path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
 				</svg>
 			</button>
 			<router-link to="/">
 				<img
-					src="../assets/logo-original.png"
+					src="@/assets/logo-original.png"
 					alt="logo top games"
 					class="w-24 h-24 md:w-32 md:h-32 mt-3  md:ml-3"
 				/>
@@ -74,7 +75,7 @@
 					</div>
 				</li>
 				<li class="ml-5 mt-2 cursor-pointer hover:border-b-2 h-8">
-					<div class="flex items-center" @click="dropMenu" id="categoriaJuegos">
+					<div class="flex items-center">
 						Noticias
 						<svg
 							class="fill-current text-white ml-1.5"
@@ -94,7 +95,7 @@
 		</div>
 
 		<!-- LOGIN, SEARCH, CARRITO -->
-		<div class="flex items-center mr-8 ">
+		<div class="flex items-center mr-6 ">
 			<div>
 				<a
 					href="#"
@@ -120,6 +121,8 @@
 				width="20"
 				height="20"
 				viewBox="0 0 24 24"
+				@click="dropMenu"
+				id="search"
 			>
 				<path
 					d="M23.809 21.646l-6.205-6.205c1.167-1.605 1.857-3.579 1.857-5.711 0-5.365-4.365-9.73-9.731-9.73-5.365 0-9.73 4.365-9.73 9.73 0 5.366 4.365 9.73 9.73 9.73 2.034 0 3.923-.627 5.487-1.698l6.238 6.238 2.354-2.354zm-20.955-11.916c0-3.792 3.085-6.877 6.877-6.877s6.877 3.085 6.877 6.877-3.085 6.877-6.877 6.877c-3.793 0-6.877-3.085-6.877-6.877z"
@@ -233,11 +236,6 @@
 				<p class="mt-4 text-white font-bold">Nintendo Switch</p>
 			</div>
 		</div>
-		<!-- <div class="border-t-2 text-white text-lg flex justify-around items-center py-2">
-			<p>Controles DualSense</p>
-			<p>Controles DualShock 4</p>
-			<p>Joycons</p>
-		</div> -->
 	</div>
 
 	<!-- DROP MENU DE ACCESORIOS -->
@@ -325,17 +323,22 @@
 		</div>
 	</div>
 
+	<!--MENU LATERAL -->
+	<Sidebar />
+
+	<!-- BARRA DE BUSCAR -->
+	<Searchbar />
+
 	<router-view />
 </template>
 
 <script>
+import Sidebar from '@/components/BarraBusqueda/Sidebar.vue';
+import Searchbar from '@/components/BarraBusqueda/Searchbar.vue';
+
 export default {
 	name: 'Navbar',
-	data() {
-		return {
-			name: 'Jose ROjas',
-		};
-	},
+	components: { Sidebar, Searchbar },
 	methods: {
 		/**
 		 * dropMenu es una funcion con la que se despliega los menu desplegables, usa el objeto del evento para saber cual de los elementos li fue en el que se produce el evento click
@@ -345,29 +348,45 @@ export default {
 				const dropJuegos = document.querySelector('#dropJuegos');
 
 				setTimeout(() => {
-					dropJuegos.classList.toggle('h-80');
+					dropJuegos.classList.toggle('h-72');
 				}, 200);
 			} else {
-				dropJuegos.classList.remove('h-80');
+				dropJuegos.classList.remove('h-72');
 			}
 			if (event.target.id == 'categoriaHardware') {
 				const dropHardware = document.querySelector('#dropHardware');
 
 				setTimeout(() => {
-					dropHardware.classList.toggle('h-80');
+					dropHardware.classList.toggle('h-72');
 				}, 200);
 			} else {
-				dropHardware.classList.remove('h-80');
+				dropHardware.classList.remove('h-72');
 			}
 			if (event.target.id == 'categoriaAccesorios') {
 				const dropAccesorios = document.querySelector('#dropAccesorios');
 
 				setTimeout(() => {
-					dropAccesorios.classList.toggle('h-80');
+					dropAccesorios.classList.toggle('h-72');
 				}, 200);
 			} else {
-				dropAccesorios.classList.remove('h-80');
+				dropAccesorios.classList.remove('h-72');
 			}
+			if (event.target.id == 'search') {
+				const dropSearchbar = document.querySelector('#searchbar');
+				const showInputSearch = document.querySelector('#inputSearch');
+
+				dropSearchbar.classList.toggle('h-16');
+				showInputSearch.classList.toggle('mb-10');
+			} else {
+				dropSearchbar.classList.remove('h-16');
+				showInputSearch.classList.add('mb-10');
+			}
+		},
+
+		sideBar() {
+			const sidebarDesplegar = document.getElementById('sidebar');
+
+			sidebarDesplegar.classList.toggle('w-screen');
 		},
 	},
 };
