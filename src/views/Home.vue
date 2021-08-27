@@ -4,7 +4,7 @@
 		<SliderPhone />
 
 		<!-- NOTICIAS -->
-		<div class="container relative mt-10 flex justify-around ">
+		<div class="container relative mt-10 flex justify-around">
 			<router-link
 				to="/MH-analisis"
 				class="w-64 h-56 border-b-2 border-red-700 hover:border-yellow-400 duration-300 sm:w-72 sm:h-56 
@@ -69,8 +69,8 @@
 				<h2 class="text-white text-4xl md:text-3xl lg:text-5xl xl:text-6xl font-bold">HADES</h2>
 				<h3 class="text-white text-lg lg:text-3xl xl:text-4xl font-normal mt-5">PROXIMO LANZAMIENTO</h3>
 				<p class="text-xs xl:text-base text-white my-8">
-					Desarrollado y editado por Supergiant Games para PC, Switch, PlayStation 4, Xbox One, PlayStation 5
-					y Xbox Series, es una aventura de acción tipo roguelike ambientada en la antigua Grecia, en la que
+					Desarrollado y editado por Supergiant Games para PC, Switch, PlayStation 4, Xbox One, PlayStation 5 y
+					Xbox Series, es una aventura de acción tipo roguelike ambientada en la antigua Grecia, en la que
 					deberemos escapar del inframundo enfrentándonos a toda clase de monstruos.
 				</p>
 
@@ -92,15 +92,15 @@
 					<p class="lg:text-md xl:text-lg">Nuestras recomendaciones</p>
 				</div>
 
-				<div class=" text-center ">
+				<router-link to="/top-juegos-rpg" class=" text-center ">
 					<img
-						src="../assets/BR.jpg"
+						src="../assets/top7.png"
 						alt=""
 						class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 					/>
-					<p class="lg:text-md xl:text-lg">Mejores Battle Royals</p>
-				</div>
+					<p class="lg:text-md xl:text-lg">Top 6 juegos RPG</p>
+				</router-link>
 
 				<div class=" text-center ">
 					<img
@@ -115,7 +115,7 @@
 		</div>
 
 		<div class="flex flex-col items-center w-full mt-10 lg:hidden">
-			<div class=" text-center ">
+			<div class="text-center mb-4">
 				<img
 					src="../assets/recomendaciones.jpg"
 					alt=""
@@ -125,17 +125,17 @@
 				<p class="text-base">Nuestras recomendaciones</p>
 			</div>
 
-			<div class=" text-center my-5 ">
+			<router-link to="/top-juegos-rpg" class=" text-center mb-4">
 				<img
-					src="../assets/BR.jpg"
+					src="../assets/top7.png"
 					alt=""
-					class="rounded-xl mb-4 w-80 h-44 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
+					class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 				/>
-				<p class="text-base">Mejores Battle Royals</p>
-			</div>
+				<p class="lg:text-md xl:text-lg">Top 6 juegos RPG</p>
+			</router-link>
 
-			<div class=" text-center ">
+			<div class=" text-center mb-4">
 				<img
 					src="../assets/mejores-switch.jpg"
 					alt=""
@@ -206,9 +206,7 @@
 				</div>
 			</div>
 
-			<div
-				class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-rows-2 gap-5 justify-items-center mt-12"
-			>
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-rows-2 gap-5 justify-items-center mt-12">
 				<Producto juego="./img/playstation/HZD.jpg" />
 				<Producto juego="./img/playstation/miles morales.jpg" />
 				<Producto juego="./img/destacados/tlou.png" />
