@@ -9,7 +9,7 @@
 			<button id="left-arrow" @click="scrollLeft()">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-12 w-12 text-gray-400 hover:text-red-700  xl:absolute xl:-left-14"
+					class="h-12 w-12 text-gray-400 hover:text-red-700 xl:absolute xl:-left-14"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -76,7 +76,7 @@
 					deberemos escapar del inframundo enfrentándonos a toda clase de monstruos.
 				</p>
 
-				<button class="rounded-full hover:ring-2 ring-white pt-1.5 pb-2.5 lg:py-3 px-1 duration-200">
+				<button class="rounded-full hover:ring-2 ring-white pt-1.5 pb-2.5 lg:py-3 px-1">
 					<a href="#" class="rounded-full font-bold text-xs lg:text-base text-black py-2 px-5 bg-white">
 						Más información
 					</a>
@@ -246,7 +246,6 @@ export default {
 	methods: {
 		scrollRight() {
 			const carousel = document.getElementById('container__carousel');
-
 			if (window.innerWidth < 1024) {
 				carousel.scrollLeft += carousel.offsetWidth;
 			} else if (window.innerWidth > 1024 && window.innerWidth < 1280) {
@@ -254,11 +253,10 @@ export default {
 			} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
 				carousel.scrollLeft += carousel.scrollLeft = 323;
 			}
-			carousel.scrollLeft += carousel.scrollLeft = 340;
+			carousel.scrollLeft += carousel.scrollLeft = 350;
 		},
 		scrollLeft() {
 			const carousel = document.getElementById('container__carousel');
-
 			if (window.innerWidth < 1024) {
 				carousel.scrollLeft -= carousel.offsetWidth;
 			} else if (window.innerWidth > 1024 && window.innerWidth < 1280) {
@@ -266,7 +264,7 @@ export default {
 			} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
 				carousel.scrollLeft -= carousel.scrollLeft = 323;
 			}
-			carousel.scrollLeft -= carousel.scrollLeft = 340;
+			carousel.scrollLeft -= carousel.scrollLeft = 350;
 		},
 	},
 };

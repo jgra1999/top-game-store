@@ -15,7 +15,7 @@
 					{{ slide.description }}
 				</p>
 
-				<button class="rounded-full hover:ring-2 ring-red-700 pt-1 pb-2 px-1 sm:py-2.5 duration-300 ">
+				<button class="rounded-full hover:ring-2 ring-red-700 pt-1 pb-2 px-1 sm:py-2.5 ">
 					<a href="#" class="rounded-full font-bold text-white py-2 px-5 bg-red-700 text-xs sm:text-base ">
 						Reservar ahora
 					</a>
