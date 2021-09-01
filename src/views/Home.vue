@@ -4,27 +4,8 @@
 		<SliderPhone />
 
 		<!-- NOTICIAS -->
-		<!-- <div class="container mt-10 relative flex justify-around">
-			<NewsElement
-				url="/monster-hunter-stories-analisis"
-				title="Análisis"
-				console="Nintendo Switch"
-				img="./img/MH.jpg"
-			/>
 
-			<NewsElement
-				url="#"
-				title="Proximamente el 10-09-21"
-				console="Playstation 4. Playstation 5"
-				img="./img/NBA.jpg"
-			/>
-
-			<NewsElement url="#" title="Análisis" console="Playstation 4. Playstation 5" img="./img/formula-1.jpg" />
-
-			<NewsElement url="#" title="Análisis" console="Nintendo Switch" img="./img/mario-golf.jpg" />
-		</div> -->
-
-		<div class="container 2xl:w-11/12 mt-10 relative flex items-center sm:justify-center">
+		<div class="container xl:w-11/12 mt-10 relative flex items-center sm:justify-center">
 			<button id="left-arrow" @click="scrollLeft()">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +76,7 @@
 					deberemos escapar del inframundo enfrentándonos a toda clase de monstruos.
 				</p>
 
-				<button class="rounded-full hover:ring-2 ring-white pt-1.5 pb-2.5 lg:py-3 px-1 duration-300 ">
+				<button class="rounded-full hover:ring-2 ring-white pt-1.5 pb-2.5 lg:py-3 px-1 duration-200">
 					<a href="#" class="rounded-full font-bold text-xs lg:text-base text-black py-2 px-5 bg-white">
 						Más información
 					</a>
@@ -265,29 +246,27 @@ export default {
 	methods: {
 		scrollRight() {
 			const carousel = document.getElementById('container__carousel');
-			// carousel.scrollLeft += carousel.scrollLeft = 388;
+
 			if (window.innerWidth < 1024) {
 				carousel.scrollLeft += carousel.offsetWidth;
 			} else if (window.innerWidth > 1024 && window.innerWidth < 1280) {
 				carousel.scrollLeft += carousel.scrollLeft = 312;
 			} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
 				carousel.scrollLeft += carousel.scrollLeft = 323;
-			} else if (window.innerWidth > 1536) {
-				carousel.scrollLeft += carousel.scrollLeft = 385;
 			}
+			carousel.scrollLeft += carousel.scrollLeft = 340;
 		},
 		scrollLeft() {
 			const carousel = document.getElementById('container__carousel');
-			// carousel.scrollLeft -= carousel.scrollLeft = 388;
+
 			if (window.innerWidth < 1024) {
 				carousel.scrollLeft -= carousel.offsetWidth;
 			} else if (window.innerWidth > 1024 && window.innerWidth < 1280) {
 				carousel.scrollLeft -= carousel.scrollLeft = 312;
 			} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
 				carousel.scrollLeft -= carousel.scrollLeft = 323;
-			} else if (window.innerWidth > 1536) {
-				carousel.scrollLeft -= carousel.scrollLeft = 385;
 			}
+			carousel.scrollLeft -= carousel.scrollLeft = 340;
 		},
 	},
 };
