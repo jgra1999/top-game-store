@@ -1,23 +1,36 @@
 <template>
 	<nav class="fixed z-20 flex items-center justify-between bg-red-700 w-screen h-14  ">
 		<div class="flex items-center">
-			<button class="lg:hidden" id="sidebar-btn">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="18"
-					height="18"
-					viewBox="0 0 24 24"
-					class="fill-current text-white ml-3"
-					@click="sideBar"
-				>
-					<path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
-				</svg>
-			</button>
+			<div @click="sideBar" class="ml-1">
+				<button class="sm:hidden" v-show="!isVisible" @click="toggle()">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-7 w-7 text-white"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 17h16" />
+					</svg>
+				</button>
+
+				<button class="sm:hidden" v-show="isVisible" @click="toggle()">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-7 w-7 text-white"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+			</div>
 			<router-link to="/">
 				<img
 					src="@/assets/logo-original.png"
 					alt="logo top games"
-					class="w-24 h-24 md:w-32 md:h-32 mt-3  md:ml-3"
+					class="w-24 h-24 md:w-32 md:h-32 mt-3 md:ml-3"
 				/>
 			</router-link>
 
@@ -33,10 +46,7 @@
 							height="12"
 							viewBox="0 0 24 24"
 						>
-							<path
-								id="flechaJuegos"
-								d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"
-							/>
+							<path id="flechaJuegos" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
 						</svg>
 					</div>
 				</li>
@@ -50,10 +60,7 @@
 							height="12"
 							viewBox="0 0 24 24"
 						>
-							<path
-								id="flechaJuegos"
-								d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"
-							/>
+							<path id="flechaJuegos" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
 						</svg>
 					</div>
 				</li>
@@ -67,28 +74,13 @@
 							height="12"
 							viewBox="0 0 24 24"
 						>
-							<path
-								id="flechaJuegos"
-								d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"
-							/>
+							<path id="flechaJuegos" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
 						</svg>
 					</div>
 				</li>
 				<li class="ml-5 mt-2 cursor-pointer hover:border-b-2 h-8">
 					<div class="flex items-center">
 						Noticias
-						<svg
-							class="fill-current text-white ml-1.5"
-							xmlns="http://www.w3.org/2000/svg"
-							width="12"
-							height="12"
-							viewBox="0 0 24 24"
-						>
-							<path
-								id="flechaJuegos"
-								d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"
-							/>
-						</svg>
 					</div>
 				</li>
 			</ul>
@@ -105,16 +97,16 @@
 			</div>
 
 			<svg
-				class="fill-current text-gray-200 hover:text-white cursor-pointer mx-4 w-5 h-5"
 				xmlns="http://www.w3.org/2000/svg"
-				width="25"
-				height="25"
-				viewBox="0 0 24 24"
+				class="fill-current text-gray-200 hover:text-white cursor-pointer mx-4 w-5 h-5"
+				viewBox="0 0 20 20"
+				fill="currentColor"
 			>
 				<path
-					d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"
+					d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
 				/>
 			</svg>
+
 			<svg
 				class="fill-current text-gray-200 hover:text-white cursor-pointer w-4 h-4"
 				xmlns="http://www.w3.org/2000/svg"
@@ -134,15 +126,15 @@
 	<!-- DROP MENU DE JUEGOS -->
 	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden" id="dropJuegos">
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
-			<div class="text-center ">
+			<div class="text-center cursor-pointer">
 				<img src="@/assets/logo-ps5.png" alt="" class=" w-48 xl:w-60" />
 				<p class="mt-4 text-white font-bold">Juegos de PS5</p>
 			</div>
-			<div class="text-center ">
+			<div class="text-center cursor-pointer">
 				<img src="@/assets/logo-ps4.png" alt="" class=" w-48 xl:w-64" />
 				<p class="mt-4 text-white font-bold">Juegos de PS4</p>
 			</div>
-			<div class="flex flex-col items-center ">
+			<div class="flex flex-col items-center cursor-pointer">
 				<img src="@/assets/logo-nintendo.png" alt="" class=" w-48 xl:w-60" />
 				<p class="mt-4 text-white font-bold">Juegos de Switch</p>
 			</div>
@@ -152,11 +144,11 @@
 	<!-- DROP MENU DE HARDWARE -->
 	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden" id="dropHardware">
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
-			<div class="text-center hover:bg-red-600 p-2 duration-300">
+			<div class="text-center cursor-pointer p-2">
 				<img src="@/assets/iconPS5.png" alt="" />
 				<p class="mt-4 text-white font-bold">PS5</p>
 			</div>
-			<div class="text-center hover:bg-red-600 p-2 duration-300">
+			<div class="text-center cursor-pointer p-2">
 				<svg
 					version="1.1"
 					id="Capa_1"
@@ -203,7 +195,7 @@
 				</svg>
 				<p class="mt-4 text-white font-bold">PS4</p>
 			</div>
-			<div class="flex flex-col items-center hover:bg-red-600 p-2 duration-300">
+			<div class="flex flex-col items-center cursor-pointer p-2">
 				<svg
 					height="512pt"
 					viewBox="0 -96 512 512"
@@ -241,7 +233,7 @@
 	<!-- DROP MENU DE ACCESORIOS -->
 	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden" id="dropAccesorios">
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
-			<div class="flex flex-col items-center hover:bg-red-600 p-2 duration-300">
+			<div class="flex flex-col items-center cursor-pointer">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"
@@ -255,7 +247,7 @@
 				</svg>
 				<p class="mt-4 text-white font-bold">Controles de Play</p>
 			</div>
-			<div class="flex flex-col items-center hover:bg-red-600 p-2 duration-300">
+			<div class="flex flex-col items-center cursor-pointer">
 				<svg
 					version="1.1"
 					id="Capa_1"
@@ -284,7 +276,7 @@
 
 				<p class="mt-4 text-white font-bold">Joy-cons</p>
 			</div>
-			<div class="flex flex-col items-center hover:bg-red-600 p-2 duration-300">
+			<div class="flex flex-col items-center cursor-pointer">
 				<svg
 					version="1.1"
 					id="Capa_1"
@@ -333,8 +325,12 @@
 </template>
 
 <script>
-import Sidebar from '@/components/BarraBusqueda/Sidebar.vue';
-import Searchbar from '@/components/BarraBusqueda/Searchbar.vue';
+import Sidebar from './Sidebar.vue';
+import Searchbar from './Searchbar.vue';
+
+import { useToggle } from '@/composable/useToggle';
+
+import { ref } from 'vue';
 
 export default {
 	name: 'Navbar',
@@ -388,6 +384,12 @@ export default {
 
 			sidebarDesplegar.classList.toggle('w-screen');
 		},
+	},
+
+	setup() {
+		let { isVisible, toggle } = useToggle();
+
+		return { isVisible, toggle };
 	},
 };
 </script>

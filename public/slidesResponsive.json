@@ -1,0 +1,16 @@
+[
+	{
+		"id": 0,
+		"img": "./img/slide-tlf.jpg",
+		"logo": "./img/FIFA_22_logo.png",
+		"description": "FIFA 22 cuenta con la nueva e innovadora tecnología de juego HyperMotion, la cual acerca cada partido a lo que ves en la vida real."
+	},
+	{
+		"id": 1,
+		"img": "./img/formula-1.jpg"
+	},
+	{
+		"id": 2,
+		"img": "./img/mario-golf.jpg"
+	}
+]

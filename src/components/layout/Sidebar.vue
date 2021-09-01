@@ -1,9 +1,9 @@
 <template>
 	<nav class="bg-red-700 w-0 h-screen fixed z-10 mt-14 overflow-hidden lg:hidden" id="sidebar">
 		<!-- CATEGORIAS -->
-		<ul class="text-white divide-y divide-white">
+		<ul class="text-white divide-y divide-white mt-2">
 			<!-- JUEGOS -->
-			<li class="p-4 flex items-center justify-between text-lg ">
+			<li class="p-4 flex items-center justify-between text-lg">
 				<div class="flex">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@
 							d="M17.622 3c-1.913 0-2.558 1.382-5.623 1.382-3.009 0-3.746-1.382-5.623-1.382-5.209 0-6.376 10.375-6.376 14.348 0 2.145.817 3.652 2.469 3.652 3.458 0 2.926-5 6.915-5h5.23c3.989 0 3.457 5 6.915 5 1.652 0 2.471-1.506 2.471-3.651 0-3.973-1.169-14.349-6.378-14.349zm-10.622 10c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zm10-6c.552 0 1 .447 1 1 0 .553-.448 1-1 1s-1-.447-1-1c0-.553.448-1 1-1zm-2 4c-.552 0-1-.447-1-1 0-.553.448-1 1-1s1 .447 1 1c0 .553-.448 1-1 1zm2 2c-.552 0-1-.447-1-1 0-.553.448-1 1-1s1 .447 1 1c0 .553-.448 1-1 1zm2-2c-.552 0-1-.447-1-1 0-.553.448-1 1-1s1 .447 1 1c0 .553-.448 1-1 1zm-10.25-1c0 .965-.785 1.75-1.75 1.75s-1.75-.785-1.75-1.75.785-1.75 1.75-1.75 1.75.785 1.75 1.75z"
 						/>
 					</svg>
-					<a href="#" @click="subMenu" id="categoriaJuegoSidebar">Juegos</a>
+					<button href="#" @click="subMenu" id="categoriaJuegoSidebar">Juegos</button>
 				</div>
 				<svg
 					class="fill-current text-white"
@@ -35,7 +35,7 @@
 				<li class="p-3"><a href="" class="text-sm ml-8">Juegos de switch</a></li>
 			</ul>
 			<!-- HARDWARE -->
-			<li class="p-4 flex items-center justify-between text-lg cursor-pointer">
+			<li class="p-4 flex items-center justify-between text-lg">
 				<div class="flex">
 					<svg
 						version="1.1"
@@ -83,7 +83,7 @@
 						</g>
 					</svg>
 
-					<a href="#" @click="subMenu" id="categoriaHardwareSidebar">Hardware</a>
+					<button @click="subMenu" id="categoriaHardwareSidebar">Hardware</button>
 				</div>
 				<svg
 					class="fill-current text-white"
@@ -102,7 +102,7 @@
 				<li class="p-3"><a href="" class="text-sm ml-8">Nintendo switch</a></li>
 			</ul>
 			<!-- ACCESORIOS -->
-			<li class="p-4  flex items-center justify-between text-lg cursor-pointer">
+			<li class="p-4  flex items-center justify-between text-lg">
 				<div class="flex">
 					<svg
 						version="1.1"
@@ -135,7 +135,7 @@
 					0-2.664-0.852-4.857-2.563-6.567C251.536,147.048,249.345,146.189,246.683,146.189z"
 						/>
 					</svg>
-					<a href="#" @click="subMenu" id="categoriaAccesoriosSidebar">Accesorios</a>
+					<button @click="subMenu" id="categoriaAccesoriosSidebar">Accesorios</button>
 				</div>
 				<svg
 					class="fill-current text-white"
@@ -154,7 +154,7 @@
 				<li class="p-3"><a href="" class="text-sm ml-8">Joycons</a></li>
 				<li class="p-3"><a href="" class="text-sm ml-8">Otros Accesorios</a></li>
 			</ul>
-			<li class="p-4  flex items-center justify-between text-lg cursor-pointer">
+			<li class="p-4  flex items-center justify-between text-lg">
 				<div class="flex">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +188,7 @@ export default {
 			}
 
 			if (event.target.id === 'categoriaHardwareSidebar') {
-				const submenuHardaware = document.querySelector('#submenuHardware');
+				const submenuHardware = document.querySelector('#submenuHardware');
 				submenuHardware.classList.toggle('h-36');
 			} else {
 				submenuHardware.classList.remove('h-36');

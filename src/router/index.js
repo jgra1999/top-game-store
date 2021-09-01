@@ -8,16 +8,22 @@ const routes = [
 		component: Home,
 	},
 	{
-		path: '/MH-analisis',
+		path: '/monster-hunter-stories-analisis',
 		name: 'MH',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "about" */ '../views/MH.vue'),
+		component: () => import(/* webpackChunkName: "about" */ '../views/analisis/MH.vue'),
+	},
+	{
+		path: '/top-juegos-rpg',
+		name: 'TopRpg',
+		component: () => import(/* webpackChunkName: "about" */ '../views/blog/TopRpg.vue'),
 	},
 ];
 
 const router = createRouter({
+	scrollBehavior(to, from, savedPosition) {
+		// always scroll to top
+		return { top: 0 };
+	},
 	history: createWebHistory(process.env.BASE_URL),
 	routes,
 });

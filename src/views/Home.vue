@@ -4,59 +4,80 @@
 		<SliderPhone />
 
 		<!-- NOTICIAS -->
-		<div class="container relative mt-10 flex justify-around">
-			<router-link
-				to="/MH-analisis"
-				class="w-64 h-56 border-b-2 border-red-700 hover:border-yellow-400 duration-300 sm:w-72 sm:h-56 
-				md:w-64 md:h-56 lg:w-64 xl:w-72 xl:h-60"
-			>
-				<img
-					src="../assets/MH.jpg"
-					alt="Monster Hunter stories 2 imagen"
-					class="rounded-lg w-full h-36 md:h-32 xl:h-40 "
-				/>
-				<div>
-					<p class="font-bold text-base md:text-lg my-4">Análisis</p>
-					<p class="text-xs font-normal">Nintendo Switch</p>
-				</div>
-			</router-link>
+		<!-- <div class="container mt-10 relative flex justify-around">
+			<NewsElement
+				url="/monster-hunter-stories-analisis"
+				title="Análisis"
+				console="Nintendo Switch"
+				img="./img/MH.jpg"
+			/>
 
-			<div
-				class=" absolute overflow-hidden w-64 h-56 border-b-2 border-red-700 hover:border-yellow-400 duration-300 -right-56 opacity-50 sm:w-72 sm:h-56 
-				md:w-64 md:h-56 md:static md:opacity-100 lg:w-64 xl:w-72  xl:h-60"
-			>
-				<img src="../assets/NBA.jpg" alt="NBA 2K22 imagen" class="rounded-lg w-full h-36 md:h-32 xl:h-40  " />
-				<div>
-					<p class="font-bold text-base md:text-lg my-4">Proximamente el 10-09-21</p>
-					<p class="text-xs font-normal">Playstation 4. Playstation 5</p>
+			<NewsElement
+				url="#"
+				title="Proximamente el 10-09-21"
+				console="Playstation 4. Playstation 5"
+				img="./img/NBA.jpg"
+			/>
+
+			<NewsElement url="#" title="Análisis" console="Playstation 4. Playstation 5" img="./img/formula-1.jpg" />
+
+			<NewsElement url="#" title="Análisis" console="Nintendo Switch" img="./img/mario-golf.jpg" />
+		</div> -->
+
+		<div class="container mt-10 relative flex items-center sm:justify-center">
+			<button id="left-arrow" @click="scrollLeft()">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-12 w-12 text-gray-400 hover:text-red-700  xl:absolute xl:-left-14"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+				</svg>
+			</button>
+
+			<div class="w-full sm:w-96 md:w-full overflow-hidden" id="container__carousel">
+				<div class="flex">
+					<NewsElement
+						url="/monster-hunter-stories-analisis"
+						title="Análisis"
+						console="Nintendo Switch"
+						img="./img/MH.jpg"
+					/>
+
+					<NewsElement
+						url="#"
+						title="Proximamente el 10-09-21"
+						console="Playstation 4. Playstation 5"
+						img="./img/NBA.jpg"
+					/>
+
+					<NewsElement url="#" title="Análisis" console="Playstation 4. Playstation 5" img="./img/formula-1.jpg" />
+
+					<NewsElement url="#" title="Análisis" console="Nintendo Switch" img="./img/mario-golf.jpg" />
+
+					<NewsElement url="#" title="Análisis" console="Playstation 4. Playstation 5" img="./img/formula-1.jpg" />
+
+					<NewsElement url="#" title="Análisis" console="Nintendo Switch" img="./img/mario-golf.jpg" />
+
+					<NewsElement url="#" title="Análisis" console="Playstation 4. Playstation 5" img="./img/formula-1.jpg" />
+
+					<NewsElement url="#" title="Análisis" console="Nintendo Switch" img="./img/mario-golf.jpg" />
 				</div>
 			</div>
 
-			<div
-				class="w-64 h-56  border-b-2 border-red-700 hover:border-yellow-400 duration-300 hidden md:block md:absolute md:-right-60 opacity-50
-				lg:static lg:opacity-100 lg:w-64 xl:w-72 xl:h-60"
-			>
-				<img
-					src="../assets/formula-1.jpg"
-					alt="Formula 1 2021 imagen"
-					class="rounded-lg w-full h-36 md:h-32 xl:h-40"
-				/>
-				<div>
-					<p class="font-bold text-lg my-4">Análisis</p>
-					<p class="text-xs font-normal">Playstation 4. Playstation 5</p>
-				</div>
-			</div>
-
-			<div
-				class="w-64 h-60  border-b-2 border-red-700 hover:border-yellow-400 duration-300 hidden lg:block md:absolute md:-right-64 opacity-50
-				xl:static xl:opacity-100 xl:w-72  "
-			>
-				<img src="../assets/mario-golf.jpg" alt="Mario golf imagen" class="rounded-lg w-full h-36 xl:h-40" />
-				<div>
-					<p class="font-bold text-lg my-4">Análisis</p>
-					<p class="text-xs font-normal">Nintendo Switch</p>
-				</div>
-			</div>
+			<button id="rightArrow" @click="scrollRight()">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-12 w-12 text-gray-400 hover:text-red-700  xl:absolute xl:-right-14"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+				</svg>
+			</button>
 		</div>
 
 		<!-- PROXIMO LANZAMIENTO -->
@@ -64,7 +85,7 @@
 			<img src="../assets/fondo-hades.jpg" alt="" class="hidden md:block" />
 			<img src="../assets/fondo-hades-phone.jpg" alt="" class="md:hidden" />
 			<div
-				class="absolute bottom-12 left-5 md:bottom-24 w-96 md:w-64  lg:w-96 xl:w-100 2xl:w-104 lg:top-12 xl:top-24"
+				class="absolute bottom-12 left-4 md:bottom-24 w-94 md:w-64 lg:w-96 xl:w-100 2xl:w-104 lg:top-12 xl:top-24"
 			>
 				<h2 class="text-white text-4xl md:text-3xl lg:text-5xl xl:text-6xl font-bold">HADES</h2>
 				<h3 class="text-white text-lg lg:text-3xl xl:text-4xl font-normal mt-5">PROXIMO LANZAMIENTO</h3>
@@ -74,7 +95,7 @@
 					deberemos escapar del inframundo enfrentándonos a toda clase de monstruos.
 				</p>
 
-				<button class="rounded-full hover:ring-2 ring-white pt-1.5 pb-2.5 lg:py-2.5 px-1 duration-300 ">
+				<button class="rounded-full hover:ring-2 ring-white pt-1.5 pb-2.5 lg:py-3 px-1 duration-300 ">
 					<a href="#" class="rounded-full font-bold text-xs lg:text-base text-black py-2 px-5 bg-white">
 						Más información
 					</a>
@@ -219,26 +240,61 @@
 				<Producto juego="./img/ofertas/dark-souls.jpg" class="hidden lg:block" />
 			</div>
 		</div>
-
-		<Footer />
 	</div>
 	<router-view />
 </template>
 
 <script>
 // @ is an alias to /src
-import Slider from '@/components/Carrousel/Slider.vue';
-import SliderPhone from '@/components/Carrousel/SliderPhone.vue';
+import Slider from '@/components/Slideshow/Slider.vue';
+import SliderPhone from '@/components/Slideshow/SliderPhone.vue';
 import Producto from '@/components/Producto.vue';
-import Footer from '@/components/Footer.vue';
+
+import NewsElement from '@/components/carousel/Element.vue';
 
 export default {
 	name: 'Home',
+
 	components: {
 		Slider,
 		SliderPhone,
 		Producto,
-		Footer,
+		NewsElement,
+	},
+
+	methods: {
+		scrollRight() {
+			const carousel = document.getElementById('container__carousel');
+			// carousel.scrollLeft += carousel.scrollLeft = 388;
+			if (window.innerWidth < 1024) {
+				carousel.scrollLeft += carousel.offsetWidth;
+			} else if (window.innerWidth > 1024 && window.innerWidth < 1280) {
+				carousel.scrollLeft += carousel.scrollLeft = 312;
+			} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
+				carousel.scrollLeft += carousel.scrollLeft = 323;
+			} else if (window.innerWidth > 1536) {
+				carousel.scrollLeft += carousel.scrollLeft = 385;
+			}
+		},
+		scrollLeft() {
+			const carousel = document.getElementById('container__carousel');
+			// carousel.scrollLeft -= carousel.scrollLeft = 388;
+			if (window.innerWidth < 1024) {
+				carousel.scrollLeft -= carousel.offsetWidth;
+			} else if (window.innerWidth > 1024 && window.innerWidth < 1280) {
+				carousel.scrollLeft -= carousel.scrollLeft = 312;
+			} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
+				carousel.scrollLeft -= carousel.scrollLeft = 323;
+			} else if (window.innerWidth > 1536) {
+				carousel.scrollLeft -= carousel.scrollLeft = 385;
+			}
+		},
 	},
 };
 </script>
+
+<style>
+#container__carousel {
+	scroll-behavior: smooth;
+}
+</style>
