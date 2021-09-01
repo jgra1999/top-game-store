@@ -1,5 +1,5 @@
 <template>
-	<div class="relative flex items-center sm:hidden h-108 mb-2">
+	<div class="relative flex items-center md:hidden h-108 mb-2">
 		<ImageSlidePhone
 			v-for="slide in slides"
 			:key="slide.id"
@@ -9,7 +9,7 @@
 		>
 			<img :src="slide.img" class="h-full w-full" />
 
-			<div class="absolute flex flex-col items-center bottom-10 sm:bottom-24 text-center w-full">
+			<div class="absolute flex flex-col items-center bottom-10 sm:bottom-5 text-center w-full">
 				<img :src="slide.logo" alt="" class="w-64 h-16 mx-auto sm:w-72 sm:h-20" />
 				<p class="w-80 text-xs sm:text-base sm:w-100 my-10">
 					{{ slide.description }}

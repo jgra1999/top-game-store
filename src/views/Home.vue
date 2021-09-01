@@ -24,7 +24,7 @@
 			<NewsElement url="#" title="Análisis" console="Nintendo Switch" img="./img/mario-golf.jpg" />
 		</div> -->
 
-		<div class="container mt-10 relative flex items-center sm:justify-center">
+		<div class="container 2xl:w-11/12 mt-10 relative flex items-center sm:justify-center">
 			<button id="left-arrow" @click="scrollLeft()">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
 				</svg>
 			</button>
 
-			<div class="w-full sm:w-96 md:w-full overflow-hidden" id="container__carousel">
+			<div class="w-full sm:w-96 md:w-full 2xl:full overflow-hidden" id="container__carousel">
 				<div class="flex">
 					<NewsElement
 						url="/monster-hunter-stories-analisis"
