@@ -18,7 +18,7 @@
 				</svg>
 			</button>
 
-			<div class="w-full sm:w-96 md:w-full 2xl:full overflow-hidden" id="container__carousel">
+			<div class="w-full sm:w-96 md:w-full xl:full overflow-hidden" id="container__carousel">
 				<div class="flex">
 					<NewsElement
 						url="/monster-hunter-stories-analisis"
@@ -246,6 +246,7 @@ export default {
 	methods: {
 		scrollRight() {
 			const carousel = document.getElementById('container__carousel');
+			carousel.scrollLeft += carousel.scrollLeft = 350;
 			if (window.innerWidth < 1024) {
 				carousel.scrollLeft += carousel.offsetWidth;
 			} else if (window.innerWidth > 1024 && window.innerWidth < 1280) {
@@ -253,10 +254,10 @@ export default {
 			} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
 				carousel.scrollLeft += carousel.scrollLeft = 323;
 			}
-			carousel.scrollLeft += carousel.scrollLeft = 350;
 		},
 		scrollLeft() {
 			const carousel = document.getElementById('container__carousel');
+			carousel.scrollLeft -= carousel.scrollLeft = 350;
 			if (window.innerWidth < 1024) {
 				carousel.scrollLeft -= carousel.offsetWidth;
 			} else if (window.innerWidth > 1024 && window.innerWidth < 1280) {
@@ -264,7 +265,6 @@ export default {
 			} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
 				carousel.scrollLeft -= carousel.scrollLeft = 323;
 			}
-			carousel.scrollLeft -= carousel.scrollLeft = 350;
 		},
 	},
 };
