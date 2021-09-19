@@ -154,22 +154,12 @@
 			<div
 				class="grid grid-cols-2 grid-row-2 mt-10 justify-items-center items-end gap-y-2 lg:grid-cols-4 grid-row-0"
 			>
-				<div class=" w-40 text-center p-4 cursor-pointer hover:shadow-xl duration-300">
-					<img src="../assets/ps5.png" alt="PS5" class="h-40" />
-					<p class="mt-5">PlayStation 5</p>
-				</div>
-				<div class=" w-40 text-center p-4 cursor-pointer hover:shadow-xl duration-300 ">
-					<img src="../assets/ps4-pro.png" alt="PS5" class="h-40" />
-					<p class="mt-5">PlayStation 4 pro</p>
-				</div>
-				<div class=" w-40 text-center p-4 cursor-pointer hover:shadow-xl duration-300 ">
-					<img src="../assets/ps4.png" alt="PS5" class="h-40" />
-					<p class="mt-5">PlayStation 4</p>
-				</div>
-				<div class=" w-40 text-center p-4 cursor-pointer hover:shadow-xl duration-300">
-					<img src="../assets/switch.png" alt="PS5" class="h-32 w-40" />
-					<p class="mt-5">Nintendo Switch</p>
-				</div>
+				<Consoles
+					v-for="console in consoles.data"
+					:key="console.id"
+					:imageUrl="console.image_url"
+					:name="console.name"
+				/>
 			</div>
 		</div>
 
@@ -181,8 +171,13 @@
 					<p class="text-xs md:text-sm">Excelentes juegos para Playstation y Nintedo</p>
 				</div>
 
-				<div class="hidden lg:flex">
-					<button class="rounded-full h-12 w-12 flex items-center justify-center bg-red-700 mr-2">
+				<div class="hidden lg:flex mr-3">
+					<button
+						class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700 mr-2 "
+						:class="{ 'opacity-25 cursor-default': games.meta.current_page === 1 }"
+						:disabled="games.meta.current_page === 1"
+						@click="showPrevGames"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="20"
@@ -194,7 +189,12 @@
 						</svg>
 					</button>
 
-					<button class="rounded-full h-12 w-12 flex items-center justify-center bg-red-700">
+					<button
+						class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700"
+						:class="{ 'opacity-25 cursor-default': games.meta.current_page === 3 }"
+						:disabled="games.meta.current_page === 3"
+						@click="showNextGames"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="20"
@@ -209,16 +209,7 @@
 			</div>
 
 			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-rows-2 gap-5 justify-items-center mt-12">
-				<Producto juego="./img/playstation/HZD.jpg" />
-				<Producto juego="./img/playstation/miles morales.jpg" />
-				<Producto juego="./img/destacados/tlou.png" />
-				<Producto juego="./img/switch/zelda.jpg" />
-				<Producto juego="./img/switch/ssb ultimate.png" />
-				<Producto juego="./img/switch/luigis mansion.jpg" />
-				<Producto juego="./img/destacados/fifa.png" class="hidden lg:block" />
-				<Producto juego="./img/destacados/ratched.jpg" class="hidden lg:block" />
-				<Producto juego="./img/playstation/god of war.jpg" class="hidden lg:block" />
-				<Producto juego="./img/ofertas/dark-souls.jpg" class="hidden lg:block" />
+				<Producto v-for="game in games.data" :key="game.id" :imageUrl="game.image_url" :price="game.price" />
 			</div>
 		</div>
 	</div>
@@ -230,8 +221,11 @@
 import Slider from '@/components/Slideshow/Slider.vue';
 import SliderPhone from '@/components/Slideshow/SliderPhone.vue';
 import Producto from '@/components/Producto.vue';
-
 import NewsElement from '@/components/carousel/Element.vue';
+import Consoles from '@/components/Consoles.vue';
+
+import useGames from '@/composables/useGames.js';
+import useConsoles from '@/composables/useConsoles.js';
 
 export default {
 	name: 'Home',
@@ -241,6 +235,7 @@ export default {
 		SliderPhone,
 		Producto,
 		NewsElement,
+		Consoles,
 	},
 
 	methods: {
@@ -266,6 +261,34 @@ export default {
 				carousel.scrollLeft -= carousel.scrollLeft = 323;
 			}
 		},
+	},
+
+	setup() {
+		let { fetchGames, games } = useGames();
+		let { fetchConsoles, consoles } = useConsoles();
+
+		fetchGames();
+		fetchConsoles();
+
+		function showNextGames() {
+			fetchGames({
+				showNext: true,
+				page: games.value.meta.current_page + 1,
+			});
+		}
+		function showPrevGames() {
+			fetchGames({
+				showPrev: true,
+				page: games.value.meta.current_page - 1,
+			});
+		}
+
+		return {
+			games,
+			consoles,
+			showNextGames,
+			showPrevGames,
+		};
 	},
 };
 </script>

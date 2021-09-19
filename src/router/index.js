@@ -7,15 +7,34 @@ const routes = [
 		name: 'Home',
 		component: Home,
 	},
+	/* JUEGOS */
+	{
+		path: '/juegos-playstation-5',
+		name: 'PS5',
+		component: () => import('../views/juegos/PS5.vue'),
+	},
+	{
+		path: '/juegos-playstation-4',
+		name: 'PS4',
+		component: () => import('../views/juegos/PS4.vue'),
+	},
+	{
+		path: '/juegos-nintendo-switch',
+		name: 'Switch',
+		component: () => import('../views/juegos/Switch.vue'),
+	},
+
+	/* ANALISIS */
 	{
 		path: '/monster-hunter-stories-analisis',
 		name: 'MH',
-		component: () => import(/* webpackChunkName: "about" */ '../views/analisis/MH.vue'),
+		component: () => import('../views/analisis/MH.vue'),
 	},
+	/* BLOG */
 	{
 		path: '/top-juegos-rpg',
 		name: 'TopRpg',
-		component: () => import(/* webpackChunkName: "about" */ '../views/blog/TopRpg.vue'),
+		component: () => import('../views/blog/TopRpg.vue'),
 	},
 ];
 

@@ -1,0 +1,245 @@
+<template>
+	<div>
+		<div class="relative">
+			<img
+				src="/img/ps4/god of war.jpg"
+				loading="lazy"
+				alt="image ratched and clank"
+				class="h-100 xl:h-header w-full"
+			/>
+
+			<div class="absolute w-full bottom-6 xl:bottom-40 flex flex-col items-center text-center">
+				<img src="/img/ps4/ps4 logo completo.png" alt="logo plyastation 5" class="w-80 h-24 xl:w-96 xl:h-28" />
+				<p class="text-white text-2xl xl:text-4xl mt-2">Disfruta de grandes juegos de playstation studios</p>
+			</div>
+		</div>
+
+		<div>
+			<h2 class="text-2xl sm:text-3xl md:text-4xl mx-2 lg:ml-5 my-12 font-bold text-red-700">
+				Juegos extraordinarios para Playstation 5
+			</h2>
+			<div>
+				<CardJuego image="/img/ps5/nba.jpg" name="NBA 2K22" :row="true">
+					<template v-slot:description>
+						<p class="mt-4">
+							NBA 2K22 es el título más reciente de la serie de videojuegos de baloncesto NBA 2K más vendida y de
+							renombre mundial. Crea tu propio legado en el asfalto.
+						</p>
+					</template>
+				</CardJuego>
+			</div>
+			<div id="horizon" class="bg-horizon bg-cover">
+				<CardJuego image="/img/ps5/horizon-forbidden-west.jpg" name="Horizon Forbidden West" :row="true">
+					<template v-slot:description>
+						<p class="mt-4">
+							Únete a Aloy mientras desafía la Forbidden West, una frontera majestuosa, aunque peligrosa, en la que
+							se ocultan nuevas y misteriosas amenazas.
+						</p>
+					</template>
+				</CardJuego>
+			</div>
+			<div>
+				<CardJuego image="/img/ps5/godfall.jpg" name="GodFall" :row="true">
+					<template v-slot:description>
+						<p class="mt-4">
+							Embárcate en la aventura en un juego de rol de acción y fantasía que utiliza el combate cuerpo a cuerpo
+							en tercera persona de alto impacto para involucrar a los jugadores mientras buscan botines. Enfréntate
+							a misiones desafiantes que te recompensarán con un botín que te hará girar la cabeza mientras derrotas
+							a los ejércitos que se enfrentan a ti.
+						</p>
+					</template>
+				</CardJuego>
+			</div>
+			<div class="bg-demons bg-cover">
+				<CardJuego image="/img/ps5/demons-souls.jpg" name="Demons Souls" :row="true">
+					<template v-slot:description>
+						<p class="mt-4">
+							Completamente reconstruido desde cero, este remake te invita a experimentar la inquietante historia y
+							el despiadado combate de Demon's Souls.
+						</p>
+					</template>
+				</CardJuego>
+			</div>
+		</div>
+
+		<div>
+			<h2 class="text-2xl sm:text-3xl md:text-4xl mx-2 lg:ml-5 my-12 font-bold text-red-700">
+				Juegos exclusivos de Playstation
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 border-b-2 border-gray-300">
+				<CardJuego image="/img/ps5/immortals.jpeg" name="Immortals Fenyx Rising">
+					<template v-slot:description>
+						<p class="mt-4">
+							Un juego de mundo abierto ambientado en la mitología griega que ofrece una increíble libertad de
+							exploración, personajes cargados de magia, los mejores puzles que hemos visto en mucho tiempo... y un
+							inevitable parecido con Zelda Breath of the Wild.
+						</p>
+					</template>
+				</CardJuego>
+				<CardJuego image="/img/ps5/returnal.jpg" name="Returnal">
+					<template v-slot:description>
+						<p class="mt-4">
+							Diseñado para una rejugabilidad extrema, el mundo procedimental de Returnal te invita a desempolvarte
+							frente a la derrota y enfrentarte a nuevos desafíos en evolución con cada renacimiento.
+						</p>
+					</template>
+				</CardJuego>
+				<CardJuego image="/img/ps5/village.jpg" name="Resident Evil 8: Village">
+					<template v-slot:description>
+						<p class="mt-4">
+							Experimente el survival horror como nunca antes en la octava entrega principal de la histórica
+							franquicia Resident Evil.
+						</p>
+					</template>
+				</CardJuego>
+				<CardJuego image="/img/ps5/ratched-clank-fondo.jpg" name="Ratchet and Clank: Rift Apart">
+					<template v-slot:description>
+						<p class="mt-4">
+							Salta de dimensión con Ratchet y Clank mientras se enfrentan a un malvado emperador de otra realidad.
+						</p>
+					</template>
+				</CardJuego>
+			</div>
+		</div>
+
+		<div class="container w-full mt-10">
+			<div class="flex justify-between items-center">
+				<div class="ml-2">
+					<h2 class="text-2xl sm:text-3xl md:text-4xl mx-2 lg:ml-5 my-12 font-bold text-red-700" id="up">
+						Nuevos lanzamientos
+					</h2>
+				</div>
+				<!-- PAGINACION -->
+				<div class="hidden lg:flex mr-3">
+					<button
+						class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700 mr-2 "
+						:class="{ 'opacity-25 cursor-default': gamesPS4.meta.current_page === 1 }"
+						:disabled="gamesPS4.meta.current_page === 1"
+						@click="showPrevGames"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							class="fill-current text-white"
+						>
+							<path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+						</svg>
+					</button>
+
+					<button
+						class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700"
+						:class="{ 'opacity-25 cursor-default': gamesPS4.meta.current_page === gamesPS4.meta.last_page }"
+						:disabled="gamesPS4.meta.current_page === gamesPS4.meta.last_page"
+						@click="showNextGames"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							class="fill-current text-white"
+						>
+							<path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div
+				class="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 mt-10 justify-items-center"
+			>
+				<CardProductos
+					v-for="game in gamesPS4.data"
+					:key="game.id"
+					:imageUrl="game.image_url"
+					:price="game.price"
+					:name="game.name"
+				/>
+			</div>
+		</div>
+
+		<!-- PAGINACION RESPOSIVE -->
+		<div class="flex justify-around mt-8 lg:hidden mr-3">
+			<a
+				class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700 mr-2 "
+				:class="{ 'opacity-25 cursor-default': gamesPS4.meta.current_page === 1 }"
+				:disabled="gamesPS4.meta.current_page === 1"
+				@click="showPrevGames"
+				href="#up"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					class="fill-current text-white"
+				>
+					<path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+				</svg>
+			</a>
+
+			<a
+				class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700"
+				:class="{ 'opacity-25 cursor-default': gamesPS4.meta.current_page === gamesPS4.meta.last_page }"
+				:disabled="gamesPS4.meta.current_page === gamesPS4.meta.last_page"
+				@click="showNextGames"
+				href="#up"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					class="fill-current text-white"
+				>
+					<path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
+				</svg>
+			</a>
+		</div>
+	</div>
+</template>
+
+<script>
+import CardProductos from '@/components/Cards/CardProductos.vue';
+import CardJuego from '@/components/Cards/CardJuego.vue';
+
+import useGamesPS4 from '@/composables/useGamesPS4.js';
+
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid';
+
+export default {
+	components: {
+		CardProductos,
+		CardJuego,
+		ChevronLeftIcon,
+		ChevronRightIcon,
+	},
+
+	setup() {
+		let { fetchGamesPS4, gamesPS4 } = useGamesPS4();
+
+		fetchGamesPS4();
+
+		function showNextGames() {
+			fetchGamesPS4({
+				showNext: true,
+				page: gamesPS4.value.meta.current_page + 1,
+			});
+		}
+		function showPrevGames() {
+			fetchGamesPS4({
+				showPrev: true,
+				page: gamesPS4.value.meta.current_page - 1,
+			});
+		}
+
+		return {
+			gamesPS4,
+			showNextGames,
+			showPrevGames,
+		};
+	},
+};
+</script>

@@ -7,7 +7,7 @@
 			:visibleSlide="visibleSlide"
 			:direction="direction"
 		>
-			<img :src="slide.img" class="h-full w-full" />
+			<img :src="slide.img" loading="lazy" class="h-full w-full" />
 
 			<div class="absolute md:bottom-8 lg:bottom-20 xl:bottom-24 2xl:bottom-36 md:left-8 w-2/5 ">
 				<img :src="slide.logo" alt="" class="md:w-64 md:h-16 xl:w-96 xl:h-24" />

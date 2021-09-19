@@ -1,8 +1,9 @@
 <template>
 	<nav class="fixed z-20 flex items-center justify-between bg-red-700 w-screen h-14  ">
 		<div class="flex items-center">
+			<!-- LOGO -->
 			<div @click="sideBar" class="ml-1">
-				<button class="sm:hidden" v-show="!isVisible" @click="toggle()">
+				<button class="lg:hidden">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="h-7 w-7 text-white"
@@ -14,7 +15,7 @@
 					</svg>
 				</button>
 
-				<button class="sm:hidden" v-show="isVisible" @click="toggle()">
+				<!-- <button class="lg:hidden" v-show="isVisible">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="h-7 w-7 text-white"
@@ -24,7 +25,7 @@
 					>
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
 					</svg>
-				</button>
+				</button> -->
 			</div>
 			<router-link to="/">
 				<img
@@ -87,7 +88,7 @@
 		</div>
 
 		<!-- LOGIN, SEARCH, CARRITO -->
-		<div class="flex items-center mr-6 ">
+		<div class="flex items-center mr-7 ">
 			<div>
 				<a
 					href="#"
@@ -124,25 +125,31 @@
 	</nav>
 
 	<!-- DROP MENU DE JUEGOS -->
-	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden" id="dropJuegos">
+	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden menu" id="dropJuegos">
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
-			<div class="text-center cursor-pointer">
-				<img src="@/assets/logo-ps5.png" alt="" class=" w-48 xl:w-60" />
-				<p class="mt-4 text-white font-bold">Juegos de PS5</p>
+			<div class="text-center">
+				<router-link to="/juegos-playstation-5" @click="CloseDropMenu">
+					<img src="@/assets/logo-ps5.png" alt="icono ps5" class=" w-48 xl:w-60" />
+					<p class="mt-4 text-white font-bold">Juegos de PS5</p>
+				</router-link>
 			</div>
-			<div class="text-center cursor-pointer">
-				<img src="@/assets/logo-ps4.png" alt="" class=" w-48 xl:w-64" />
-				<p class="mt-4 text-white font-bold">Juegos de PS4</p>
+			<div class="text-center">
+				<router-link to="/juegos-playstation-4" @click="CloseDropMenu">
+					<img src="@/assets/logo-ps4.png" alt="icono ps4" class=" w-48 xl:w-64" />
+					<p class="mt-4 text-white font-bold">Juegos de PS4</p>
+				</router-link>
 			</div>
-			<div class="flex flex-col items-center cursor-pointer">
-				<img src="@/assets/logo-nintendo.png" alt="" class=" w-48 xl:w-60" />
-				<p class="mt-4 text-white font-bold">Juegos de Switch</p>
+			<div>
+				<router-link to="/juegos-nintendo-switch" @click="CloseDropMenu" class="flex flex-col items-center">
+					<img src="@/assets/logo-nintendo.png" alt="icono switch" class=" w-48 xl:w-60" />
+					<p class="mt-4 text-white font-bold">Juegos de Switch</p>
+				</router-link>
 			</div>
 		</div>
 	</div>
 
 	<!-- DROP MENU DE HARDWARE -->
-	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden" id="dropHardware">
+	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden menu" id="dropHardware">
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
 			<div class="text-center cursor-pointer p-2">
 				<img src="@/assets/iconPS5.png" alt="" />
@@ -231,7 +238,7 @@
 	</div>
 
 	<!-- DROP MENU DE ACCESORIOS -->
-	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden" id="dropAccesorios">
+	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden menu" id="dropAccesorios">
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
 			<div class="flex flex-col items-center cursor-pointer">
 				<svg
@@ -328,12 +335,15 @@
 import Sidebar from './Sidebar.vue';
 import Searchbar from './Searchbar.vue';
 
-import { useToggle } from '@/composable/useToggle';
-
-import { ref } from 'vue';
+import { useToggle } from '@/composables/useToggle';
 
 export default {
 	name: 'Navbar',
+	data() {
+		return {
+			isVisible: false,
+		};
+	},
 	components: { Sidebar, Searchbar },
 	methods: {
 		/**
@@ -384,13 +394,18 @@ export default {
 
 			sidebarDesplegar.classList.toggle('w-screen');
 		},
+
+		CloseDropMenu() {
+			const dropmenu = document.querySelector('.menu');
+			dropmenu.classList.remove('h-72');
+		},
 	},
 
-	setup() {
+	/* setup() {
 		let { isVisible, toggle } = useToggle();
 
 		return { isVisible, toggle };
-	},
+	}, */
 };
 </script>
 

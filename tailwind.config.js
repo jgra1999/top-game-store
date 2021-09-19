@@ -24,6 +24,7 @@ module.exports = {
 		extend: {
 			spacing: {
 				'52.5': '13.5rem',
+				'66': '18rem',
 				'94': '22rem',
 				'96.5': '24.5rem',
 				'100': '28rem',
@@ -32,10 +33,15 @@ module.exports = {
 				'108': '36.30rem',
 				'110': '40rem',
 				'112': '44rem',
-				slide: '48rem',
+				header: '52rem',
 			},
 			colors: {
 				hades: '#620101',
+			},
+
+			backgroundImage: {
+				horizon: "url('/img/ps5/horizon forbidden west fondo.jpg')",
+				demons: "url('/img/ps5/demons-souls-fondo.jpg')",
 			},
 		},
 		boxShadow: {
