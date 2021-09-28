@@ -1,5 +1,5 @@
 import { ref } from '@vue/reactivity';
-import api from '../apis/api';
+import api from '../../apis/api';
 
 export default function useGamesPS5() {
 	let gamesPS5 = ref({

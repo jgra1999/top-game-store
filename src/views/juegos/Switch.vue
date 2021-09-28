@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<Portada
-			imageUrl="/img/switch/octopath wallpaper.jpg"
+			imageUrl="/img/games/switch/octopath wallpaper.jpg"
 			description="Octopath Traveler"
 			logoUrl="/img/navbar/logo-nintendo.png"
 			console="Nintendo"
@@ -13,7 +13,7 @@
 				Juegos extraordinarios para Playstation 5
 			</h2>
 			<div>
-				<CardJuego image="/img/ps5/nba.jpg" name="NBA 2K22" :row="true">
+				<CardJuego image="/img/games/ps5/nba.jpg" name="NBA 2K22" :row="true">
 					<template v-slot:description>
 						<p class="mt-4">
 							NBA 2K22 es el título más reciente de la serie de videojuegos de baloncesto NBA 2K más vendida y de
@@ -23,7 +23,7 @@
 				</CardJuego>
 			</div>
 			<div id="horizon" class="bg-horizon bg-cover">
-				<CardJuego image="/img/ps5/horizon-forbidden-west.jpg" name="Horizon Forbidden West" :row="true">
+				<CardJuego image="/img/games/ps5/horizon-forbidden-west.jpg" name="Horizon Forbidden West" :row="true">
 					<template v-slot:description>
 						<p class="mt-4">
 							Únete a Aloy mientras desafía la Forbidden West, una frontera majestuosa, aunque peligrosa, en la que
@@ -33,7 +33,7 @@
 				</CardJuego>
 			</div>
 			<div>
-				<CardJuego image="/img/ps5/godfall.jpg" name="GodFall" :row="true">
+				<CardJuego image="/img/games/ps5/godfall.jpg" name="GodFall" :row="true">
 					<template v-slot:description>
 						<p class="mt-4">
 							Embárcate en la aventura en un juego de rol de acción y fantasía que utiliza el combate cuerpo a cuerpo
@@ -45,7 +45,7 @@
 				</CardJuego>
 			</div>
 			<div class="bg-demons bg-cover">
-				<CardJuego image="/img/ps5/demons-souls.jpg" name="Demons Souls" :row="true">
+				<CardJuego image="/img/games/ps5/demons-souls.jpg" name="Demons Souls" :row="true">
 					<template v-slot:description>
 						<p class="mt-4">
 							Completamente reconstruido desde cero, este remake te invita a experimentar la inquietante historia y
@@ -61,7 +61,7 @@
 				Juegos exclusivos de Playstation
 			</h2>
 			<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 border-b-2 border-gray-300">
-				<CardJuego image="/img/ps5/immortals.jpeg" name="Immortals Fenyx Rising">
+				<CardJuego image="/img/games/ps5/immortals.jpeg" name="Immortals Fenyx Rising">
 					<template v-slot:description>
 						<p class="mt-4">
 							Un juego de mundo abierto ambientado en la mitología griega que ofrece una increíble libertad de
@@ -70,7 +70,7 @@
 						</p>
 					</template>
 				</CardJuego>
-				<CardJuego image="/img/ps5/returnal.jpg" name="Returnal">
+				<CardJuego image="/img/games/ps5/returnal.jpg" name="Returnal">
 					<template v-slot:description>
 						<p class="mt-4">
 							Diseñado para una rejugabilidad extrema, el mundo procedimental de Returnal te invita a desempolvarte
@@ -112,15 +112,7 @@
 						:disabled="gamesSwitch.meta.current_page === 1"
 						@click="showPrevGames"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 24 24"
-							class="fill-current text-white"
-						>
-							<path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-						</svg>
+						<ChevronLeftIcon class="fill-current text-white w-9 h-9" />
 					</button>
 
 					<button
@@ -129,20 +121,12 @@
 						:disabled="gamesSwitch.meta.current_page === gamesSwitch.meta.last_page"
 						@click="showNextGames"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 24 24"
-							class="fill-current text-white"
-						>
-							<path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
-						</svg>
+						<ChevronRightIcon class="fill-current text-white w-9 h-9" />
 					</button>
 				</div>
 			</div>
 			<div
-				class="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 mt-10 justify-items-center"
+				class="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 my-10 justify-items-center"
 			>
 				<CardProductos
 					v-for="game in gamesSwitch.data"
@@ -156,41 +140,25 @@
 
 		<!-- PAGINACION RESPONSIVE -->
 		<div class="flex justify-around mt-8 lg:hidden mr-3">
-			<a
+			<button
 				class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700 mr-2 "
 				:class="{ 'opacity-25 cursor-default': gamesSwitch.meta.current_page === 1 }"
 				:disabled="gamesSwitch.meta.current_page === 1"
 				@click="showPrevGames"
 				href="#up"
 			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					viewBox="0 0 24 24"
-					class="fill-current text-white"
-				>
-					<path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-				</svg>
-			</a>
+				<ChevronLeftIcon class="fill-current text-white w-9 h-9" />
+			</button>
 
-			<a
+			<button
 				class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700"
 				:class="{ 'opacity-25 cursor-default': gamesSwitch.meta.current_page === gamesSwitch.meta.last_page }"
 				:disabled="gamesSwitch.meta.current_page === gamesSwitch.meta.last_page"
 				@click="showNextGames"
 				href="#up"
 			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					viewBox="0 0 24 24"
-					class="fill-current text-white"
-				>
-					<path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
-				</svg>
-			</a>
+				<ChevronRightIcon class="fill-current text-white w-9 h-9" />
+			</button>
 		</div>
 	</div>
 </template>
@@ -202,11 +170,15 @@ import Portada from '@/components/Utilidades/Portada.vue';
 
 import useGamesSwitch from '@/composables/games/useGamesSwitch.js';
 
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid';
+
 export default {
 	components: {
 		CardProductos,
 		CardJuego,
 		Portada,
+		ChevronLeftIcon,
+		ChevronRightIcon,
 	},
 
 	setup() {

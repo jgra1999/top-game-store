@@ -1,6 +1,6 @@
 <template>
 	<div class="flex justify-center relative min-h-80">
-		<img src="@/assets/wallpaper-MH.jpg" alt="" />
+		<img src="@/assets/wallpaper-MH.jpg" loading="lazy" alt="monster hunter wallapaper" />
 		<Ficha />
 	</div>
 	<FichaPhone />

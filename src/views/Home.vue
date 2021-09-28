@@ -178,15 +178,7 @@
 						:disabled="games.meta.current_page === 1"
 						@click="showPrevGames"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 24 24"
-							class="fill-current text-white"
-						>
-							<path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-						</svg>
+						<ChevronLeftIcon class="fill-current text-white w-9 h-9" />
 					</button>
 
 					<button
@@ -195,21 +187,13 @@
 						:disabled="games.meta.current_page === 3"
 						@click="showNextGames"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 24 24"
-							class="fill-current text-white"
-						>
-							<path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
-						</svg>
+						<ChevronRightIcon class="fill-current text-white w-9 h-9" />
 					</button>
 				</div>
 			</div>
 
-			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-rows-2 gap-5 justify-items-center mt-12">
-				<Producto v-for="game in games.data" :key="game.id" :imageUrl="game.image_url" :price="game.price" />
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-rows-2 gap-5 justify-items-center my-12">
+				<Producto v-for="game in games.data" :key="game.id" :imageUrl="game.image_url" />
 			</div>
 		</div>
 	</div>
@@ -227,6 +211,8 @@ import Consoles from '@/components/Consoles.vue';
 import useGames from '@/composables/useGames.js';
 import useConsoles from '@/composables/useConsoles.js';
 
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid';
+
 export default {
 	name: 'Home',
 
@@ -236,6 +222,8 @@ export default {
 		Producto,
 		NewsElement,
 		Consoles,
+		ChevronLeftIcon,
+		ChevronRightIcon,
 	},
 
 	methods: {

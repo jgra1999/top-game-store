@@ -8,7 +8,7 @@
 		</div>
 
 		<div :class="{ 'text-white': name == 'Horizon Forbidden West' || name == 'Demons Souls' }">
-			<h3 class="mt-3 md:mt-5 text-4xl md:text-3xl lg:text-4xl">{{ name }}</h3>
+			<h3 class="mt-3 md:mt-5 text-4xl md:text-3xl lg:text-4xl font-semibold">{{ name }}</h3>
 
 			<slot name="description"></slot>
 

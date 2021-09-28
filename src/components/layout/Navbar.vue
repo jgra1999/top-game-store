@@ -38,51 +38,26 @@
 			<!-- CATEGORIAS -->
 			<ul class="text-white hidden lg:flex items-center ">
 				<li class="ml-5 mt-2 cursor-pointer hover:border-b-2 h-8">
-					<div class="flex items-center" @click="dropMenu" id="categoriaJuegos">
+					<button class="flex items-center" @click="dropMenu" id="categoriaJuegos">
 						Juegos
-						<svg
-							class="fill-current text-white ml-1.5"
-							xmlns="http://www.w3.org/2000/svg"
-							width="12"
-							height="12"
-							viewBox="0 0 24 24"
-						>
-							<path id="flechaJuegos" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
-						</svg>
-					</div>
+						<ChevronDownIcon class="fill-current text-white w-5 h-5" />
+					</button>
 				</li>
 				<li class="ml-5 mt-2 cursor-pointer hover:border-b-2 h-8">
-					<div class="flex items-center" @click="dropMenu" id="categoriaHardware">
+					<button class="flex items-center" @click="dropMenu" id="categoriaHardware">
 						Hardware
-						<svg
-							class="fill-current text-white ml-1.5"
-							xmlns="http://www.w3.org/2000/svg"
-							width="12"
-							height="12"
-							viewBox="0 0 24 24"
-						>
-							<path id="flechaJuegos" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
-						</svg>
-					</div>
+						<ChevronDownIcon class="fill-current text-white w-5 h-5" />
+					</button>
 				</li>
 				<li class="ml-5 mt-2 cursor-pointer hover:border-b-2 h-8">
-					<div class="flex items-center" @click="dropMenu" id="categoriaAccesorios">
+					<router-link to="/accesorios" class="flex items-center">
 						Accesorios
-						<svg
-							class="fill-current text-white ml-1.5"
-							xmlns="http://www.w3.org/2000/svg"
-							width="12"
-							height="12"
-							viewBox="0 0 24 24"
-						>
-							<path id="flechaJuegos" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
-						</svg>
-					</div>
+					</router-link>
 				</li>
 				<li class="ml-5 mt-2 cursor-pointer hover:border-b-2 h-8">
-					<div class="flex items-center">
+					<button class="flex items-center">
 						Noticias
-					</div>
+					</button>
 				</li>
 			</ul>
 		</div>
@@ -90,10 +65,10 @@
 		<!-- LOGIN, SEARCH, CARRITO -->
 		<div class="flex items-center mr-7 ">
 			<div>
-				<a
-					href="#"
+				<router-link
+					to="/iniciar-sesion"
 					class=" rounded-full font-bold text-xs md:text-base text-white py-1 px-5 border-2 active:bg-white active:text-red-700 lg:hover:bg-white lg:hover:text-red-700 lg:duration-300  "
-					>Login</a
+					>Login</router-link
 				>
 			</div>
 
@@ -108,19 +83,9 @@
 				/>
 			</svg>
 
-			<svg
-				class="fill-current text-gray-200 hover:text-white cursor-pointer w-4 h-4"
-				xmlns="http://www.w3.org/2000/svg"
-				width="20"
-				height="20"
-				viewBox="0 0 24 24"
-				@click="dropMenu"
-				id="search"
-			>
-				<path
-					d="M23.809 21.646l-6.205-6.205c1.167-1.605 1.857-3.579 1.857-5.711 0-5.365-4.365-9.73-9.731-9.73-5.365 0-9.73 4.365-9.73 9.73 0 5.366 4.365 9.73 9.73 9.73 2.034 0 3.923-.627 5.487-1.698l6.238 6.238 2.354-2.354zm-20.955-11.916c0-3.792 3.085-6.877 6.877-6.877s6.877 3.085 6.877 6.877-3.085 6.877-6.877 6.877c-3.793 0-6.877-3.085-6.877-6.877z"
-				/>
-			</svg>
+			<router-link to="/buscar">
+				<SearchIcon class="text-white w-5 h-5" />
+			</router-link>
 		</div>
 	</nav>
 
@@ -151,11 +116,14 @@
 	<!-- DROP MENU DE HARDWARE -->
 	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden menu" id="dropHardware">
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
-			<div class="text-center cursor-pointer p-2">
-				<img src="@/assets/iconPS5.png" alt="" />
-				<p class="mt-4 text-white font-bold">PS5</p>
+			<div class="text-center p-2">
+				<router-link to="/consola-playstation-5" @click="CloseDropMenu">
+					<img src="@/assets/iconPS5.png" alt="" />
+					<p class="mt-4 text-white font-bold">PS5</p>
+				</router-link>
 			</div>
-			<div class="text-center cursor-pointer p-2">
+
+			<router-link to="/consola-playstation-4" class="text-center" @click="CloseDropMenu">
 				<svg
 					version="1.1"
 					id="Capa_1"
@@ -201,8 +169,9 @@
 					/>
 				</svg>
 				<p class="mt-4 text-white font-bold">PS4</p>
-			</div>
-			<div class="flex flex-col items-center cursor-pointer p-2">
+			</router-link>
+
+			<router-link to="/consola-nintendo-switch" class="flex flex-col items-center" @click="CloseDropMenu">
 				<svg
 					height="512pt"
 					viewBox="0 -96 512 512"
@@ -233,7 +202,7 @@
 					/>
 				</svg>
 				<p class="mt-4 text-white font-bold">Nintendo Switch</p>
-			</div>
+			</router-link>
 		</div>
 	</div>
 
@@ -241,18 +210,20 @@
 	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden menu" id="dropAccesorios">
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
 			<div class="flex flex-col items-center cursor-pointer">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					class="fill-current text-white w-28 h-28"
-				>
-					<path
-						d="M23.908 16.041l-2.344-9.66c-.205-.821-.943-1.381-1.789-1.381h-15.551c-.845 0-1.582.56-1.787 1.381l-2.344 9.66c-.064.251-.093.491-.093.716 0 1.38 1.095 2.243 2.287 2.243.632 0 1.292-.243 1.83-.781l2.406-2.87c.44.643 1.238 1.007 2.077 1.007 1.712 0 2.139-1.542 3.403-1.542 1.099 0 1.615 1.542 3.457 1.542.84 0 1.578-.364 2.02-1.007l2.404 2.87c.537.538 1.197.781 1.83.781 1.191 0 2.286-.863 2.286-2.242 0-.226-.028-.465-.092-.717zm-8.158-7.291c.414 0 .75.335.75.75s-.336.75-.75.75-.75-.335-.75-.75.336-.75.75-.75zm-8.75 3.25h-1v-2h-2v-1h2v-2h1v2h2v1h-2v2zm1.658 3.005c-.726 0-1.316-.59-1.316-1.316 0-.726.59-1.316 1.316-1.316.726 0 1.316.59 1.316 1.316 0 .726-.591 1.316-1.316 1.316zm4.342-4.005h-2v-1h2v1zm2.344 4.005c-.727 0-1.316-.59-1.316-1.316 0-.726.59-1.316 1.316-1.316.725 0 1.314.59 1.314 1.316 0 .726-.59 1.316-1.314 1.316zm2.156-3.005c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75zm0-3.531c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75zm1.734 1.781c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75z"
-					/>
-				</svg>
-				<p class="mt-4 text-white font-bold">Controles de Play</p>
+				<router-link to="/controles-playstation" @click="CloseDropMenu">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						class="fill-current text-white w-28 h-28"
+					>
+						<path
+							d="M23.908 16.041l-2.344-9.66c-.205-.821-.943-1.381-1.789-1.381h-15.551c-.845 0-1.582.56-1.787 1.381l-2.344 9.66c-.064.251-.093.491-.093.716 0 1.38 1.095 2.243 2.287 2.243.632 0 1.292-.243 1.83-.781l2.406-2.87c.44.643 1.238 1.007 2.077 1.007 1.712 0 2.139-1.542 3.403-1.542 1.099 0 1.615 1.542 3.457 1.542.84 0 1.578-.364 2.02-1.007l2.404 2.87c.537.538 1.197.781 1.83.781 1.191 0 2.286-.863 2.286-2.242 0-.226-.028-.465-.092-.717zm-8.158-7.291c.414 0 .75.335.75.75s-.336.75-.75.75-.75-.335-.75-.75.336-.75.75-.75zm-8.75 3.25h-1v-2h-2v-1h2v-2h1v2h2v1h-2v2zm1.658 3.005c-.726 0-1.316-.59-1.316-1.316 0-.726.59-1.316 1.316-1.316.726 0 1.316.59 1.316 1.316 0 .726-.591 1.316-1.316 1.316zm4.342-4.005h-2v-1h2v1zm2.344 4.005c-.727 0-1.316-.59-1.316-1.316 0-.726.59-1.316 1.316-1.316.725 0 1.314.59 1.314 1.316 0 .726-.59 1.316-1.314 1.316zm2.156-3.005c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75zm0-3.531c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75zm1.734 1.781c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75z"
+						/>
+					</svg>
+					<p class="mt-4 text-white font-bold">Controles de Play</p>
+				</router-link>
 			</div>
 			<div class="flex flex-col items-center cursor-pointer">
 				<svg
@@ -335,7 +306,10 @@
 import Sidebar from './Sidebar.vue';
 import Searchbar from './Searchbar.vue';
 
+import { ChevronDownIcon, SearchIcon } from '@heroicons/vue/solid';
+
 import { useToggle } from '@/composables/useToggle';
+import Button from '../Button.vue';
 
 export default {
 	name: 'Navbar',
@@ -344,7 +318,7 @@ export default {
 			isVisible: false,
 		};
 	},
-	components: { Sidebar, Searchbar },
+	components: { Sidebar, Searchbar, ChevronDownIcon, Button, SearchIcon },
 	methods: {
 		/**
 		 * dropMenu es una funcion con la que se despliega los menu desplegables, usa el objeto del evento para saber cual de los elementos li fue en el que se produce el evento click
@@ -396,8 +370,13 @@ export default {
 		},
 
 		CloseDropMenu() {
-			const dropmenu = document.querySelector('.menu');
-			dropmenu.classList.remove('h-72');
+			const dropJuegos = document.querySelector('#dropJuegos');
+			const dropHardware = document.querySelector('#dropHardware');
+			const dropAccesorios = document.querySelector('#dropAccesorios');
+
+			dropJuegos.classList.remove('h-72');
+			dropHardware.classList.remove('h-72');
+			dropAccesorios.classList.remove('h-72');
 		},
 	},
 

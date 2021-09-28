@@ -11,12 +11,12 @@ export default function useGame() {
 	let loading = ref(false);
 
 	function fetchGames(params = {}) {
-		let { page = 1, showNext = false, showPrev = false } = params;
+		let { page = 1, showNext = false, showPrev = false, search = false, name = '' } = params;
 
 		loading.value = true;
 
 		api
-			.get('games', { params: { page } }) //aqui indicamos el resto de la url donde se encuentra nuestra API
+			.get('games', { params: { page, name } }) //aqui indicamos el resto de la url donde se encuentra nuestra API
 			.then((response) => {
 				if (showNext) {
 					games.value = {
@@ -24,6 +24,11 @@ export default function useGame() {
 						data: [...response.data.data],
 					};
 				} else if (showPrev) {
+					games.value = {
+						...response.data,
+						data: [...response.data.data],
+					};
+				} else if (search) {
 					games.value = {
 						...response.data,
 						data: [...response.data.data],

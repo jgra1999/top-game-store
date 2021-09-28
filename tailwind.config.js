@@ -23,6 +23,7 @@ module.exports = {
 
 		extend: {
 			spacing: {
+				'18': '4.5rem',
 				'52.5': '13.5rem',
 				'66': '18rem',
 				'94': '22rem',
@@ -34,14 +35,21 @@ module.exports = {
 				'110': '40rem',
 				'112': '44rem',
 				header: '52rem',
+				grande: '74rem',
 			},
 			colors: {
 				hades: '#620101',
+				lite: '#d5d5d5',
+				cosmic: '#c6144f',
 			},
 
 			backgroundImage: {
-				horizon: "url('/img/ps5/horizon forbidden west fondo.jpg')",
-				demons: "url('/img/ps5/demons-souls-fondo.jpg')",
+				horizon: "url('/img/games/ps5/horizon forbidden west fondo.jpg')",
+				demons: "url('/img/games/ps5/demons-souls-fondo.jpg')",
+				ghost: "url('/img/hardware/ps5/ghost of tushima wallpaper.jpeg')",
+				dualsense: "url('/img/accesorios/controles/dualsense wallpaper.jpg')",
+				dualshock: "url('/img/accesorios/controles/dualshock 4 wallpaper.jpg')",
+				joycons: "url('/img/accesorios/joycons/switch wallpaper.jpg')",
 			},
 		},
 		boxShadow: {

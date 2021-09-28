@@ -18,15 +18,7 @@
 					</svg>
 					<button href="#" @click="subMenu" id="categoriaJuegoSidebar" class="text-lg">Juegos</button>
 				</div>
-				<svg
-					class="fill-current text-white"
-					xmlns="http://www.w3.org/2000/svg"
-					width="12"
-					height="12"
-					viewBox="0 0 24 24"
-				>
-					<path id="flechaJuegos" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
-				</svg>
+				<ChevronDownIcon class="fill-current text-white w-7 h-7" />
 			</li>
 			<!-- SUBMENU JUEGOS -->
 			<ul class="text-white divide-y divide-white h-0 overflow-hidden" id="submenuJuegos">
@@ -97,21 +89,21 @@
 
 					<button @click="subMenu" id="categoriaHardwareSidebar">Hardware</button>
 				</div>
-				<svg
-					class="fill-current text-white"
-					xmlns="http://www.w3.org/2000/svg"
-					width="12"
-					height="12"
-					viewBox="0 0 24 24"
-				>
-					<path id="flechaJuegos" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
-				</svg>
+				<ChevronDownIcon class="fill-current text-white w-7 h-7" />
 			</li>
 			<!-- SUBMENU HARDWARE -->
 			<ul class="text-white divide-y divide-white h-0 overflow-hidden" id="submenuHardware">
-				<li class="p-3"><a href="" class="text-sm ml-8">PS5</a></li>
-				<li class="p-3"><a href="" class="text-sm ml-8">PS4</a></li>
-				<li class="p-3"><a href="" class="text-sm ml-8">Nintendo switch</a></li>
+				<li class="p-3">
+					<router-link to="/consola-playstation-5" @click="CloseSidebar" class="text-sm ml-8">PS5</router-link>
+				</li>
+				<li class="p-3">
+					<router-link to="/consola-playstation-4" @click="CloseSidebar" class="text-sm ml-8">PS4</router-link>
+				</li>
+				<li class="p-3">
+					<router-link to="/consola-nintendo-switch" @click="CloseSidebar" class="text-sm ml-8"
+						>Nintendo switch</router-link
+					>
+				</li>
 			</ul>
 			<!-- ACCESORIOS -->
 			<li class="p-4  flex items-center justify-between text-lg">
@@ -149,15 +141,7 @@
 					</svg>
 					<button @click="subMenu" id="categoriaAccesoriosSidebar">Accesorios</button>
 				</div>
-				<svg
-					class="fill-current text-white"
-					xmlns="http://www.w3.org/2000/svg"
-					width="12"
-					height="12"
-					viewBox="0 0 24 24"
-				>
-					<path id="flechaJuegos" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
-				</svg>
+				<ChevronDownIcon class="fill-current text-white w-7 h-7" />
 			</li>
 			<!-- SUBMENU ACCESORIOS -->
 			<ul class="text-white divide-y divide-white h-0 overflow-hidden" id="submenuAccesorios">
@@ -187,8 +171,14 @@
 </template>
 
 <script>
+import { ChevronDownIcon } from '@heroicons/vue/solid';
+
 export default {
 	name: 'Sidebar',
+
+	components: {
+		ChevronDownIcon,
+	},
 
 	methods: {
 		subMenu(event) {
