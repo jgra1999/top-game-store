@@ -1,6 +1,10 @@
 <template>
-	<div>
+	<div class="w-full">
 		<Navbar />
+
+		<CartAlert />
+
+		<Whatsapp />
 
 		<Footer />
 	</div>
@@ -9,11 +13,15 @@
 <script>
 import Navbar from '@/components/layout/Navbar.vue';
 import Footer from '@/components/layout/Footer.vue';
+import CartAlert from '@/components/layout/CartAlert.vue';
+import Whatsapp from '@/components/layout/Whatsapp.vue';
 
 export default {
 	components: {
 		Navbar,
 		Footer,
+		CartAlert,
+		Whatsapp,
 	},
 };
 </script>

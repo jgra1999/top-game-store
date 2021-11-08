@@ -1,16 +1,20 @@
 [
 	{
 		"id": 0,
-		"img": "./img/fifa-22.jpg",
-		"logo": "./img/FIFA_22_logo.png",
+		"img": "./img/slides/fifa-22.jpg",
+		"logo": "./img/slides/FIFA_22_logo.png",
 		"description": "FIFA 22 cuenta con la nueva e innovadora tecnología de juego HyperMotion, la cual acerca cada partido a lo que ves en la vida real."
 	},
 	{
 		"id": 1,
-		"img": "./img/formula-1.jpg"
+		"img": "./img/slides/ps5 web.jpg"
 	},
 	{
 		"id": 2,
-		"img": "./img/mario-golf.jpg"
+		"img": "./img/slides/cod web.jpg"
+	},
+	{
+		"id": 3,
+		"img": "./img/slides/joycons web.jpg"
 	}
 ]

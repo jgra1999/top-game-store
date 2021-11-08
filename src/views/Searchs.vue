@@ -1,16 +1,22 @@
 <template>
-	<Portada
-		imageUrl="/img/games/ps5/horizon-forbidden-west-fondo-2.jpg"
-		description="Horizon Forbbiden West"
-		logoUrl="/img/logo-original.png"
-		console="PS5"
-		message="Busca tus juegos y consolas favoritos."
-	/>
+	<div class="relative">
+		<img
+			src="/img/games/ps5/horizon-forbidden-west-fondo-2.jpg"
+			loading="lazy"
+			alt="Horizon Forbbiden Wes"
+			class="h-96 xl:h-header w-full"
+		/>
+
+		<div class="absolute w-full bottom-6 xl:bottom-44 flex flex-col items-center text-center">
+			<img src="/img/logo-original.png" alt="logo top games store" class="h-48 xl:w-96 xl:h-72" />
+			<p class="text-white text-2xl xl:text-4xl mt-2">Busca tus juegos y consolas favoritos.</p>
+		</div>
+	</div>
 
 	<div class="container my-10 flex flex-col items-center">
 		<div class="flex justify-center">
-			<form action="" method="get" class="flex items-center">
-				<select
+			<form method="get" class="flex items-center">
+				<!-- <select
 					@change="selectSearch"
 					name=""
 					id="selectType"
@@ -19,14 +25,14 @@
 					<option value="juegos">Juegos</option>
 					<option value="consolas">Consolas</option>
 					<option value="accesorios">Accesorios</option>
-				</select>
+				</select> -->
 
 				<!-- Buscador de juegos -->
-				<div v-if="typeSearch == 'juegos'">
+				<div class="flex justify-center" v-if="typeSearch == 'juegos'">
 					<input
 						type="text"
 						placeholder="¿Que juego estas Buscando?"
-						class="bg-transparent p-2 text-2xl border-b-2 focus:outline-none focus:border-red-700 "
+						class="bg-transparent p-2 w-3/4 md:w-11/12 text-lg  md:text-2xl border-b-2 focus:outline-none focus:border-red-700 "
 						v-model="search.name"
 					/>
 					<button type="submit" @click.enter.prevent="searchGame(search.name)">
@@ -62,20 +68,13 @@
 			</form>
 		</div>
 
-		<!-- Resultado juegos -->
 		<div v-if="typeSearch == 'juegos'">
 			<div class="mt-10 flex flex-wrap justify-center gap-10">
-				<CardSearch
-					v-for="game in games.data"
-					:key="game.id"
-					:imageUrl="game.image_url"
-					:name="game.name"
-					:price="game.price"
-				/>
+				<CardSearch v-for="game of games.data" :key="game.id" :game="game" />
 			</div>
 		</div>
 
-		<!-- Resultado consolas -->
+		<!-- 
 		<div v-if="typeSearch == 'consolas'">
 			<div class="mt-10 flex flex-wrap justify-center gap-10">
 				<CardSearch
@@ -88,7 +87,6 @@
 			</div>
 		</div>
 
-		<!-- Resultado accesorios -->
 		<div v-if="typeSearch == 'accesorios'">
 			<div class="mt-10 flex flex-wrap justify-center gap-10">
 				<CardSearch
@@ -99,7 +97,7 @@
 					:price="accesory.price"
 				/>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </template>
 
@@ -109,9 +107,8 @@ import CardSearch from '@/components/Cards/CardSearch.vue';
 
 import { SearchIcon } from '@heroicons/vue/solid';
 
-import useGames from '@/composables/useGames.js';
-import useConsoles from '@/composables/useConsoles.js';
-// import useAccesories from '@/composables/useAccesories.js';
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
 	components: {
@@ -139,40 +136,27 @@ export default {
 	},
 
 	setup() {
-		let { fetchGames, games } = useGames();
-		let { fetchConsoles, consoles } = useConsoles();
-		// let { fetchAccesories, accesories } = useAccesories();
+		const store = useStore();
+		onMounted(() => {
+			store.dispatch('fetchDataGames');
+		});
 
-		fetchGames();
-		fetchConsoles();
+		const games = computed(() => store.state.games);
+		const cart = computed(() => store.state.cart);
 
 		function searchGame(name) {
-			fetchGames({
-				search: true,
+			store.dispatch('fetchDataGames', {
 				name: name,
 			});
 		}
-
-		function searchConsole(name) {
-			fetchConsoles({
-				search: true,
-				name: name,
-			});
-		}
-
-		// function searchAccesories(name) {
-		// 	fetchAccesories({
-		// 		search: true,
-		// 		name: name,
-		// 	});
-		// }
 
 		return {
 			games,
-			consoles,
+			cart,
+			// consoles,
 			// accesories,
 			searchGame,
-			searchConsole,
+			// searchConsole,
 			// searchAccesories,
 		};
 	},

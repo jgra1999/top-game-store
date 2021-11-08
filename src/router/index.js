@@ -8,12 +8,28 @@ const routes = [
 		component: Home,
 	},
 
-	/* SERACH */
+	/* SEARCH */
 	{
 		path: '/buscar',
 		name: 'Buscar',
 		component: Home,
 		component: () => import('../views/Searchs.vue'),
+	},
+
+	/* CARRITO */
+	{
+		path: '/carrito-de-compras',
+		name: 'Cart',
+		component: Home,
+		component: () => import('../views/Cart.vue'),
+	},
+
+	/* Finalizar Compra  */
+	{
+		path: '/finalizar-compra',
+		name: 'ToPay',
+		component: Home,
+		component: () => import('../views/ToPay.vue'),
 	},
 
 	/* JUEGOS */
@@ -58,11 +74,33 @@ const routes = [
 		component: () => import('../views/Accesorios.vue'),
 	},
 
-	/* ANALISIS */
+	/* ANALISIS Y NOTICIAS SECCION */
 	{
-		path: '/monster-hunter-stories-analisis',
-		name: 'MH',
-		component: () => import('../views/analisis/MH.vue'),
+		path: '/noticias-y-analisis',
+		name: 'Posts',
+		component: () => import('../views/posts/Posts.vue'),
+	},
+
+	/* NOTICIAS */
+	{
+		path: '/noticia-gta-trilogy-switch',
+		name: 'TheNewsOne',
+		component: () => import('../views/posts/news/TheNewsOne.vue'),
+	},
+	{
+		path: '/noticia-new-world-estreno',
+		name: 'TheNewsTwo',
+		component: () => import('../views/posts/news/TheNewsTwo.vue'),
+	},
+	{
+		path: '/noticia-wolverine',
+		name: 'TheNewsThree',
+		component: () => import('../views/posts/news/TheNewsThree.vue'),
+	},
+	{
+		path: '/noticia-god-of-war-ragnarok',
+		name: 'TheNewsFour',
+		component: () => import('../views/posts/news/TheNewsFour.vue'),
 	},
 	/* BLOG */
 	{

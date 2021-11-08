@@ -28,11 +28,10 @@
 				</button> -->
 			</div>
 			<router-link to="/">
-				<img
-					src="@/assets/logo-original.png"
-					alt="logo top games"
-					class="w-24 h-24 md:w-32 md:h-32 mt-3 md:ml-3"
-				/>
+				<!-- bg-red-700 md:w-32 md:h-32 mt-3 -->
+				<img src="img/topgames.png" alt="logo top games" class="w-24 h-24 md:w-32 md:h-32 mt-3 md:ml-3" />
+
+				<!-- <span class="text-3xl font-bold text-white mx-5">LOGO</span> -->
 			</router-link>
 
 			<!-- CATEGORIAS -->
@@ -50,15 +49,15 @@
 					</button>
 				</li>
 				<li class="ml-5 mt-2 cursor-pointer hover:border-b-2 h-8">
-					<router-link to="/accesorios" class="flex items-center">
+					<router-link to="/accesorios" class="flex items-center" @click="CloseDropMenu">
 						Accesorios
 					</router-link>
 				</li>
-				<li class="ml-5 mt-2 cursor-pointer hover:border-b-2 h-8">
-					<button class="flex items-center">
+				<!-- <li class="ml-5 mt-2 cursor-pointer hover:border-b-2 h-8">
+					<router-link to="/noticias-y-analisis" class="flex items-center">
 						Noticias
-					</button>
-				</li>
+					</router-link>
+				</li> -->
 			</ul>
 		</div>
 
@@ -72,19 +71,12 @@
 				>
 			</div>
 
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				class="fill-current text-gray-200 hover:text-white cursor-pointer mx-4 w-5 h-5"
-				viewBox="0 0 20 20"
-				fill="currentColor"
-			>
-				<path
-					d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
-				/>
-			</svg>
+			<router-link to="/carrito-de-compras" id="carrito">
+				<ShoppingCartIcon class="text-gray-200 hover:text-white w-5 h-5 mx-4" />
+			</router-link>
 
 			<router-link to="/buscar">
-				<SearchIcon class="text-white w-5 h-5" />
+				<SearchIcon class="text-gray-200 hover:text-white w-5 h-5" />
 			</router-link>
 		</div>
 	</nav>
@@ -94,19 +86,19 @@
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
 			<div class="text-center">
 				<router-link to="/juegos-playstation-5" @click="CloseDropMenu">
-					<img src="@/assets/logo-ps5.png" alt="icono ps5" class=" w-48 xl:w-60" />
+					<img src="img/navbar/logo-ps5.png" loading="lazy" alt="icono ps5" class=" w-48 xl:w-60" />
 					<p class="mt-4 text-white font-bold">Juegos de PS5</p>
 				</router-link>
 			</div>
 			<div class="text-center">
 				<router-link to="/juegos-playstation-4" @click="CloseDropMenu">
-					<img src="@/assets/logo-ps4.png" alt="icono ps4" class=" w-48 xl:w-64" />
+					<img src="img/navbar/logo-ps4.png" loading="lazy" alt="icono ps4" class=" w-48 xl:w-64" />
 					<p class="mt-4 text-white font-bold">Juegos de PS4</p>
 				</router-link>
 			</div>
 			<div>
 				<router-link to="/juegos-nintendo-switch" @click="CloseDropMenu" class="flex flex-col items-center">
-					<img src="@/assets/logo-nintendo.png" alt="icono switch" class=" w-48 xl:w-60" />
+					<img src="img/navbar/logo-nintendo.png" loading="lazy" alt="icono switch" class=" w-48 xl:w-60" />
 					<p class="mt-4 text-white font-bold">Juegos de Switch</p>
 				</router-link>
 			</div>
@@ -118,7 +110,7 @@
 		<div class="container mt-24 mb-6 flex justify-around items-end ">
 			<div class="text-center p-2">
 				<router-link to="/consola-playstation-5" @click="CloseDropMenu">
-					<img src="@/assets/iconPS5.png" alt="" />
+					<img src="img/navbar/iconPS5.png" alt="icon ps5" loading="lazy" />
 					<p class="mt-4 text-white font-bold">PS5</p>
 				</router-link>
 			</div>
@@ -206,109 +198,17 @@
 		</div>
 	</div>
 
-	<!-- DROP MENU DE ACCESORIOS -->
-	<div class=" w-full bg-red-700 fixed z-10 h-0 overflow-hidden menu" id="dropAccesorios">
-		<div class="container mt-24 mb-6 flex justify-around items-end ">
-			<div class="flex flex-col items-center cursor-pointer">
-				<router-link to="/controles-playstation" @click="CloseDropMenu">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						class="fill-current text-white w-28 h-28"
-					>
-						<path
-							d="M23.908 16.041l-2.344-9.66c-.205-.821-.943-1.381-1.789-1.381h-15.551c-.845 0-1.582.56-1.787 1.381l-2.344 9.66c-.064.251-.093.491-.093.716 0 1.38 1.095 2.243 2.287 2.243.632 0 1.292-.243 1.83-.781l2.406-2.87c.44.643 1.238 1.007 2.077 1.007 1.712 0 2.139-1.542 3.403-1.542 1.099 0 1.615 1.542 3.457 1.542.84 0 1.578-.364 2.02-1.007l2.404 2.87c.537.538 1.197.781 1.83.781 1.191 0 2.286-.863 2.286-2.242 0-.226-.028-.465-.092-.717zm-8.158-7.291c.414 0 .75.335.75.75s-.336.75-.75.75-.75-.335-.75-.75.336-.75.75-.75zm-8.75 3.25h-1v-2h-2v-1h2v-2h1v2h2v1h-2v2zm1.658 3.005c-.726 0-1.316-.59-1.316-1.316 0-.726.59-1.316 1.316-1.316.726 0 1.316.59 1.316 1.316 0 .726-.591 1.316-1.316 1.316zm4.342-4.005h-2v-1h2v1zm2.344 4.005c-.727 0-1.316-.59-1.316-1.316 0-.726.59-1.316 1.316-1.316.725 0 1.314.59 1.314 1.316 0 .726-.59 1.316-1.314 1.316zm2.156-3.005c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75zm0-3.531c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75zm1.734 1.781c-.414 0-.75-.335-.75-.75s.336-.75.75-.75.75.335.75.75-.336.75-.75.75z"
-						/>
-					</svg>
-					<p class="mt-4 text-white font-bold">Controles de Play</p>
-				</router-link>
-			</div>
-			<div class="flex flex-col items-center cursor-pointer">
-				<svg
-					version="1.1"
-					id="Capa_1"
-					xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink"
-					x="0px"
-					y="0px"
-					viewBox="0 0 512 512"
-					style="enable-background:new 0 0 512 512;"
-					xml:space="preserve"
-					class="fill-current text-white w-24 h-24"
-				>
-					<path
-						d="M397,0H281v512h116c63.411,0,115-51.589,115-115V115C512,51.589,460.411,0,397,0z M396.5,332
-	c-33.359,0-60.5-27.141-60.5-60.5s27.141-60.5,60.5-60.5s60.5,27.141,60.5,60.5S429.859,332,396.5,332z"
-					/>
-					<path
-						d="M251,512H115C51.589,512,0,460.411,0,397V115C0,51.589,51.589,0,115,0h136V512z M115,30
-		c-46.869,0-85,38.131-85,85v282c0,46.869,38.131,85,85,85h106V30H115z"
-					/>
-					<path
-						d="M125.5,211C92.141,211,65,183.859,65,150.5S92.141,90,125.5,90s60.5,27.141,60.5,60.5
-		S158.859,211,125.5,211z"
-					/>
-				</svg>
-
-				<p class="mt-4 text-white font-bold">Joy-cons</p>
-			</div>
-			<div class="flex flex-col items-center cursor-pointer">
-				<svg
-					version="1.1"
-					id="Capa_1"
-					xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink"
-					x="0px"
-					y="0px"
-					width="328.911px"
-					height="328.911px"
-					viewBox="0 0 328.911 328.911"
-					style="enable-background:new 0 0 328.911 328.911;"
-					xml:space="preserve"
-					class="fill-current text-white w-24 h-24"
-				>
-					<path
-						d="M310.199,18.71C297.735,6.242,282.65,0.007,264.951,0.007H63.954c-17.703,0-32.79,6.235-45.253,18.704
-			C6.235,31.177,0,46.261,0,63.96v200.991c0,17.515,6.232,32.552,18.701,45.11c12.467,12.566,27.553,18.843,45.253,18.843h201.004
-			c17.699,0,32.777-6.276,45.248-18.843c12.47-12.559,18.705-27.596,18.705-45.11V63.96
-			C328.911,46.261,322.666,31.177,310.199,18.71z M292.362,264.96c0,7.614-2.673,14.089-8.001,19.414
-			c-5.324,5.332-11.799,7.994-19.41,7.994H63.954c-7.614,0-14.082-2.662-19.414-7.994c-5.33-5.325-7.992-11.8-7.992-19.414V63.965
-			c0-7.613,2.662-14.086,7.992-19.414c5.327-5.327,11.8-7.994,19.414-7.994h201.004c7.61,0,14.086,2.663,19.41,7.994
-			c5.325,5.328,7.994,11.801,7.994,19.414V264.96z"
-					/>
-					<path
-						d="M246.683,146.189H182.73V82.236c0-2.667-0.855-4.854-2.573-6.567c-1.704-1.714-3.895-2.568-6.564-2.568h-18.271
-			c-2.667,0-4.854,0.854-6.567,2.568c-1.714,1.713-2.568,3.903-2.568,6.567v63.954H82.233c-2.664,0-4.857,0.855-6.567,2.568
-			c-1.711,1.713-2.568,3.903-2.568,6.567v18.271c0,2.666,0.854,4.855,2.568,6.563c1.712,1.708,3.903,2.57,6.567,2.57h63.954v63.953
-			c0,2.666,0.854,4.855,2.568,6.563c1.713,1.711,3.903,2.566,6.567,2.566h18.271c2.67,0,4.86-0.855,6.564-2.566
-			c1.718-1.708,2.573-3.897,2.573-6.563V182.73h63.953c2.662,0,4.853-0.862,6.563-2.57c1.712-1.708,2.563-3.897,2.563-6.563v-18.271
-			c0-2.664-0.852-4.857-2.563-6.567C251.536,147.048,249.345,146.189,246.683,146.189z"
-					/>
-				</svg>
-
-				<p class="mt-4 text-white font-bold">Otros Accesorios</p>
-			</div>
-		</div>
-	</div>
-
 	<!--MENU LATERAL -->
 	<Sidebar />
-
-	<!-- BARRA DE BUSCAR -->
-	<Searchbar />
 
 	<router-view />
 </template>
 
 <script>
 import Sidebar from './Sidebar.vue';
-import Searchbar from './Searchbar.vue';
 
-import { ChevronDownIcon, SearchIcon } from '@heroicons/vue/solid';
+import { ChevronDownIcon, SearchIcon, ShoppingCartIcon } from '@heroicons/vue/solid';
 
-import { useToggle } from '@/composables/useToggle';
 import Button from '../Button.vue';
 
 export default {
@@ -318,7 +218,7 @@ export default {
 			isVisible: false,
 		};
 	},
-	components: { Sidebar, Searchbar, ChevronDownIcon, Button, SearchIcon },
+	components: { Sidebar, ChevronDownIcon, Button, SearchIcon, ShoppingCartIcon },
 	methods: {
 		/**
 		 * dropMenu es una funcion con la que se despliega los menu desplegables, usa el objeto del evento para saber cual de los elementos li fue en el que se produce el evento click
@@ -342,25 +242,6 @@ export default {
 			} else {
 				dropHardware.classList.remove('h-72');
 			}
-			if (event.target.id == 'categoriaAccesorios') {
-				const dropAccesorios = document.querySelector('#dropAccesorios');
-
-				setTimeout(() => {
-					dropAccesorios.classList.toggle('h-72');
-				}, 200);
-			} else {
-				dropAccesorios.classList.remove('h-72');
-			}
-			if (event.target.id == 'search') {
-				const dropSearchbar = document.querySelector('#searchbar');
-				const showInputSearch = document.querySelector('#inputSearch');
-
-				dropSearchbar.classList.toggle('h-16');
-				showInputSearch.classList.toggle('mb-10');
-			} else {
-				dropSearchbar.classList.remove('h-16');
-				showInputSearch.classList.add('mb-10');
-			}
 		},
 
 		sideBar() {
@@ -372,19 +253,11 @@ export default {
 		CloseDropMenu() {
 			const dropJuegos = document.querySelector('#dropJuegos');
 			const dropHardware = document.querySelector('#dropHardware');
-			const dropAccesorios = document.querySelector('#dropAccesorios');
 
 			dropJuegos.classList.remove('h-72');
 			dropHardware.classList.remove('h-72');
-			dropAccesorios.classList.remove('h-72');
 		},
 	},
-
-	/* setup() {
-		let { isVisible, toggle } = useToggle();
-
-		return { isVisible, toggle };
-	}, */
 };
 </script>
 

@@ -105,6 +105,7 @@
 					>
 				</li>
 			</ul>
+
 			<!-- ACCESORIOS -->
 			<li class="p-4  flex items-center justify-between text-lg">
 				<div class="flex">
@@ -139,18 +140,12 @@
 					0-2.664-0.852-4.857-2.563-6.567C251.536,147.048,249.345,146.189,246.683,146.189z"
 						/>
 					</svg>
-					<button @click="subMenu" id="categoriaAccesoriosSidebar">Accesorios</button>
+					<router-link to="/accesorios" @click="CloseSidebar">Accesorios</router-link>
 				</div>
-				<ChevronDownIcon class="fill-current text-white w-7 h-7" />
 			</li>
-			<!-- SUBMENU ACCESORIOS -->
-			<ul class="text-white divide-y divide-white h-0 overflow-hidden" id="submenuAccesorios">
-				<li class="p-3"><a href="" class="text-sm ml-8">DualSense</a></li>
-				<li class="p-3"><a href="" class="text-sm ml-8">DualShock</a></li>
-				<li class="p-3"><a href="" class="text-sm ml-8">Joycons</a></li>
-				<li class="p-3"><a href="" class="text-sm ml-8">Otros Accesorios</a></li>
-			</ul>
-			<li class="p-4  flex items-center justify-between text-lg">
+
+			<!-- Noticias -->
+			<!-- <li class="p-4  flex items-center justify-between text-lg">
 				<div class="flex">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +160,7 @@
 					</svg>
 					Noticias
 				</div>
-			</li>
+			</li> -->
 		</ul>
 	</nav>
 </template>
@@ -194,14 +189,6 @@ export default {
 				submenuHardware.classList.toggle('h-36');
 			} else {
 				submenuHardware.classList.remove('h-36');
-			}
-
-			if (event.target.id === 'categoriaAccesoriosSidebar') {
-				const submenuAccesorios = document.querySelector('#submenuAccesorios');
-				submenuAccesorios.classList.toggle('h-48');
-				console.log('click');
-			} else {
-				submenuAccesorios.classList.remove('h-48');
 			}
 		},
 		CloseSidebar() {

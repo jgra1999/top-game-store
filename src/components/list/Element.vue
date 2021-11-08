@@ -11,7 +11,7 @@
 		</div>
 	</div>
 
-	<div class="w-full xl:w-3/4 mx-auto h-64 sm:h-72 md:h-96 lg:h-100 xl:102 mt-5 lg:mt-10" id="video">
+	<div class="w-full xl:w-3/4 mx-auto h-64 sm:h-72 md:h-96 lg:h-100 xl:h-102 mt-5 lg:mt-10" id="video">
 		<iframe
 			class="w-full h-full rounded"
 			:src="youtubeUrl"

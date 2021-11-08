@@ -1,4 +1,5 @@
 <template>
+	<div class="hidden lg:block w-full h-14"></div>
 	<div class="relative hidden md:flex items-center w-full h-96 lg:h-100 xl:h-110 overflow-hidden">
 		<ImageSlide
 			v-for="slide in slides"
@@ -9,7 +10,10 @@
 		>
 			<img :src="slide.img" loading="lazy" class="h-full w-full" />
 
-			<div class="absolute md:bottom-8 lg:bottom-20 xl:bottom-24 2xl:bottom-36 md:left-8 w-2/5 ">
+			<div
+				class="absolute md:bottom-8 lg:bottom-20 xl:bottom-24 2xl:bottom-36 md:left-8 w-2/5 "
+				v-if="slide.id === 0"
+			>
 				<img :src="slide.logo" alt="" class="md:w-64 md:h-16 xl:w-96 xl:h-24" />
 				<p class="md:w-72 lg:w-96 md:text-xs lg:text-sm  xl:w-104 my-10">
 					{{ slide.description }}
@@ -19,21 +23,27 @@
 
 		<div class="absolute bottom-1 left-1/2">
 			<button
-				class="w-4 h-4 rounded-full bg-gray-300 mr-2"
+				class="w-3 h-3 rounded-full bg-gray-300 mr-2"
 				:class="{ 'bg-red-700': visibleSlide == 0 }"
 				id="cero"
 				@click="controller"
 			></button>
 			<button
-				class="w-4 h-4 rounded-full bg-gray-300 mr-2"
+				class="w-3 h-3 rounded-full bg-gray-300 mr-2"
 				:class="{ 'bg-red-700': visibleSlide == 1 }"
 				id="uno"
 				@click="controller"
 			></button>
 			<button
-				class="w-4 h-4 rounded-full bg-gray-300 mr-2"
+				class="w-3 h-3 rounded-full bg-gray-300 mr-2"
 				:class="{ 'bg-red-700': visibleSlide == 2 }"
 				id="dos"
+				@click="controller"
+			></button>
+			<button
+				class="w-3 h-3 rounded-full bg-gray-300 mr-2"
+				:class="{ 'bg-red-700': visibleSlide == 3 }"
+				id="tres"
 				@click="controller"
 			></button>
 		</div>
@@ -73,6 +83,8 @@ export default {
 				this.visibleSlide = 1;
 			} else if (event.target.id == 'dos') {
 				this.visibleSlide = 2;
+			} else if (event.target.id == 'tres') {
+				this.visibleSlide = 3;
 			}
 		},
 	},
@@ -91,7 +103,7 @@ export default {
 	mounted() {
 		setInterval(() => {
 			this.visibleSlide = this.visibleSlide + 1;
-			if (this.visibleSlide === 3) {
+			if (this.visibleSlide === 4) {
 				this.visibleSlide = 0;
 			}
 		}, 6000);

@@ -5,38 +5,40 @@
 
 		<!-- NOTICIAS -->
 
-		<div class="container xl:w-11/12 mt-10 relative flex items-center sm:justify-center">
-			<button id="left-arrow" @click="scrollLeft()">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-12 w-12 text-gray-400 hover:text-red-700 xl:absolute xl:-left-14"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-				</svg>
+		<div class="container xl:w-11/12 mt-4 relative flex items-center sm:justify-center">
+			<button id="left-arrow" @click="scrollLeft()" class="xl:hidden">
+				<ChevronLeftIcon class="h-20 w-20 text-gray-400 hover:text-red-700 xl:absolute xl:top-24 xl:-left-16" />
 			</button>
 
 			<div class="w-full sm:w-96 md:w-full xl:full overflow-hidden" id="container__carousel">
 				<div class="flex">
 					<NewsElement
-						url="/monster-hunter-stories-analisis"
-						title="Análisis"
+						url="/noticia-gta-trilogy-switch"
+						title="GTA Trilogy Remastered"
 						console="Nintendo Switch"
-						img="./img/MH.jpg"
+						img="./img/news/gta-trilogy.jpg"
 					/>
 
 					<NewsElement
-						url="#"
-						title="Proximamente el 10-09-21"
-						console="Playstation 4. Playstation 5"
-						img="./img/NBA.jpg"
+						url="/noticia-new-world-estreno"
+						title="Estreno de New World"
+						console="PC"
+						img="./img/news/new world.jpeg"
 					/>
 
-					<NewsElement url="#" title="Análisis" console="Playstation 4. Playstation 5" img="./img/formula-1.jpg" />
+					<NewsElement
+						url="/noticia-wolverine"
+						title="Wolverine"
+						console="Playstation 5"
+						img="./img/news/wolverine.jpg"
+					/>
 
-					<NewsElement url="#" title="Análisis" console="Nintendo Switch" img="./img/mario-golf.jpg" />
+					<NewsElement
+						url="/noticia-god-of-war-ragnarok"
+						title="God Of War Ragnarok"
+						console="Playstation 4, Playstation 5"
+						img="./img/news/gow ragnarok.jpeg"
+					/>
 
 					<NewsElement url="#" title="Análisis" console="Playstation 4. Playstation 5" img="./img/formula-1.jpg" />
 
@@ -48,16 +50,8 @@
 				</div>
 			</div>
 
-			<button id="rightArrow" @click="scrollRight()">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-12 w-12 text-gray-400 hover:text-red-700  xl:absolute xl:-right-14"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-				</svg>
+			<button id="rightArrow" @click="scrollRight()" class="xl:hidden">
+				<ChevronRightIcon class="h-20 w-20 text-gray-400 hover:text-red-700 xl:absolute xl:top-24 xl:-right-16" />
 			</button>
 		</div>
 
@@ -66,11 +60,13 @@
 			<img src="../assets/fondo-hades.jpg" alt="" class="hidden md:block" />
 			<img src="../assets/fondo-hades-phone.jpg" alt="" class="md:hidden" />
 			<div
-				class="absolute bottom-12 left-4 md:bottom-24 w-94 md:w-64 lg:w-96 xl:w-100 2xl:w-104 lg:top-12 xl:top-24"
+				class="absolute bottom-12 sm:bottom-36 left-4 sm:left-20 md:left-4 md:bottom-24 w-94 sm:w-102 md:w-64 lg:w-96 xl:w-100 2xl:w-104 lg:top-12 xl:top-24"
 			>
-				<h2 class="text-white text-4xl md:text-3xl lg:text-5xl xl:text-6xl font-bold">HADES</h2>
-				<h3 class="text-white text-lg lg:text-3xl xl:text-4xl font-normal mt-5">PROXIMO LANZAMIENTO</h3>
-				<p class="text-xs xl:text-base text-white my-8">
+				<h2 class="text-white text-4xl sm:text-5xl md:text-3xl lg:text-5xl xl:text-6xl font-bold">HADES</h2>
+				<h3 class="text-white text-lg sm:text-2xl md:text-xl lg:text-3xl xl:text-4xl font-normal mt-5">
+					PROXIMO LANZAMIENTO
+				</h3>
+				<p class="text-xs sm:text-lg md:text-xs xl:text-base text-white my-8">
 					Desarrollado y editado por Supergiant Games para PC, Switch, PlayStation 4, Xbox One, PlayStation 5 y
 					Xbox Series, es una aventura de acción tipo roguelike ambientada en la antigua Grecia, en la que
 					deberemos escapar del inframundo enfrentándonos a toda clase de monstruos.
@@ -150,16 +146,22 @@
 
 		<!-- ELIGE TU CONSOLA -->
 		<div class="container w-full mt-24 lg:mt-48 border-t-2 border-b-2 border-gray-300 py-6">
-			<h2 class="text-xl md:text-3xl font-medium ml-2">Elige tu consola para jugar</h2>
+			<TitleH2 title="Elige tu consola para jugar" class="w-104" />
 			<div
 				class="grid grid-cols-2 grid-row-2 mt-10 justify-items-center items-end gap-y-2 lg:grid-cols-4 grid-row-0"
 			>
-				<Consoles
-					v-for="console in consoles.data"
-					:key="console.id"
-					:imageUrl="console.image_url"
-					:name="console.name"
-				/>
+				<Consoles imageUrl="/img/consolas/ps5.png" name="Playstation 5" />
+				<Consoles imageUrl="/img/consolas/ps4-pro.png" name="Playstation 4" />
+
+				<div class=" w-48 text-center p-4 cursor-pointer hover:shadow-xl duration-300">
+					<img src="/img/consolas/nintendo-switch.png" alt="image nintedo switch" class="h-28 w-full" />
+					<p class="mt-5">Nintendo Switch</p>
+				</div>
+
+				<div class=" w-48 text-center p-4 cursor-pointer hover:shadow-xl duration-300">
+					<img src="/img/consolas/nintendo-switch-lite.png" alt="image nintedo switch-lite" class="h-28 w-full" />
+					<p class="mt-5">Nintendo Switch Lite</p>
+				</div>
 			</div>
 		</div>
 
@@ -167,27 +169,26 @@
 		<div class="container my-5">
 			<div class="flex justify-between items-center">
 				<div class="ml-2">
-					<h2 class="text-xl md:text-3xl font-medium mb-5">Nuevos lanzamientos</h2>
-					<p class="text-xs md:text-sm">Excelentes juegos para Playstation y Nintedo</p>
+					<TitleH2 title="Nuevos Lanzamientos" />
 				</div>
 
 				<div class="hidden lg:flex mr-3">
 					<button
-						class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700 mr-2 "
+						class="rounded-full hover:ring-2 ring-red-700 p-0.5 flex items-center justify-center mr-2 "
 						:class="{ 'opacity-25 cursor-default': games.meta.current_page === 1 }"
 						:disabled="games.meta.current_page === 1"
 						@click="showPrevGames"
 					>
-						<ChevronLeftIcon class="fill-current text-white w-9 h-9" />
+						<ChevronLeftIcon class="fill-current bg-red-700 rounded-full text-white w-10 h-10" />
 					</button>
 
 					<button
-						class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700"
+						class="rounded-full hover:ring-2 ring-red-700 p-0.5 flex items-center justify-center mr-2"
 						:class="{ 'opacity-25 cursor-default': games.meta.current_page === 3 }"
 						:disabled="games.meta.current_page === 3"
 						@click="showNextGames"
 					>
-						<ChevronRightIcon class="fill-current text-white w-9 h-9" />
+						<ChevronRightIcon class="fill-current bg-red-700 rounded-full text-white w-10 h-10" />
 					</button>
 				</div>
 			</div>
@@ -207,9 +208,9 @@ import SliderPhone from '@/components/Slideshow/SliderPhone.vue';
 import Producto from '@/components/Producto.vue';
 import NewsElement from '@/components/carousel/Element.vue';
 import Consoles from '@/components/Consoles.vue';
+import TitleH2 from '@/components/Utilidades/TitleH2.vue';
 
 import useGames from '@/composables/useGames.js';
-import useConsoles from '@/composables/useConsoles.js';
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid';
 
@@ -224,6 +225,7 @@ export default {
 		Consoles,
 		ChevronLeftIcon,
 		ChevronRightIcon,
+		TitleH2,
 	},
 
 	methods: {
@@ -253,10 +255,8 @@ export default {
 
 	setup() {
 		let { fetchGames, games } = useGames();
-		let { fetchConsoles, consoles } = useConsoles();
 
 		fetchGames();
-		fetchConsoles();
 
 		function showNextGames() {
 			fetchGames({
@@ -273,7 +273,6 @@ export default {
 
 		return {
 			games,
-			consoles,
 			showNextGames,
 			showPrevGames,
 		};

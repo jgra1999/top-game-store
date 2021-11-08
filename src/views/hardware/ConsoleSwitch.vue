@@ -1,11 +1,18 @@
 <template>
-	<Portada
-		imageUrl="/img/hardware/switch/nintendo switch wallpaper.png"
-		description="Horizon Forbbiden West"
-		console="Switch"
-		logoUrl="/img/hardware/switch/switch logo.png"
-	/>
-	<div class="p-5 bg-white mt-10">
+	<div class="relative">
+		<img
+			src="/img/hardware/switch/nintendo switch wallpaper.png"
+			loading="lazy"
+			alt="wallpaper nintendo switch"
+			class="h-96 xl:h-header w-full"
+		/>
+
+		<div class="absolute w-full bottom-6 xl:bottom-80 flex flex-col items-center text-center">
+			<img src="/img/hardware/switch/switch logo.png" alt="logo Nintendo Switch" class="h-20 xl:w-96 xl:h-28" />
+			<p class="text-white text-2xl xl:text-4xl mt-2">{{ message }}</p>
+		</div>
+	</div>
+	<div class="py-8 px-5 bg-white">
 		<div>
 			<h2 class="text-4xl lg:text-5xl font-bold">Nintedo Switch</h2>
 			<div class="bg-red-600 mt-10 flex flex-col lg:flex-row items-center justify-around">

@@ -9,47 +9,57 @@
 		/>
 
 		<div>
-			<h2 class="text-2xl sm:text-3xl md:text-4xl mx-2 lg:ml-5 my-12 font-bold text-red-700">
-				Juegos extraordinarios para Playstation 5
-			</h2>
+			<TitleH2 title="Juegos extraordinarios para Switch" class="w-screen md:w-112 mt-10 mb-12 md:ml-2" />
 			<div>
-				<CardJuego image="/img/games/ps5/nba.jpg" name="NBA 2K22" :row="true">
+				<CardJuego image="/img/games/switch/fifa 22 switch.jpeg" name="FIFA 22 Legacy Edition" :row="true">
 					<template v-slot:description>
 						<p class="mt-4">
-							NBA 2K22 es el título más reciente de la serie de videojuegos de baloncesto NBA 2K más vendida y de
-							renombre mundial. Crea tu propio legado en el asfalto.
+							Desarrollado por Football ™, EA SPORTS ™ FIFA 22 Legacy Edition en Nintendo Switch ™ presenta los
+							últimos kits, clubes y escuadrones de algunas de las mejores ligas de todo el mundo. También contará
+							con algunos de los estadios más famosos del mundo, incluidos algunos nuevos en FIFA 22. Las funciones y
+							modos de juego tendrán paridad con FIFA 21 en Nintendo Switch.
 						</p>
 					</template>
 				</CardJuego>
 			</div>
-			<div id="horizon" class="bg-horizon bg-cover">
-				<CardJuego image="/img/games/ps5/horizon-forbidden-west.jpg" name="Horizon Forbidden West" :row="true">
+			<div id="horizon" class="bg-mh">
+				<CardJuego
+					image="/img/games/switch/mh.jpg"
+					class="text-white"
+					name="monster hunter stories 2"
+					:row="true"
+				>
 					<template v-slot:description>
 						<p class="mt-4">
-							Únete a Aloy mientras desafía la Forbidden West, una frontera majestuosa, aunque peligrosa, en la que
-							se ocultan nuevas y misteriosas amenazas.
+							Nueva aventura en la segunda entrega de esta serie de juegos de rol por turnos ambientada en el mundo
+							de Monster Hunter. Conviértete en un Rider y únete a monstruos amistosos para luchar a su lado
+							embarcándote en una historia épica.
 						</p>
 					</template>
 				</CardJuego>
 			</div>
 			<div>
-				<CardJuego image="/img/games/ps5/godfall.jpg" name="GodFall" :row="true">
+				<CardJuego image="/img/games/switch/bravely default.jpeg" name="Bravely Default II" :row="true">
 					<template v-slot:description>
 						<p class="mt-4">
-							Embárcate en la aventura en un juego de rol de acción y fantasía que utiliza el combate cuerpo a cuerpo
-							en tercera persona de alto impacto para involucrar a los jugadores mientras buscan botines. Enfréntate
-							a misiones desafiantes que te recompensarán con un botín que te hará girar la cabeza mientras derrotas
-							a los ejércitos que se enfrentan a ti.
+							Explora un mundo nuevo mientras luchas por sobrevivir con tu equipo personalizado de héroes en Bravely
+							El juego Default II, una aventura de rol sorprendentemente hermosa. Equilibra el riesgo y la recompensa
+							en batallas por turnos con los comandos Brave y Default.
 						</p>
 					</template>
 				</CardJuego>
 			</div>
-			<div class="bg-demons bg-cover">
-				<CardJuego image="/img/games/ps5/demons-souls.jpg" name="Demons Souls" :row="true">
+			<div class="bg-little bg-cover">
+				<CardJuego
+					image="/img/games/switch/little nightmares II.jpg"
+					class="text-white"
+					name="Little Nightmares II"
+					:row="true"
+				>
 					<template v-slot:description>
 						<p class="mt-4">
-							Completamente reconstruido desde cero, este remake te invita a experimentar la inquietante historia y
-							el despiadado combate de Demon's Souls.
+							Es un juego de aventuras y suspenso en el que juegas como Mono, un niño atrapado en un mundo que ha
+							sido distorsionado por la transmisión del zumbido de una torre lejana.
 						</p>
 					</template>
 				</CardJuego>
@@ -57,39 +67,37 @@
 		</div>
 
 		<div>
-			<h2 class="text-2xl sm:text-3xl md:text-4xl mx-2 lg:ml-5 my-12 font-bold text-red-700">
-				Juegos exclusivos de Playstation
-			</h2>
+			<TitleH2 title="Juegos exclusivos de Nintedo" class="w-screen md:w-108 mt-10 mb-12 md:ml-2" />
 			<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 border-b-2 border-gray-300">
-				<CardJuego image="/img/games/ps5/immortals.jpeg" name="Immortals Fenyx Rising">
+				<CardJuego image="/img/games/switch/no more heroes.jpg" name="no more hero III">
 					<template v-slot:description>
 						<p class="mt-4">
-							Un juego de mundo abierto ambientado en la mitología griega que ofrece una increíble libertad de
-							exploración, personajes cargados de magia, los mejores puzles que hemos visto en mucho tiempo... y un
-							inevitable parecido con Zelda Breath of the Wild.
+							El legendario asesino Travis Touchdown hace su glorioso regreso a la locura en el juego No More Heroes
+							III, ¡exclusivamente para el sistema Nintendo Switch ™!
 						</p>
 					</template>
 				</CardJuego>
-				<CardJuego image="/img/games/ps5/returnal.jpg" name="Returnal">
+				<CardJuego image="/img/games/switch/mario party superstars.jpg" name="Mario party superstars">
 					<template v-slot:description>
 						<p class="mt-4">
-							Diseñado para una rejugabilidad extrema, el mundo procedimental de Returnal te invita a desempolvarte
-							frente a la derrota y enfrentarte a nuevos desafíos en evolución con cada renacimiento.
+							¡Llamando a todas las superestrellas! La Mario Party serie ™ está de vuelta con 5 tableros clásicos de
+							los juegos Nintendo 64 Mario Party.
 						</p>
 					</template>
 				</CardJuego>
-				<CardJuego image="/img/ps5/village.jpg" name="Resident Evil 8: Village">
+				<CardJuego image="/img/games/switch/warioware.jpg" name="WarioWare: Get It Together">
 					<template v-slot:description>
 						<p class="mt-4">
-							Experimente el survival horror como nunca antes en la octava entrega principal de la histórica
-							franquicia Resident Evil.
+							Wario está de vuelta en el mundo de los microjuegos,Enfréntate a más de 200 microjuegos rápidos y
+							extravagantes, minijuegos ultrarrápidos llenos de diversión frenética, solo o con un amigo.
 						</p>
 					</template>
 				</CardJuego>
-				<CardJuego image="/img/ps5/ratched-clank-fondo.jpg" name="Ratchet and Clank: Rift Apart">
+				<CardJuego image="/img/games/switch/metroid dread.jpg" name="metroid dread">
 					<template v-slot:description>
 						<p class="mt-4">
-							Salta de dimensión con Ratchet y Clank mientras se enfrentan a un malvado emperador de otra realidad.
+							Únete al cazarrecompensas Samus Aran mientras intenta escapar de un mundo alienígena mortal plagado por
+							una amenaza mecánica.
 						</p>
 					</template>
 				</CardJuego>
@@ -99,66 +107,58 @@
 		<div class="container w-full mt-10">
 			<div class="flex justify-between items-center">
 				<div class="ml-2">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl mx-2 lg:ml-5 my-12 font-bold text-red-700" id="up">
-						Nuevos lanzamientos
-					</h2>
+					<TitleH2 title="Elige tu juego de Nintendo Switch" class="w-screen md:w-110 my-12" id="up" />
 				</div>
 
 				<!-- PAGINACION -->
 				<div class="hidden lg:flex mr-3">
 					<button
-						class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700 mr-2 "
+						class="rounded-full hover:ring-2 ring-red-700 p-0.5 flex items-center justify-center mr-2 "
 						:class="{ 'opacity-25 cursor-default': gamesSwitch.meta.current_page === 1 }"
 						:disabled="gamesSwitch.meta.current_page === 1"
 						@click="showPrevGames"
 					>
-						<ChevronLeftIcon class="fill-current text-white w-9 h-9" />
+						<ChevronLeftIcon class="fill-current bg-red-700 rounded-full text-white w-10 h-10" />
 					</button>
 
 					<button
-						class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700"
+						class="rounded-full hover:ring-2 ring-red-700 p-0.5 flex items-center justify-center mr-2"
 						:class="{ 'opacity-25 cursor-default': gamesSwitch.meta.current_page === gamesSwitch.meta.last_page }"
 						:disabled="gamesSwitch.meta.current_page === gamesSwitch.meta.last_page"
 						@click="showNextGames"
 					>
-						<ChevronRightIcon class="fill-current text-white w-9 h-9" />
+						<ChevronRightIcon class="fill-current bg-red-700 rounded-full text-white w-10 h-10" />
 					</button>
 				</div>
 			</div>
 			<div
 				class="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 my-10 justify-items-center"
 			>
-				<CardProductos
-					v-for="game in gamesSwitch.data"
-					:key="game.id"
-					:imageUrl="game.image_url"
-					:price="game.price"
-					:name="game.name"
-				/>
+				<CardProductos v-for="game in gamesSwitch.data" :key="game.id" :game="game" />
 			</div>
 		</div>
 
 		<!-- PAGINACION RESPONSIVE -->
 		<div class="flex justify-around mt-8 lg:hidden mr-3">
-			<button
-				class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700 mr-2 "
+			<a
+				class="rounded-full active:ring-2 ring-red-700 p-0.5 flex items-center justify-center mr-2 "
 				:class="{ 'opacity-25 cursor-default': gamesSwitch.meta.current_page === 1 }"
 				:disabled="gamesSwitch.meta.current_page === 1"
 				@click="showPrevGames"
 				href="#up"
 			>
-				<ChevronLeftIcon class="fill-current text-white w-9 h-9" />
-			</button>
+				<ChevronLeftIcon class="fill-current bg-red-700 rounded-full text-white w-10 h-10" />
+			</a>
 
-			<button
-				class="rounded-full h-10 w-10 flex items-center justify-center bg-red-700"
+			<a
+				class="rounded-full active:ring-2 ring-red-700 p-0.5 flex items-center justify-center mr-2"
 				:class="{ 'opacity-25 cursor-default': gamesSwitch.meta.current_page === gamesSwitch.meta.last_page }"
 				:disabled="gamesSwitch.meta.current_page === gamesSwitch.meta.last_page"
 				@click="showNextGames"
 				href="#up"
 			>
-				<ChevronRightIcon class="fill-current text-white w-9 h-9" />
-			</button>
+				<ChevronRightIcon class="fill-current bg-red-700 rounded-full text-white w-10 h-10" />
+			</a>
 		</div>
 	</div>
 </template>
@@ -167,10 +167,12 @@
 import CardProductos from '@/components/Cards/CardProductos.vue';
 import CardJuego from '@/components/Cards/CardJuego.vue';
 import Portada from '@/components/Utilidades/Portada.vue';
-
-import useGamesSwitch from '@/composables/games/useGamesSwitch.js';
+import TitleH2 from '@/components/Utilidades/TitleH2.vue';
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid';
+
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
 	components: {
@@ -179,28 +181,33 @@ export default {
 		Portada,
 		ChevronLeftIcon,
 		ChevronRightIcon,
+		TitleH2,
 	},
 
 	setup() {
-		let { fetchGamesSwitch, gamesSwitch } = useGamesSwitch();
+		const store = useStore();
+		onMounted(() => {
+			store.dispatch('fetchDataGamesSwitch');
+		});
 
-		fetchGamesSwitch();
+		const gamesSwitch = computed(() => store.state.gamesSwitch);
+		const cart = computed(() => store.state.cart);
 
 		function showNextGames() {
-			fetchGamesSwitch({
-				showNext: true,
+			store.dispatch('fetchDataGamesSwitch', {
 				page: gamesSwitch.value.meta.current_page + 1,
 			});
 		}
+
 		function showPrevGames() {
-			fetchGamesSwitch({
-				showPrev: true,
+			store.dispatch('fetchDataGamesSwitch', {
 				page: gamesSwitch.value.meta.current_page - 1,
 			});
 		}
 
 		return {
 			gamesSwitch,
+			cart,
 			showNextGames,
 			showPrevGames,
 		};

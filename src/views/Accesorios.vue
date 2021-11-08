@@ -53,18 +53,18 @@
 		<div class="flex flex-col items-center">
 			<h3 class="font-semibold text-3xl mb-5 lg:text-5xl">Elige tu color favorito</h3>
 			<div class="mt-4">
-				<button class="rounded-full bg-white w-8 h-8 shadow-lg" id="white" @click="showNextGames"></button>
+				<button class="rounded-full bg-white w-8 h-8 shadow-lg" id="white" @click="showNextDualsense(1)"></button>
 
 				<button
 					class="rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 focus:bg-opacity-100 w-8 h-8 mx-4 shadow-lg"
 					id="black"
-					@click="showNextGames"
+					@click="showNextDualsense(2)"
 				></button>
 
 				<button
 					class="rounded-full bg-cosmic bg-opacity-50 hover:bg-opacity-75 focus:bg-opacity-100 w-8 h-8 shadow-lg "
 					id="red"
-					@click="showNextGames"
+					@click="showNextDualsense(3)"
 				></button>
 			</div>
 
@@ -75,7 +75,7 @@
 					<p class="text-2xl">{{ dualsense.name }}</p>
 					<p class="text-lg text-red-700 font-bold my-2">{{ dualsense.price }} $</p>
 
-					<button class="rounded-full hover:ring-2 ring-red-700 p-1">
+					<button class="rounded-full hover:ring-2 ring-red-700 p-1" @click="addCart(dualsense)">
 						<p class="rounded-full font-bold text-white py-2 px-5 bg-red-700 text-sm md:text-lg">
 							Agregar al carrito
 						</p>
@@ -120,7 +120,7 @@
 			<div
 				v-for="joycon in joycons.data"
 				:key="joycon.id"
-				class="flex flex-col justify-center bg-white p-5 rounded shadow-md"
+				class="flex flex-col justify-center bg-white p-5 rounded-xl shadow-lg"
 			>
 				<img :src="joycon.image_url" :alt="`image ${joycon.name}`" />
 
@@ -129,7 +129,11 @@
 
 					<p class="text-red-700 font-bold text-lg">{{ joycon.price }} $</p>
 
-					<Button />
+					<button class="rounded-full hover:ring-2 ring-red-700 p-1 mt-4 w-full" @click="addCart(joycon)">
+						<p class="rounded-full font-bold text-white py-2 px-5 bg-red-700 text-xs md:text-sm">
+							Agregar al carrito
+						</p>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -137,10 +141,10 @@
 </template>
 
 <script>
-import useDualsense from '@/composables/accessories/useDualsense.js';
-import useJoycons from '@/composables/accessories/useJoycons.js';
-
 import Button from '@/components/Button.vue';
+
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
 	components: {
@@ -148,35 +152,46 @@ export default {
 	},
 
 	setup() {
-		let { fetchDualsense, dualsenses } = useDualsense();
-		let { fetchJoycons, joycons } = useJoycons();
+		const store = useStore();
+		onMounted(() => {
+			store.dispatch('fetchDataDualsenses');
+			store.dispatch('fetchDataJoycons');
+		});
 
-		fetchDualsense();
-		fetchJoycons();
+		const dualsenses = computed(() => store.state.dualsenses);
+		const joycons = computed(() => store.state.joycons);
+		const cart = computed(() => store.state.cart);
 
-		function showNextGames(event) {
-			if (event.target.id == 'white') {
-				fetchDualsense({
-					showNext: true,
-					page: (dualsenses.value.meta.current_page = 1),
-				});
-			} else if (event.target.id == 'black') {
-				fetchDualsense({
-					showNext: true,
-					page: (dualsenses.value.meta.current_page = 2),
-				});
-			} else if (event.target.id == 'red') {
-				fetchDualsense({
-					showNext: true,
-					page: (dualsenses.value.meta.current_page = 3),
-				});
-			}
+		function showNextDualsense(number) {
+			store.dispatch('fetchDataDualsenses', {
+				page: (dualsenses.value.meta.current_page = number),
+			});
+		}
+
+		function addCart(product) {
+			store.dispatch('addToCart', product);
+
+			const activeAlert = document.getElementById('alert');
+			const shoppingCart = document.getElementById('carrito');
+
+			shoppingCart.classList.add('animate-bounce');
+
+			activeAlert.classList.remove('-right-56');
+			activeAlert.classList.add('right-4');
+
+			setTimeout(() => {
+				activeAlert.classList.add('-right-56');
+				activeAlert.classList.remove('right-4');
+				shoppingCart.classList.remove('animate-bounce');
+			}, 4000);
 		}
 
 		return {
 			dualsenses,
 			joycons,
-			showNextGames,
+			cart,
+			showNextDualsense,
+			addCart,
 		};
 	},
 };

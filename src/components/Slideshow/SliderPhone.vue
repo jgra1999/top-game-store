@@ -1,4 +1,5 @@
 <template>
+	<div class="w-full h-14"></div>
 	<div class="relative flex items-center md:hidden h-108 mb-2">
 		<ImageSlidePhone
 			v-for="slide in slides"
@@ -9,17 +10,14 @@
 		>
 			<img :src="slide.img" class="h-full w-full" loading="lazy" />
 
-			<div class="absolute flex flex-col items-center bottom-10 sm:bottom-5 text-center w-full">
+			<div
+				class="absolute flex flex-col items-center bottom-10 sm:bottom-5 text-center w-full"
+				v-if="slide.id == 0"
+			>
 				<img :src="slide.logo" alt="" class="w-64 h-16 mx-auto sm:w-72 sm:h-20" />
 				<p class="w-80 text-xs sm:text-base sm:w-100 my-10">
 					{{ slide.description }}
 				</p>
-
-				<button class="rounded-full hover:ring-2 ring-red-700 pt-1 pb-2 px-1 sm:py-2.5 ">
-					<a href="#" class="rounded-full font-bold text-white py-2 px-5 bg-red-700 text-xs sm:text-base ">
-						Reservar ahora
-					</a>
-				</button>
 			</div>
 		</ImageSlidePhone>
 
@@ -110,8 +108,9 @@ export default {
 	mounted() {
 		setInterval(() => {
 			this.visibleSlide = this.visibleSlide + 1;
+			this.direction = 'left';
 
-			if (this.visibleSlide === 3) {
+			if (this.visibleSlide === 4) {
 				this.visibleSlide = 0;
 			}
 		}, 6000);

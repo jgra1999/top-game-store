@@ -16,7 +16,6 @@
 
 <script>
 export default {
-	// props: ['imageUrl', 'description', 'logoUrl', 'console', 'message'],
 	props: {
 		imageUrl: String,
 		description: String,
