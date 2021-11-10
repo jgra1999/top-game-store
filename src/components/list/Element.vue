@@ -1,10 +1,10 @@
 <template>
 	<div class="flex items-center mt-8 md:mt-20 ">
 		<div>
-			<img :src="img" :alt="title" class="w-48 h-56 rounded-md hidden lg:block" />
+			<img :src="img" :alt="title" loading="lazy" class="w-48 h-56 rounded-md hidden lg:block" />
 		</div>
 		<div class="ml-5 w-full ">
-			<h3 class="text-2xl md:text-3xl lg:text-4xl font-bold border-b-4 border-red-700 pb-4">
+			<h3 class="text-2xl md:text-3xl lg:text-4xl font-bold border-b-4 border-red-700 pb-4 capitalize">
 				{{ title }}
 			</h3>
 			<slot name="description"></slot>

@@ -3,7 +3,12 @@
 		v-if="game.stock >= 1"
 		class="bg-white p-5 w-72 md:w-108 flex flex-col items-center md:items-start md:flex-row md:justify-between rounded shadow-md"
 	>
-		<img :src="game.image_url" :alt="`image ${game.name}`" class="w-4/5 h-64 md:w-40 md:h-48 rounded-xl" />
+		<img
+			:src="game.image_url"
+			:alt="`image ${game.name}`"
+			loading="lazy"
+			class="w-4/5 h-64 md:w-40 md:h-48 rounded-xl"
+		/>
 
 		<div class="mt-5 md:mt-0 md:text-right">
 			<h3 class="text-xl font-bold">{{ game.name }}</h3>
@@ -30,6 +35,7 @@
 		<img
 			:src="game.image_url"
 			:alt="`image ${game.name}`"
+			loading="lazy"
 			class="w-4/5 h-64 md:w-40 md:h-48 rounded-xl opacity-50"
 		/>
 

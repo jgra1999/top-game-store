@@ -3,8 +3,14 @@
 		class="container p-6 lg:p-12 capitalize"
 		:class="{ 'grid grid-cols-1 justify-items-center md:grid-cols-2 md:gap-x-10 md:items-center': row == true }"
 	>
-		<div class="md:h-96">
-			<img :src="image" :alt="`image ${name}`" class="h-full" :class="{ 'h-auto': row == true }" />
+		<div class="h-64 md:h-96">
+			<img
+				:src="image"
+				:alt="`image ${name}`"
+				loading="lazy"
+				class="h-full"
+				:class="{ 'h-auto': row == true }"
+			/>
 		</div>
 
 		<div>

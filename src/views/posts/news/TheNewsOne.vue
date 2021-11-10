@@ -19,7 +19,7 @@
 		</div>
 
 		<div class="w-full h-64 lg:h-110 my-10">
-			<img src="/img/news/gta-trilogy.jpg" class="w-full h-full" loading="lazy" alt="" />
+			<img src="/img/news/gta-trilogy.jpg" class="w-full h-full" loading="lazy" alt="imagen gta trilogy" />
 		</div>
 
 		<div>

@@ -122,7 +122,7 @@
 				:key="joycon.id"
 				class="flex flex-col justify-center bg-white p-5 rounded-xl shadow-lg"
 			>
-				<img :src="joycon.image_url" :alt="`image ${joycon.name}`" />
+				<img :src="joycon.image_url" loading="lazy" :alt="`image ${joycon.name}`" />
 
 				<div>
 					<p class="text-2xl mb-5">{{ joycon.name }}</p>

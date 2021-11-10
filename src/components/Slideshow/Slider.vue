@@ -1,5 +1,5 @@
 <template>
-	<div class="hidden lg:block w-full h-14"></div>
+	<div class="lg:block w-full h-14"></div>
 	<div class="relative hidden md:flex items-center w-full h-96 lg:h-100 xl:h-110 overflow-hidden">
 		<ImageSlide
 			v-for="slide in slides"

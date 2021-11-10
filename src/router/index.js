@@ -104,9 +104,14 @@ const routes = [
 	},
 	/* BLOG */
 	{
-		path: '/top-juegos-rpg',
-		name: 'TopRpg',
-		component: () => import('../views/blog/TopRpg.vue'),
+		path: '/top-juegos-rpg-nintendo-switch',
+		name: 'PostOne',
+		component: () => import('../views/blog/PostOne.vue'),
+	},
+	{
+		path: '/mejores-juegos-en-oferta-de-playstation',
+		name: 'PostThree',
+		component: () => import('../views/blog/PostThree.vue'),
 	},
 
 	/* LOGIN Y REGISTRO */

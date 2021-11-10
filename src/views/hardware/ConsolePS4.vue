@@ -1,4 +1,5 @@
 <template>
+	<div class="lg:block w-full h-14"></div>
 	<Portada
 		imageUrl="/img/hardware/ps4/ps4 wallpaper 2.jpg"
 		description="Horizon Forbbiden West"
@@ -24,11 +25,7 @@
 					Únete a guerreros samurái, a sobrevivientes fortalecidos y a dioses poderosos en algunos de los juegos
 					más aclamados de la historia, creados por PlayStation Studios.
 				</p>
-				<button class="rounded-full hover:ring-2 ring-white p-1 mt-4">
-					<p class="rounded-full font-bold py-2 px-5 bg-white text-sm md:text-lg">
-						Agregar al carrito
-					</p>
-				</button>
+				<BtnConsoles console="Hola tienes disponible la PS4?" border="ring-white" button="bg-white" />
 			</div>
 		</div>
 
@@ -45,11 +42,7 @@
 					desde la consola PS4 Pro en tu televisor 4K, y transmite tu entretenimiento favorito con increíble
 					detalle visual desde los servicios compatibles con 4K.
 				</p>
-				<button class="rounded-full hover:ring-2 ring-white p-1 mt-4">
-					<p class="rounded-full font-bold py-2 px-5 bg-white text-sm md:text-lg">
-						Agregar al carrito
-					</p>
-				</button>
+				<BtnConsoles console="Hola tienes disponible la PS4 PRO?" border="ring-white" button="bg-white" />
 			</div>
 			<div class="order-1 lg:order-2">
 				<img
@@ -66,7 +59,7 @@
 	<div class="flex flex-col items-center my-10">
 		<div class="text-center w-3/4">
 			<h2 class="text-5xl font-bold">Control Increible</h2>
-			<p class="text-xl my-10">
+			<p class="text-lg md:text-xll my-10">
 				Diseño emblemático que se ajusta perfectamente a tus manos, controles intuitivos que te mantienen en la
 				cima del juego y una dinámica variedad de colores disponibles para adaptarse a tu estilo. Sin importar tu
 				forma de jugar, el control inalámbrico DUALSHOCK®4 tiene lo que necesitas.
@@ -84,17 +77,17 @@
 
 	<div class="bg-red-600 flex flex-col items-center text-center p-4">
 		<img src="/img/hardware/ps4/ps hits.png" alt="logo Playstation hits" />
-		<p class="text-xl my-10 text-white w-3/4">
+		<p class="text-lg md:text-xl my-10 text-white w-3/4">
 			Desde títulos épicos y premiados hasta favoritos de la familia, PlayStation Hits ofrece una colección
 			genial de más de 20 de los títulos más adorados de PS4; y pronto vienen más.
 		</p>
 
-		<div class="grid grid-cols-5 gap-x-3">
+		<div class="grid grid-cols-2 md:grid-cols-5 items-center gap-3 md:gap-x-3">
 			<Producto imageUrl="/img/hardware/ps4/batman hits.jpg" />
 			<Producto imageUrl="/img/hardware/ps4/bloodborne hits.jpg" />
 			<Producto imageUrl="/img/hardware/ps4/doom hits.jpg" />
 			<Producto imageUrl="/img/hardware/ps4/horizon hits.jpg" />
-			<Producto imageUrl="/img/hardware/ps4/uncharted hits.jpg" />
+			<Producto imageUrl="/img/hardware/ps4/uncharted hits.jpg" class="hidden md:block" />
 		</div>
 
 		<router-link to="/juegos-playstation-4">
@@ -110,11 +103,13 @@
 <script>
 import Portada from '@/components/Utilidades/Portada.vue';
 import Producto from '@/components/Producto.vue';
+import BtnConsoles from '@/components/buttons/BtnConsoles.vue';
 
 export default {
 	components: {
 		Portada,
 		Producto,
+		BtnConsoles,
 	},
 };
 </script>

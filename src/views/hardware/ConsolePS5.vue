@@ -1,4 +1,5 @@
 <template>
+	<div class="lg:block w-full h-14"></div>
 	<div>
 		<Portada
 			imageUrl="/img/hardware/ps5/ps5-wallpaper.jpg"
@@ -15,16 +16,16 @@
 			</div>
 
 			<div class="ml-5 lg:w-2/4">
-				<h2 class="text-5xl font-bold">Consola PS5</h2>
-				<p class="text-xl my-5">
+				<h2 class="text-5xl font-bold">Playstation 5</h2>
+				<p class="text-lg md:text-xl my-5">
 					Juega títulos de PS5 y PS4 en discos Blu-ray. También puedes descargar juegos digitales de PS5 y PS4
 					desde PlayStation® Store.
 				</p>
-				<button class="rounded-full hover:ring-2 ring-red-700 p-1 mt-4">
-					<p class="rounded-full font-bold text-white py-2 px-5 bg-red-700 text-sm md:text-lg">
-						Agregar al carrito
-					</p>
-				</button>
+				<BtnConsoles
+					console="Hola tienes disponible la PS5?"
+					border="ring-red-700"
+					button="text-white bg-red-700"
+				/>
 			</div>
 		</div>
 
@@ -32,16 +33,16 @@
 		<div class="flex flex-col lg:flex-row justify-around items-center bg-gray-300">
 			<div class="ml-5 mt-10 lg:mt-0 lg:w-2/4 order-2 lg:order-1">
 				<h2 class="text-5xl font-bold">PS5 Edición Digital</h2>
-				<p class="text-xl my-5">
+				<p class="text-lg md:text-xl my-5">
 					Una versión completamente digital de la consola PS5 que no trae unidad de disco. Inicia sesión en tu
 					cuenta de PlayStation Network y ve a PlayStation Store para comprar y descargar juegos digitales de PS5 y
 					PS4.
 				</p>
-				<button class="rounded-full hover:ring-2 ring-red-700 p-1 my-4">
-					<p class="rounded-full font-bold text-white py-2 px-5 bg-red-700 text-sm md:text-lg">
-						Agregar al carrito
-					</p>
-				</button>
+				<BtnConsoles
+					console="Hola tienes disponible la PS5 digital?"
+					border="ring-red-700"
+					button="text-white bg-red-700"
+				/>
 			</div>
 
 			<div class="order-1 lg:order-2">
@@ -107,10 +108,12 @@
 
 <script>
 import Portada from '@/components/Utilidades/Portada.vue';
+import BtnConsoles from '@/components/buttons/BtnConsoles.vue';
 
 export default {
 	components: {
 		Portada,
+		BtnConsoles,
 	},
 };
 </script>

@@ -28,11 +28,11 @@
 				</select> -->
 
 				<!-- Buscador de juegos -->
-				<div class="flex justify-center" v-if="typeSearch == 'juegos'">
+				<div class="flex justify-center mx-auto w-screen md:w-11/12 px-5" v-if="typeSearch == 'juegos'">
 					<input
 						type="text"
 						placeholder="¿Que juego estas Buscando?"
-						class="bg-transparent p-2 w-3/4 md:w-11/12 text-lg  md:text-2xl border-b-2 focus:outline-none focus:border-red-700 "
+						class="bg-transparent p-2 w-full text-lg  md:text-2xl border-b-2 focus:outline-none focus:border-red-700 "
 						v-model="search.name"
 					/>
 					<button type="submit" @click.enter.prevent="searchGame(search.name)">

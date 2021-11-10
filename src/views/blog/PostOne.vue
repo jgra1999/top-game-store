@@ -22,7 +22,7 @@
 
 		<ListElement
 			title="1) Octopath Traveler"
-			img="./img/top-6-rpg-switch/octopath.jpg"
+			img="./img/blog/post1/octopath.jpg"
 			youtubeUrl="https://www.youtube.com/embed/wardmBnjHnU"
 		>
 			<template v-slot:description>
@@ -37,7 +37,7 @@
 
 		<ListElement
 			title="2) The Elder Scrolls V: Skyrim - Special Edition"
-			img="./img/top-6-rpg-switch/skyrim-special-edition.jpg"
+			img="./img/blog/post1/skyrim-special-edition.jpg"
 			youtubeUrl="https://www.youtube.com/embed/iKkWcfawKFE"
 		>
 			<template v-slot:description>
@@ -51,7 +51,7 @@
 
 		<ListElement
 			title="3) Pokémon Espada y Escudo"
-			img="./img/top-6-rpg-switch/pokemon-ec.jpg"
+			img="./img/blog/post1/pokemon-ec.jpg"
 			youtubeUrl="https://www.youtube.com/embed/B9_h7xNhPBE"
 		>
 			<template v-slot:description>
@@ -66,7 +66,7 @@
 
 		<ListElement
 			title="4) Persona 5: Strikers Switch"
-			img="./img/top-6-rpg-switch/persona-5-strikers-switch.jpg"
+			img="./img/blog/post1/persona-5-strikers-switch.jpg"
 			youtubeUrl="https://www.youtube.com/embed/E3cvskLI-oM"
 		>
 			<template v-slot:description>
@@ -81,7 +81,7 @@
 
 		<ListElement
 			title="5) The Legend Of Zelda Breath Of The Wild"
-			img="./img/top-6-rpg-switch/zelda.jpg"
+			img="./img/blog/post1/zelda.jpg"
 			youtubeUrl="https://www.youtube.com/embed/zw47_q9wbBE"
 		>
 			<template v-slot:description>
@@ -97,7 +97,7 @@
 
 		<ListElement
 			title="6) The Witcher 3: Wild Hunt"
-			img="./img/top-6-rpg-switch/the-witcher-3.jpg"
+			img="./img/blog/post1/the-witcher-3.jpg"
 			youtubeUrl="https://www.youtube.com/embed/XHrskkHf958"
 		>
 			<template v-slot:description>

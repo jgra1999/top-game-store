@@ -1,16 +1,17 @@
 <template>
+	<div class="lg:block w-full h-14"></div>
 	<div class="relative">
 		<img
-			src="/img/hardware/switch/nintendo switch wallpaper.png"
+			src="/img/hardware/switch/fondo.jpg"
 			loading="lazy"
 			alt="wallpaper nintendo switch"
-			class="h-96 xl:h-header w-full"
+			class="h-94 xl:h-header w-full"
 		/>
 
-		<div class="absolute w-full bottom-6 xl:bottom-80 flex flex-col items-center text-center">
+		<!-- <div class="absolute w-full bottom-6 xl:bottom-80 flex flex-col items-center text-center">
 			<img src="/img/hardware/switch/switch logo.png" alt="logo Nintendo Switch" class="h-20 xl:w-96 xl:h-28" />
 			<p class="text-white text-2xl xl:text-4xl mt-2">{{ message }}</p>
-		</div>
+		</div> -->
 	</div>
 	<div class="py-8 px-5 bg-white">
 		<div>
@@ -23,11 +24,7 @@
 						Nintendo Switch está diseñado para adaptarse a tu vida, transformándose de una consola doméstica a un
 						sistema portátil en un instante.
 					</p>
-					<button class="rounded-full hover:ring-2 ring-white p-1 mt-4">
-						<p class="rounded-full font-bold py-2 px-5 bg-white text-sm md:text-lg">
-							Agregar al carrito
-						</p>
-					</button>
+					<BtnConsoles console="Hola tienes disponible la Nintendo switch" border="ring-white" button="bg-white" />
 				</div>
 			</div>
 		</div>
@@ -130,11 +127,11 @@
 						El sistema para jugadores en movimiento. El Nintendo Switch Lite está diseñado específicamente para
 						jugar en la computadora de mano, por lo que puede saltar a sus juegos favoritos donde quiera que esté.
 					</p>
-					<button class="rounded-full hover:ring-2 ring-red-700 p-1 mt-4">
-						<p class="rounded-full font-bold py-2 px-5 text-white bg-red-700 text-sm md:text-lg">
-							Agregar al carrito
-						</p>
-					</button>
+					<BtnConsoles
+						console="Hola tienes disponible la Nintendo switch lite"
+						border="ring-red-700"
+						button="text-white bg-red-700"
+					/>
 				</div>
 				<img
 					src="/img/hardware/switch/nintendo switch lite consoles.jpeg"
@@ -144,7 +141,7 @@
 				/>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-3 mt-10">
+			<div class="grid grid-cols-1 md:grid-cols-3 md:gap-x-3 mt-10">
 				<div class="flex flex-col items-center text-center">
 					<h4 class="font-bold text-red-600 text-2xl mb-3">Compacto y ligero</h4>
 					<p>
@@ -172,11 +169,11 @@
 </template>
 
 <script>
-import Portada from '@/components/Utilidades/Portada.vue';
+import BtnConsoles from '@/components/buttons/BtnConsoles.vue';
 
 export default {
 	components: {
-		Portada,
+		BtnConsoles,
 	},
 };
 </script>

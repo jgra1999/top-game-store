@@ -5,20 +5,20 @@
 
 		<!-- NOTICIAS -->
 
-		<div class="container xl:w-11/12 mt-4 relative flex items-center sm:justify-center">
-			<button id="left-arrow" @click="scrollLeft()" class="xl:hidden">
-				<ChevronLeftIcon class="h-20 w-20 text-gray-400 hover:text-red-700 xl:absolute xl:top-24 xl:-left-16" />
-			</button>
-
-			<div class="w-full sm:w-96 md:w-full xl:full overflow-hidden" id="container__carousel">
-				<div class="flex">
+		<div class="mt-10 lg:mt-0">
+			<div class="relative w-screen lg:w-11/12 mx-auto flex items-center justify-around lg:block">
+				<button class="left-arrow xl:hidden">
+					<ChevronLeftIcon
+						class=" h-12 w-12 md:h-20 md:w-20 text-gray-400 hover:text-red-700 lg:absolute inset-y-2/4 -left-16"
+					/>
+				</button>
+				<div id="carousel__lista" class="overflow-hidden">
 					<NewsElement
 						url="/noticia-gta-trilogy-switch"
 						title="GTA Trilogy Remastered"
 						console="Nintendo Switch"
 						img="./img/news/gta-trilogy.jpg"
 					/>
-
 					<NewsElement
 						url="/noticia-new-world-estreno"
 						title="Estreno de New World"
@@ -39,20 +39,13 @@
 						console="Playstation 4, Playstation 5"
 						img="./img/news/gow ragnarok.jpeg"
 					/>
-
-					<NewsElement url="#" title="Análisis" console="Playstation 4. Playstation 5" img="./img/formula-1.jpg" />
-
-					<NewsElement url="#" title="Análisis" console="Nintendo Switch" img="./img/mario-golf.jpg" />
-
-					<NewsElement url="#" title="Análisis" console="Playstation 4. Playstation 5" img="./img/formula-1.jpg" />
-
-					<NewsElement url="#" title="Análisis" console="Nintendo Switch" img="./img/mario-golf.jpg" />
 				</div>
+				<button class="right-arrow xl:hidden">
+					<ChevronRightIcon
+						class=" h-12 w-12 md:h-20 md:w-20 text-gray-400 hover:text-red-700 lg:absolute inset-y-2/4 -right-16"
+					/>
+				</button>
 			</div>
-
-			<button id="rightArrow" @click="scrollRight()" class="xl:hidden">
-				<ChevronRightIcon class="h-20 w-20 text-gray-400 hover:text-red-700 xl:absolute xl:top-24 xl:-right-16" />
-			</button>
 		</div>
 
 		<!-- PROXIMO LANZAMIENTO -->
@@ -90,7 +83,7 @@
 					<p class="lg:text-md xl:text-lg">Nuestras recomendaciones</p>
 				</div>
 
-				<router-link to="/top-juegos-rpg" class=" text-center ">
+				<router-link to="top-juegos-rpg-nintendo-switch" class=" text-center ">
 					<img
 						src="../assets/top7.png"
 						alt=""
@@ -100,15 +93,15 @@
 					<p class="lg:text-md xl:text-lg">Top 6 juegos RPG</p>
 				</router-link>
 
-				<div class=" text-center ">
+				<router-link to="/mejores-juegos-en-oferta-de-playstation" class=" text-center ">
 					<img
 						src="../assets/mejores-switch.jpg"
 						alt=""
 						class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl  hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 					/>
-					<p class="lg:text-md xl:text-lg">Mejores juegos de Nintendo Switch</p>
-				</div>
+					<p class="lg:text-md xl:text-lg">Mejores Ofertas de Playstation Noviembre</p>
+				</router-link>
 			</div>
 		</div>
 
@@ -146,21 +139,36 @@
 
 		<!-- ELIGE TU CONSOLA -->
 		<div class="container w-full mt-24 lg:mt-48 border-t-2 border-b-2 border-gray-300 py-6">
-			<TitleH2 title="Elige tu consola para jugar" class="w-104" />
+			<TitleH2 title="Elige tu consola para jugar" class="w-96 lg:w-104" />
 			<div
 				class="grid grid-cols-2 grid-row-2 mt-10 justify-items-center items-end gap-y-2 lg:grid-cols-4 grid-row-0"
 			>
-				<Consoles imageUrl="/img/consolas/ps5.png" name="Playstation 5" />
-				<Consoles imageUrl="/img/consolas/ps4-pro.png" name="Playstation 4" />
-
-				<div class=" w-48 text-center p-4 cursor-pointer hover:shadow-xl duration-300">
-					<img src="/img/consolas/nintendo-switch.png" alt="image nintedo switch" class="h-28 w-full" />
-					<p class="mt-5">Nintendo Switch</p>
+				<div class="text-center p-4 hover:text-red-700 duration-300">
+					<router-link to="/consola-playstation-5">
+						<img src="/img/consolas/ps5.png" alt="image nintedo switch" class="h-40" />
+						<p class="mt-5">Playsation 5</p>
+					</router-link>
 				</div>
 
-				<div class=" w-48 text-center p-4 cursor-pointer hover:shadow-xl duration-300">
-					<img src="/img/consolas/nintendo-switch-lite.png" alt="image nintedo switch-lite" class="h-28 w-full" />
-					<p class="mt-5">Nintendo Switch Lite</p>
+				<div class="text-center p-4 hover:text-red-700 duration-300">
+					<router-link to="/consola-playstation-4">
+						<img src="/img/consolas/ps4-pro.png" alt="image nintedo switch" class="h-40" />
+						<p class="mt-5">Playsation 4</p>
+					</router-link>
+				</div>
+
+				<div class="text-center p-4 hover:text-red-700 duration-300">
+					<router-link to="/consola-nintendo-switch">
+						<img src="/img/consolas/nintendo-switch.png" alt="image nintedo switch" class="h-28 w-full" />
+						<p class="mt-5">Nintendo Switch</p>
+					</router-link>
+				</div>
+
+				<div class="text-center p-4 hover:text-red-700 duration-300">
+					<router-link to="/consola-nintendo-switch">
+						<img src="/img/consolas/nintendo-switch-lite.png" alt="image nintedo switch-lite" class="h-28 w-full" />
+						<p class="mt-5">Nintendo Switch Lite</p>
+					</router-link>
 				</div>
 			</div>
 		</div>
@@ -169,7 +177,7 @@
 		<div class="container my-5">
 			<div class="flex justify-between items-center">
 				<div class="ml-2">
-					<TitleH2 title="Nuevos Lanzamientos" />
+					<TitleH2 title="Nuevos Lanzamientos" class="w-80 md:w-100" />
 				</div>
 
 				<div class="hidden lg:flex mr-3">
@@ -207,12 +215,12 @@ import Slider from '@/components/Slideshow/Slider.vue';
 import SliderPhone from '@/components/Slideshow/SliderPhone.vue';
 import Producto from '@/components/Producto.vue';
 import NewsElement from '@/components/carousel/Element.vue';
-import Consoles from '@/components/Consoles.vue';
 import TitleH2 from '@/components/Utilidades/TitleH2.vue';
 
 import useGames from '@/composables/useGames.js';
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid';
+import { onMounted } from 'vue';
 
 export default {
 	name: 'Home',
@@ -222,35 +230,9 @@ export default {
 		SliderPhone,
 		Producto,
 		NewsElement,
-		Consoles,
 		ChevronLeftIcon,
 		ChevronRightIcon,
 		TitleH2,
-	},
-
-	methods: {
-		scrollRight() {
-			const carousel = document.getElementById('container__carousel');
-			carousel.scrollLeft += carousel.scrollLeft = 350;
-			if (window.innerWidth < 1024) {
-				carousel.scrollLeft += carousel.offsetWidth;
-			} else if (window.innerWidth > 1024 && window.innerWidth < 1280) {
-				carousel.scrollLeft += carousel.scrollLeft = 312;
-			} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
-				carousel.scrollLeft += carousel.scrollLeft = 323;
-			}
-		},
-		scrollLeft() {
-			const carousel = document.getElementById('container__carousel');
-			carousel.scrollLeft -= carousel.scrollLeft = 350;
-			if (window.innerWidth < 1024) {
-				carousel.scrollLeft -= carousel.offsetWidth;
-			} else if (window.innerWidth > 1024 && window.innerWidth < 1280) {
-				carousel.scrollLeft -= carousel.scrollLeft = 312;
-			} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
-				carousel.scrollLeft -= carousel.scrollLeft = 323;
-			}
-		},
 	},
 
 	setup() {
@@ -270,6 +252,60 @@ export default {
 				page: games.value.meta.current_page - 1,
 			});
 		}
+
+		onMounted(() => {
+			new Glider(document.querySelector('#carousel__lista'), {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				draggable: true,
+				arrows: {
+					prev: '.left-arrow',
+					next: '.right-arrow',
+				},
+				responsive: [
+					{
+						// screens greater than >= 775px
+						breakpoint: 640,
+						settings: {
+							// Set to `auto` and provide item width to adjust to viewport
+							slidesToShow: 2,
+							slidesToScroll: 1,
+							draggable: true,
+							arrows: {
+								prev: '.left-arrow',
+								next: '.right-arrow',
+							},
+						},
+					},
+					{
+						// screens greater than >= 1024px
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 1,
+							draggable: true,
+							arrows: {
+								prev: '.left-arrow',
+								next: '.right-arrow',
+							},
+						},
+					},
+					{
+						// screens greater than >= 1280px
+						breakpoint: 1280,
+						settings: {
+							slidesToShow: 4,
+							slidesToScroll: 1,
+							draggable: true,
+							arrows: {
+								prev: '.left-arrow',
+								next: '.right-arrow',
+							},
+						},
+					},
+				],
+			});
+		});
 
 		return {
 			games,

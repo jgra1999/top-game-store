@@ -99,7 +99,7 @@
 
 		<div class="container w-full mt-10">
 			<div class="flex justify-between items-center">
-				<TitleH2 title="Elige tu juego de Playstation 4" class="w-screen md:w-108 my-12" id="up" />
+				<TitleH2 title="Elige tu juego de Playstation 5" class="w-screen md:w-108 my-12" id="up" />
 				<!-- PAGINACION -->
 				<div class="hidden lg:flex mr-3">
 					<button
@@ -183,24 +183,23 @@ export default {
 		const gamesPS5 = computed(() => store.state.gamesPS5);
 		const cart = computed(() => store.state.cart);
 
-		// function showNextGames() {
-		// 	fetchGamesPS5({
-		// 		showNext: true,
-		// 		page: gamesPS5.value.meta.current_page + 1,
-		// 	});
-		// }
-		// function showPrevGames() {
-		// 	fetchGamesPS5({
-		// 		showPrev: true,
-		// 		page: gamesPS5.value.meta.current_page - 1,
-		// 	});
-		// }
+		function showNextGames() {
+			store.dispatch('fetchDataGamesPS5', {
+				page: gamesPS5.value.meta.current_page + 1,
+			});
+		}
+
+		function showPrevGames() {
+			store.dispatch('fetchDataGamesPS5', {
+				page: gamesPS5.value.meta.current_page - 1,
+			});
+		}
 
 		return {
 			gamesPS5,
 			cart,
-			// showNextGames,
-			// showPrevGames,
+			showNextGames,
+			showPrevGames,
 		};
 	},
 };
