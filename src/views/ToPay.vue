@@ -88,9 +88,9 @@
 						</p>
 					</div>
 
-					<div class="text-gray-400 text-xs md:col-span-2">
+					<!-- <div class="text-gray-400 text-xs md:col-span-2">
 						Nota: crea una cuenta para tener estos datos guardados y agilizar el proceso de pago.
-					</div>
+					</div> -->
 				</form>
 			</div>
 
@@ -127,8 +127,12 @@
 						<p class="text-md font-semibold">{{ totalToPay }} $</p>
 					</div>
 					<div class="mt-5">
-						<router-link to="/carrito-de-compras" class="text-gray-400 text-sm hover:text-red-600 duration-300"
-							>Volver al carrito</router-link
+						<router-link
+							to="/carrito-de-compras"
+							class="flex  items-center text-gray-400 text-sm hover:text-red-600 duration-300"
+						>
+							<ArrowLeftIcon class="w-4 h-4 mr-2" />
+							Volver al carrito</router-link
 						>
 					</div>
 				</div>
@@ -144,18 +148,29 @@
 							Transferencia Bancaria
 							<LibraryIcon class="w-5 h-5" />
 						</div>
-						<div class="mt-2" id="transferencia">
+						<div class="mt-2">
 							<p class="text-xs text-gray-400">
 								Por favor, transfiera el monto expresado en Bolivares a la siguiente cuenta.
 							</p>
-							<div class="mt-2">
-								<p class="text-sm">
-									0105-0670-12-0670169242
-									<br />
-									A nombre de: Carlos Aular
-									<br />
-									C.I: 24.423.060
-								</p>
+							<div class="mt-2 w-full flex justify-between">
+								<div>
+									<p class="text-sm">
+										0105-0670-12-0670169242
+										<br />
+										A nombre de: Carlos Aular
+										<br />
+										C.I: 24.423.060
+									</p>
+								</div>
+								<div>
+									<p class="text-sm">
+										0134-0890-49-8901016561
+										<br />
+										A nombre de: Oriana Escalona
+										<br />
+										C.I: 25.049.452
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -168,14 +183,25 @@
 							<p class="text-xs text-gray-400">
 								Por favor, transfiera el monto expresado en Bolivares a la siguiente cuenta.
 							</p>
-							<div class="mt-2">
-								<p class="text-sm">
-									Banco: Mercantil
-									<br />
-									C.I: 24.423.060
-									<br />
-									TLF: 0414-5831111
-								</p>
+							<div class="mt-2 w-full flex gap-x-10">
+								<div>
+									<p class="text-sm">
+										Banco: Mercantil
+										<br />
+										C.I: 24.423.060
+										<br />
+										TLF: 0414-5831111
+									</p>
+								</div>
+								<div>
+									<p class="text-sm">
+										Banco: Banesco
+										<br />
+										C.I: 25.049.452
+										<br />
+										TLF: 0414-4708869
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -227,14 +253,14 @@
 </template>
 
 <script>
-import { LibraryIcon, DeviceMobileIcon, CreditCardIcon } from '@heroicons/vue/outline';
+import { LibraryIcon, DeviceMobileIcon, CreditCardIcon, ArrowLeftIcon } from '@heroicons/vue/outline';
 import { XCircleIcon } from '@heroicons/vue/solid';
 
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 
 export default {
-	components: { LibraryIcon, DeviceMobileIcon, CreditCardIcon, XCircleIcon },
+	components: { LibraryIcon, DeviceMobileIcon, CreditCardIcon, XCircleIcon, ArrowLeftIcon },
 
 	data() {
 		return {
@@ -256,10 +282,10 @@ export default {
 		const totalToPay = computed(() => store.getters.totalToPay);
 
 		let campos = {
-			name: true,
-			email: true,
-			address: true,
-			phone: true,
+			name: false,
+			email: false,
+			address: false,
+			phone: false,
 		};
 
 		function sendDetails(billing) {
@@ -317,8 +343,8 @@ export default {
 				const pedidoRealizado = document.getElementById('pedidoRealizado');
 				const enviarPedido = document.getElementById('enviarPedido');
 
-				// pedidoRealizado.classList.remove('hidden');
-				// enviarPedido.classList.add('hidden');
+				pedidoRealizado.classList.remove('hidden');
+				enviarPedido.classList.add('hidden');
 			} else {
 				const pedidoFallido = document.getElementById('pedidoFallido');
 				pedidoFallido.classList.remove('hidden');

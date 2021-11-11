@@ -28,7 +28,7 @@
 				</select> -->
 
 				<!-- Buscador de juegos -->
-				<div class="flex justify-center mx-auto w-screen md:w-11/12 px-5" v-if="typeSearch == 'juegos'">
+				<div class="flex justify-center mx-auto w-screen md:w-11/12 px-5">
 					<input
 						type="text"
 						placeholder="¿Que juego estas Buscando?"
@@ -41,7 +41,7 @@
 				</div>
 
 				<!-- Buscador de consolas -->
-				<div v-if="typeSearch == 'consolas'">
+				<!-- <div v-if="typeSearch == 'consolas'">
 					<input
 						type="text"
 						placeholder="¿Que consola estas Buscando?"
@@ -51,24 +51,11 @@
 					<button type="submit" @click.enter.prevent="searchConsole(search.name)">
 						<SearchIcon class="text-gray-400 hover:text-red-700 w-7 h-7" />
 					</button>
-				</div>
-
-				<!-- Buscador de accesorios -->
-				<div v-if="typeSearch == 'accesorios'">
-					<input
-						type="text"
-						placeholder="¿Que accesorios estas Buscando?"
-						class="bg-transparent w-96 p-2 text-2xl border-b-2 focus:outline-none focus:border-red-700 "
-						v-model="search.name"
-					/>
-					<button type="submit" @click.enter.prevent="searchAccesories(search.name)">
-						<SearchIcon class="text-gray-400 hover:text-red-700 w-7 h-7" />
-					</button>
-				</div>
+				</div> -->
 			</form>
 		</div>
 
-		<div v-if="typeSearch == 'juegos'">
+		<div>
 			<div class="mt-10 flex flex-wrap justify-center gap-10">
 				<CardSearch v-for="game of games.data" :key="game.id" :game="game" />
 			</div>
@@ -122,7 +109,6 @@ export default {
 			search: {
 				name: '',
 			},
-			typeSearch: 'juegos',
 		};
 	},
 

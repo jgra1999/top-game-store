@@ -109,6 +109,11 @@ const routes = [
 		component: () => import('../views/blog/PostOne.vue'),
 	},
 	{
+		path: '/mejores-consolas-2021',
+		name: 'PostTwo',
+		component: () => import('../views/blog/PostTwo.vue'),
+	},
+	{
 		path: '/mejores-juegos-en-oferta-de-playstation',
 		name: 'PostThree',
 		component: () => import('../views/blog/PostThree.vue'),

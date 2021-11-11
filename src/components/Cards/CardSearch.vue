@@ -10,7 +10,7 @@
 			class="w-4/5 h-64 md:w-40 md:h-48 rounded-xl"
 		/>
 
-		<div class="mt-5 md:mt-0 md:text-right">
+		<div class="mt-5 md:mt-0 md:text-right w-full">
 			<h3 class="text-xl font-bold">{{ game.name }}</h3>
 			<p class="my-4">
 				Precio: <span class="text-red-600">$ {{ game.price }}</span>

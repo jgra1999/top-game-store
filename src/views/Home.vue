@@ -5,7 +5,7 @@
 
 		<!-- NOTICIAS -->
 
-		<div class="mt-10 lg:mt-0">
+		<div class="mt-10">
 			<div class="relative w-screen lg:w-11/12 mx-auto flex items-center justify-around lg:block">
 				<button class="left-arrow xl:hidden">
 					<ChevronLeftIcon
@@ -73,24 +73,24 @@
 			</div>
 
 			<div class="lg:grid lg:grid-cols-3 gap-5 justify-items-center w-full absolute lg:-bottom-32 hidden">
-				<div class=" text-center ">
-					<img
-						src="../assets/recomendaciones.jpg"
-						alt=""
-						class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
-						hover:scale-110 cursor-pointer"
-					/>
-					<p class="lg:text-md xl:text-lg">Nuestras recomendaciones</p>
-				</div>
-
-				<router-link to="top-juegos-rpg-nintendo-switch" class=" text-center ">
+				<router-link to="/top-juegos-rpg-nintendo-switch" class=" text-center ">
 					<img
 						src="../assets/top7.png"
 						alt=""
 						class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 					/>
-					<p class="lg:text-md xl:text-lg">Top 6 juegos RPG</p>
+					<p class="lg:text-md xl:text-lg">Top 6 juegos RPG de Switch</p>
+				</router-link>
+
+				<router-link to="/mejores-consolas-2021" class=" text-center ">
+					<img
+						src="../assets/recomendaciones.jpg"
+						alt=""
+						class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
+						hover:scale-110 cursor-pointer"
+					/>
+					<p class="lg:text-md xl:text-lg">Mejores consolas de este 2021</p>
 				</router-link>
 
 				<router-link to="/mejores-juegos-en-oferta-de-playstation" class=" text-center ">
@@ -104,9 +104,19 @@
 				</router-link>
 			</div>
 		</div>
-
+		<!-- blog responsive -->
 		<div class="flex flex-col items-center w-full mt-10 lg:hidden">
-			<div class="text-center mb-4">
+			<router-link to="/top-juegos-rpg-nintendo-switch" class=" text-center mb-4">
+				<img
+					src="../assets/top7.png"
+					alt=""
+					class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
+						hover:scale-110 cursor-pointer"
+				/>
+				<p class="lg:text-md xl:text-lg">Top 6 juegos RPG de Switch</p>
+			</router-link>
+
+			<router-link to="/mejores-consolas-2021" class="text-center mb-4">
 				<img
 					src="../assets/recomendaciones.jpg"
 					alt=""
@@ -114,27 +124,17 @@
 						hover:scale-110 cursor-pointer"
 				/>
 				<p class="text-base">Nuestras recomendaciones</p>
-			</div>
-
-			<router-link to="/top-juegos-rpg" class=" text-center mb-4">
-				<img
-					src="../assets/top7.png"
-					alt=""
-					class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
-						hover:scale-110 cursor-pointer"
-				/>
-				<p class="lg:text-md xl:text-lg">Top 6 juegos RPG</p>
 			</router-link>
 
-			<div class=" text-center mb-4">
+			<router-link to="/mejores-juegos-en-oferta-de-playstation" class=" text-center mb-4">
 				<img
 					src="../assets/mejores-switch.jpg"
 					alt=""
 					class="rounded-xl mb-4 w-80 h-44 shadow-2xl  hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 				/>
-				<p class="text-base">Mejores juegos de Nintendo Switch</p>
-			</div>
+				<p class="text-base">Mejores Ofertas de Playstation Noviembre</p>
+			</router-link>
 		</div>
 
 		<!-- ELIGE TU CONSOLA -->

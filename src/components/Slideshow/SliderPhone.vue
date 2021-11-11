@@ -1,5 +1,4 @@
 <template>
-	<div class="w-full h-14"></div>
 	<div class="relative flex items-center md:hidden h-108 mb-2">
 		<ImageSlidePhone
 			v-for="slide in slides"

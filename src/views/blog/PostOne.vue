@@ -1,5 +1,5 @@
 <template>
-	<div class="hidden lg:block w-full h-14"></div>
+	<div class="w-full h-14"></div>
 	<div>
 		<img src="@/assets/top7.png" alt="" class="block w-full h-full object-cover" />
 	</div>
