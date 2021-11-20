@@ -1,7 +1,8 @@
 <template>
 	<div class="w-full h-14"></div>
 	<div>
-		<img src="@/assets/top7.png" alt="" class="block w-full h-full object-cover" />
+		<img src="/img/blog/post2/consolas.jpg" alt="" class="w-full sm:h-full 2xl:h-108 hidden sm:block" />
+		<img src="/img/blog/post2/consola mobile.jpg" alt="" class="w-full h-104 sm:hidden" />
 	</div>
 
 	<article class="mt-4 md:mt-10 container mx-auto my-20 w-4/5 text-lg">

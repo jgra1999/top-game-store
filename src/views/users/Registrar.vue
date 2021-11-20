@@ -4,7 +4,9 @@
 	<div class="container w-11/12 lg:w-3/4 my-10">
 		<div class="flex flex-col items-center mb-5">
 			<img src="/img/logo1.png" alt="logo top games" class="w-28 h-18" />
-			<h3 class="text-4xl font-bold">Crea una cuenta con nosotros</h3>
+			<h3 class="text-xl font-bold">
+				Crea una cuenta con nosotros y se el primero en enterarte de nuestras promociones
+			</h3>
 		</div>
 
 		<form
@@ -143,8 +145,8 @@
 				<CheckCircleIcon class="w-5 h-5 text-green-600 mr-1.5" />
 				<p>
 					Cuenta creada exitosamente,
-					<router-link to="/iniciar-sesion" class="text-red-600 hover:border-b-2 border-red-600"
-						>Inicia sesión.</router-link
+					<router-link to="/buscar" class="text-red-600 hover:border-b-2 border-red-600"
+						>sigue comprando.</router-link
 					>
 				</p>
 			</div>

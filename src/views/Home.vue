@@ -12,7 +12,15 @@
 						class=" h-12 w-12 md:h-20 md:w-20 text-gray-400 hover:text-red-700 lg:absolute inset-y-2/4 -left-16"
 					/>
 				</button>
+
 				<div id="carousel__lista" class="overflow-hidden">
+					<NewsElement
+						url="/noticia-god-of-war-ragnarok"
+						title="Multiversus"
+						console="Playstation, Xbox, PC"
+						img="./img/news/multiversus.jpg"
+					/>
+
 					<NewsElement
 						url="/noticia-gta-trilogy-switch"
 						title="GTA Trilogy Remastered"
@@ -32,13 +40,6 @@
 						console="Playstation 5"
 						img="./img/news/wolverine.jpg"
 					/>
-
-					<NewsElement
-						url="/noticia-god-of-war-ragnarok"
-						title="God Of War Ragnarok"
-						console="Playstation 4, Playstation 5"
-						img="./img/news/gow ragnarok.jpeg"
-					/>
 				</div>
 				<button class="right-arrow xl:hidden">
 					<ChevronRightIcon
@@ -50,19 +51,22 @@
 
 		<!-- PROXIMO LANZAMIENTO -->
 		<div class="mt-10 relative">
-			<img src="../assets/fondo-hades.jpg" alt="" class="hidden md:block" />
-			<img src="../assets/fondo-hades-phone.jpg" alt="" class="md:hidden" />
+			<img src="/img/mounth/gta.jpg" alt="" class="hidden md:block" />
+			<img src="/img/mounth/gta mobile.jpg" alt="" class="md:hidden" />
 			<div
-				class="absolute bottom-12 sm:bottom-36 left-4 sm:left-20 md:left-4 md:bottom-24 w-94 sm:w-102 md:w-64 lg:w-96 xl:w-100 2xl:w-104 lg:top-12 xl:top-24"
+				class="absolute bottom-6 sm:bottom-36 left-4 sm:left-20 md:left-4 md:bottom-24 w-94 sm:w-102 md:w-64 lg:w-96 xl:w-100 2xl:w-104 lg:top-12 xl:top-24"
 			>
-				<h2 class="text-white text-4xl sm:text-5xl md:text-3xl lg:text-5xl xl:text-6xl font-bold">HADES</h2>
+				<h2 class="text-white text-4xl sm:text-5xl md:text-3xl lg:text-5xl xl:text-6xl font-bold">
+					GTA TRILOGY REMASTERED
+				</h2>
 				<h3 class="text-white text-lg sm:text-2xl md:text-xl lg:text-3xl xl:text-4xl font-normal mt-5">
-					PROXIMO LANZAMIENTO
+					LANZAMIENTO DEL MES
 				</h3>
 				<p class="text-xs sm:text-lg md:text-xs xl:text-base text-white my-8">
-					Desarrollado y editado por Supergiant Games para PC, Switch, PlayStation 4, Xbox One, PlayStation 5 y
-					Xbox Series, es una aventura de acción tipo roguelike ambientada en la antigua Grecia, en la que
-					deberemos escapar del inframundo enfrentándonos a toda clase de monstruos.
+					Es una compilación 2021 de tres juegos de acción y aventura en los Grand Theft Auto serie: Grand Theft
+					Auto III, Grand Theft Auto: Vice City, y Grand Theft Auto: San Andreas. Fue desarrollado por Grove Street
+					Games y publicado por Rockstar Games . Los tres juegos han sido remasterizados , con mejoras visuales y
+					mejoras en la jugabilidad.
 				</p>
 
 				<button class="rounded-full hover:ring-2 ring-white pt-1.5 pb-2.5 lg:py-3 px-1">
@@ -75,9 +79,9 @@
 			<div class="lg:grid lg:grid-cols-3 gap-5 justify-items-center w-full absolute lg:-bottom-32 hidden">
 				<router-link to="/top-juegos-rpg-nintendo-switch" class=" text-center ">
 					<img
-						src="../assets/top7.png"
-						alt=""
-						class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
+						src="/img/blog/post1/top switch.jpg"
+						alt="imagen top 6 juegos de nintendo swtich"
+						class="rounded-xl mb-4 w-94 h-44 xl:w-96 xl:h-48 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 					/>
 					<p class="lg:text-md xl:text-lg">Top 6 juegos RPG de Switch</p>
@@ -85,9 +89,9 @@
 
 				<router-link to="/mejores-consolas-2021" class=" text-center ">
 					<img
-						src="../assets/recomendaciones.jpg"
+						src="/img/blog/post2/consolas.jpg"
 						alt=""
-						class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
+						class="rounded-xl mb-4 w-94 h-44 xl:w-96 xl:h-48 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 					/>
 					<p class="lg:text-md xl:text-lg">Mejores consolas de este 2021</p>
@@ -95,9 +99,9 @@
 
 				<router-link to="/mejores-juegos-en-oferta-de-playstation" class=" text-center ">
 					<img
-						src="../assets/mejores-switch.jpg"
+						src="/img/blog/post3/ofertas ps.jpg"
 						alt=""
-						class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl  hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
+						class="rounded-xl mb-4 w-94 h-44 xl:w-96 xl:h-48 shadow-2xl  hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 					/>
 					<p class="lg:text-md xl:text-lg">Mejores Ofertas de Playstation Noviembre</p>
@@ -108,7 +112,7 @@
 		<div class="flex flex-col items-center w-full mt-10 lg:hidden">
 			<router-link to="/top-juegos-rpg-nintendo-switch" class=" text-center mb-4">
 				<img
-					src="../assets/top7.png"
+					src="/img/blog/post1/top switch.jpg"
 					alt=""
 					class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
@@ -118,17 +122,17 @@
 
 			<router-link to="/mejores-consolas-2021" class="text-center mb-4">
 				<img
-					src="../assets/recomendaciones.jpg"
+					src="/img/blog/post2/consolas.jpg"
 					alt=""
 					class="rounded-xl mb-4 w-80 h-44 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 				/>
-				<p class="text-base">Nuestras recomendaciones</p>
+				<p class="text-base">Mejores consolas de este 2021</p>
 			</router-link>
 
 			<router-link to="/mejores-juegos-en-oferta-de-playstation" class=" text-center mb-4">
 				<img
-					src="../assets/mejores-switch.jpg"
+					src="/img/blog/post3/ofertas ps.jpg"
 					alt=""
 					class="rounded-xl mb-4 w-80 h-44 shadow-2xl  hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
@@ -220,7 +224,8 @@ import TitleH2 from '@/components/Utilidades/TitleH2.vue';
 import useGames from '@/composables/useGames.js';
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid';
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
 	name: 'Home',
@@ -236,7 +241,26 @@ export default {
 	},
 
 	setup() {
-		let { fetchGames, games } = useGames();
+		const store = useStore();
+		onMounted(() => {
+			store.dispatch('fetchDataGames');
+		});
+
+		const games = computed(() => store.state.games);
+
+		function showNextGames() {
+			store.dispatch('fetchDataGames', {
+				page: games.value.meta.current_page + 1,
+			});
+		}
+
+		function showPrevGames() {
+			store.dispatch('fetchDataGames', {
+				page: games.value.meta.current_page - 1,
+			});
+		}
+
+		/* let { fetchGames, games } = useGames();
 
 		fetchGames();
 
@@ -251,7 +275,7 @@ export default {
 				showPrev: true,
 				page: games.value.meta.current_page - 1,
 			});
-		}
+		} */
 
 		onMounted(() => {
 			new Glider(document.querySelector('#carousel__lista'), {

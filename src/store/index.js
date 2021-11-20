@@ -9,7 +9,10 @@ export default createStore({
 		slidesResponsive: [],
 
 		/* Games */
-		games: [],
+		games: ref({
+			data: [],
+			meta: {},
+		}),
 		gamesPS5: ref({
 			data: [],
 			meta: {},

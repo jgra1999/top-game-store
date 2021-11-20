@@ -65,9 +65,9 @@
 		<div class="flex items-center mr-7 ">
 			<div>
 				<router-link
-					to="/iniciar-sesion"
+					to="/crear-cuenta"
 					class=" rounded-full font-bold text-xs md:text-base text-white py-1 px-5 border-2 active:bg-white active:text-red-700 lg:hover:bg-white lg:hover:text-red-700 lg:duration-300  "
-					>Login</router-link
+					>Sign up</router-link
 				>
 			</div>
 

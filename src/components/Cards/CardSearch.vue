@@ -7,13 +7,13 @@
 			:src="game.image_url"
 			:alt="`image ${game.name}`"
 			loading="lazy"
-			class="w-4/5 h-64 md:w-40 md:h-48 rounded-xl"
+			class="w-4/5 h-64 md:w-52 md:h-48 rounded-xl"
 		/>
 
 		<div class="mt-5 md:mt-0 md:text-right w-full">
 			<h3 class="text-xl font-bold">{{ game.name }}</h3>
 			<p class="my-4">
-				Precio: <span class="text-red-600">$ {{ game.price }}</span>
+				Precio: <span class="text-red-600 font-bold">$ {{ game.price }}</span>
 			</p>
 
 			<div>

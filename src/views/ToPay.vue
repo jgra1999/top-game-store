@@ -142,7 +142,7 @@
 			<div class="py-5 px-4">
 				<h5 class="font-bold text-xl">Elige tu método de pago</h5>
 
-				<div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
+				<div class="mt-5 grid grid-cols-1 gap-5 p-5">
 					<div class="border-2 border-gray-100 rounded-lg shadow-lg p-4">
 						<div class="flex items-center justify-between">
 							Transferencia Bancaria
@@ -152,7 +152,7 @@
 							<p class="text-xs text-gray-400">
 								Por favor, transfiera el monto expresado en Bolivares a la siguiente cuenta.
 							</p>
-							<div class="mt-2 w-full flex justify-between">
+							<div class="mt-2 w-full flex gap-x-10">
 								<div>
 									<p class="text-sm">
 										0105-0670-12-0670169242
@@ -179,7 +179,7 @@
 							Pago Movil
 							<DeviceMobileIcon class="w-5 h-5" />
 						</div>
-						<div class="mt-2" id="transferencia">
+						<div class="mt-2">
 							<p class="text-xs text-gray-400">
 								Por favor, transfiera el monto expresado en Bolivares a la siguiente cuenta.
 							</p>
@@ -207,18 +207,32 @@
 					</div>
 					<div class="border-2 border-gray-100 rounded-lg shadow-lg p-4">
 						<div class="flex items-center justify-between">
-							Tarjetas de credito internacionales
-							<CreditCardIcon class="w-5 h-5" />
-						</div>
-					</div>
-					<div class="border-2 border-gray-100 rounded-lg shadow-lg p-4">
-						<div class="flex items-center justify-between">
 							PayPal
 							<CreditCardIcon class="w-5 h-5" />
 						</div>
+						<div class="mt-2">
+							<p class="text-xs text-gray-400">
+								Por favor, transfiera el monto a uno de estos correos electronicos.
+							</p>
+							<div class="mt-2 w-full flex gap-x-10">
+								<div>
+									<p class="text-sm">
+										lawiirc@gmail.com
+									</p>
+								</div>
+								<div>
+									<p class="text-sm">
+										themastered11@gmail.com
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
+					<p class="mt-2 text-xs text-gray-400">
+						NOTA: Haz capture al comprobante del pago independientemente del metodo que hayas usado.
+					</p>
 				</div>
-				<div class="mt-10">
+				<div class="mt-8">
 					<button
 						class="rounded-full hover:ring-2 ring-red-700 p-1 mt-4 w-full"
 						@click.prevent="sendDetails(billing)"
@@ -231,10 +245,8 @@
 
 					<div class="bg-green-500 p-4 rounded-lg text-white text-sm text-center hidden" id="pedidoRealizado">
 						<p>
-							Pedido Realizado exitosamente, número de pedido: #40
-							<br />
-							Por favor envianos por whatsapp al número 0414-5831111 el comprobante del pago junto al número de
-							pedido.
+							Pedido Realizado exitosamente, Por favor envianos por whatsapp al número 0414-5831111 el comprobante
+							del pago.
 						</p>
 					</div>
 
@@ -314,7 +326,7 @@ export default {
 				);
 
 				let url =
-					'https://wa.me/+584145831111?text=Pedido 20%0ACliente: ' +
+					'https://wa.me/+584145831111?text=Pedido %0ACliente: ' +
 					clientName +
 					'%0A Email: ' +
 					clientEmail +

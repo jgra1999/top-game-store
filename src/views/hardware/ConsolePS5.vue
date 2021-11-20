@@ -22,7 +22,7 @@
 					desde PlayStation® Store.
 				</p>
 				<BtnConsoles
-					console="Hola tienes disponible la PS5?"
+					console="Hola buenas tardes, estoy interesado en la PS5?"
 					border="ring-red-700"
 					button="text-white bg-red-700"
 				/>
@@ -39,7 +39,7 @@
 					PS4.
 				</p>
 				<BtnConsoles
-					console="Hola tienes disponible la PS5 digital?"
+					console="Hola buenas tardes, estoy interesado en la PS5 digital?"
 					border="ring-red-700"
 					button="text-white bg-red-700"
 				/>

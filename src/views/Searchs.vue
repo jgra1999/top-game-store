@@ -1,37 +1,17 @@
 <template>
-	<div class="relative">
-		<img
-			src="/img/games/ps5/horizon-forbidden-west-fondo-2.jpg"
-			loading="lazy"
-			alt="Horizon Forbbiden Wes"
-			class="h-96 xl:h-header w-full"
-		/>
-
-		<div class="absolute w-full bottom-6 xl:bottom-44 flex flex-col items-center text-center">
-			<img src="/img/logo-original.png" alt="logo top games store" class="h-48 xl:w-96 xl:h-72" />
-			<p class="text-white text-2xl xl:text-4xl mt-2">Busca tus juegos y consolas favoritos.</p>
-		</div>
+	<div class="w-full h-4"></div>
+	<div>
+		<img src="/img/search.jpg" loading="lazy" alt="El juego que tanto has buscado" class="xl:h-110 w-full" />
 	</div>
 
 	<div class="container my-10 flex flex-col items-center">
 		<div class="flex justify-center">
 			<form method="get" class="flex items-center">
-				<!-- <select
-					@change="selectSearch"
-					name=""
-					id="selectType"
-					class="bg-transparent border-2 focus:outline-none focus:border-red-700 p-2 mr-5"
-				>
-					<option value="juegos">Juegos</option>
-					<option value="consolas">Consolas</option>
-					<option value="accesorios">Accesorios</option>
-				</select> -->
-
 				<!-- Buscador de juegos -->
 				<div class="flex justify-center mx-auto w-screen md:w-11/12 px-5">
 					<input
 						type="text"
-						placeholder="¿Que juego estas Buscando?"
+						placeholder="¿Que juego Buscas?"
 						class="bg-transparent p-2 w-full text-lg  md:text-2xl border-b-2 focus:outline-none focus:border-red-700 "
 						v-model="search.name"
 					/>
@@ -39,19 +19,6 @@
 						<SearchIcon class="text-gray-400 hover:text-red-700 w-7 h-7" />
 					</button>
 				</div>
-
-				<!-- Buscador de consolas -->
-				<!-- <div v-if="typeSearch == 'consolas'">
-					<input
-						type="text"
-						placeholder="¿Que consola estas Buscando?"
-						class="bg-transparent w-96 p-2 text-2xl border-b-2 focus:outline-none focus:border-red-700 "
-						v-model="search.name"
-					/>
-					<button type="submit" @click.enter.prevent="searchConsole(search.name)">
-						<SearchIcon class="text-gray-400 hover:text-red-700 w-7 h-7" />
-					</button>
-				</div> -->
 			</form>
 		</div>
 
@@ -139,11 +106,7 @@ export default {
 		return {
 			games,
 			cart,
-			// consoles,
-			// accesories,
 			searchGame,
-			// searchConsole,
-			// searchAccesories,
 		};
 	},
 };

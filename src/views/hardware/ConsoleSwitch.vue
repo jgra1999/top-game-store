@@ -1,17 +1,26 @@
 <template>
 	<div class="lg:block w-full h-14"></div>
-	<div class="relative">
-		<img
+	<div class="w-full h-110">
+		<!-- <img
 			src="/img/hardware/switch/fondo.jpg"
 			loading="lazy"
 			alt="wallpaper nintendo switch"
-			class="h-94 xl:h-header w-full"
-		/>
+			class="h-64 xl:h-header w-full"
+		/> -->
 
 		<!-- <div class="absolute w-full bottom-6 xl:bottom-80 flex flex-col items-center text-center">
 			<img src="/img/hardware/switch/switch logo.png" alt="logo Nintendo Switch" class="h-20 xl:w-96 xl:h-28" />
 			<p class="text-white text-2xl xl:text-4xl mt-2">{{ message }}</p>
 		</div> -->
+
+		<iframe
+			class="w-full h-full"
+			src="https://www.youtube.com/embed/f5uik5fgIaI"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen
+		></iframe>
 	</div>
 	<div class="py-8 px-5 bg-white">
 		<div>
@@ -24,7 +33,11 @@
 						Nintendo Switch está diseñado para adaptarse a tu vida, transformándose de una consola doméstica a un
 						sistema portátil en un instante.
 					</p>
-					<BtnConsoles console="Hola tienes disponible la Nintendo switch" border="ring-white" button="bg-white" />
+					<BtnConsoles
+						console="Hola buengas tardes, estoy interesado en la Nintendo switch"
+						border="ring-white"
+						button="bg-white"
+					/>
 				</div>
 			</div>
 		</div>
@@ -128,7 +141,7 @@
 						jugar en la computadora de mano, por lo que puede saltar a sus juegos favoritos donde quiera que esté.
 					</p>
 					<BtnConsoles
-						console="Hola tienes disponible la Nintendo switch lite"
+						console="Hola buengas tardes, estoy interesado en la Nintendo switch lite"
 						border="ring-red-700"
 						button="text-white bg-red-700"
 					/>

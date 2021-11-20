@@ -25,7 +25,11 @@
 					Únete a guerreros samurái, a sobrevivientes fortalecidos y a dioses poderosos en algunos de los juegos
 					más aclamados de la historia, creados por PlayStation Studios.
 				</p>
-				<BtnConsoles console="Hola tienes disponible la PS4?" border="ring-white" button="bg-white" />
+				<BtnConsoles
+					console="Hola buenas tardes, estoy interesado en la PS4?"
+					border="ring-white"
+					button="bg-white"
+				/>
 			</div>
 		</div>
 
@@ -42,7 +46,11 @@
 					desde la consola PS4 Pro en tu televisor 4K, y transmite tu entretenimiento favorito con increíble
 					detalle visual desde los servicios compatibles con 4K.
 				</p>
-				<BtnConsoles console="Hola tienes disponible la PS4 PRO?" border="ring-white" button="bg-white" />
+				<BtnConsoles
+					console="Hola buenas tardes, estoy interesado en la PS4 PRO?"
+					border="ring-white"
+					button="bg-white"
+				/>
 			</div>
 			<div class="order-1 lg:order-2">
 				<img

@@ -120,11 +120,11 @@ const routes = [
 	},
 
 	/* LOGIN Y REGISTRO */
-	{
+	/* {
 		path: '/iniciar-sesion',
 		name: 'Login',
 		component: () => import('../views/users/Login.vue'),
-	},
+	},*/
 	{
 		path: '/crear-cuenta',
 		name: 'Registrar',
