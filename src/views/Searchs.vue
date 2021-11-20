@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full h-4"></div>
+	<div class="w-full h-14 xl:h-4"></div>
 	<div>
 		<img src="/img/search.jpg" loading="lazy" alt="El juego que tanto has buscado" class="xl:h-110 w-full" />
 	</div>

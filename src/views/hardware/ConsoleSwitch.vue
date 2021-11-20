@@ -1,6 +1,6 @@
 <template>
 	<div class="lg:block w-full h-14"></div>
-	<div class="w-full h-110">
+	<div class="w-full">
 		<!-- <img
 			src="/img/hardware/switch/fondo.jpg"
 			loading="lazy"
@@ -14,7 +14,7 @@
 		</div> -->
 
 		<iframe
-			class="w-full h-full"
+			class="w-full h-100 lg:h-full"
 			src="https://www.youtube.com/embed/f5uik5fgIaI"
 			title="YouTube video player"
 			frameborder="0"
