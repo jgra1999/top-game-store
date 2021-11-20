@@ -1,6 +1,6 @@
 <template>
 	<div class="lg:block w-full h-14"></div>
-	<div class="w-full">
+	<div class="w-full lg:h-110">
 		<!-- <img
 			src="/img/hardware/switch/fondo.jpg"
 			loading="lazy"
