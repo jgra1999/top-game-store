@@ -69,11 +69,14 @@
 					mejoras en la jugabilidad.
 				</p>
 
-				<button class="rounded-full hover:ring-2 ring-white pt-1.5 pb-2.5 lg:py-3 px-1">
+				<router-link
+					to="/noticia-gta-trilogy-switch"
+					class="rounded-full hover:ring-2 ring-white pt-1.5 pb-2.5 lg:py-3 px-1"
+				>
 					<a href="#" class="rounded-full font-bold text-xs lg:text-base text-black py-2 px-5 bg-white">
 						Más información
 					</a>
-				</button>
+				</router-link>
 			</div>
 
 			<div class="lg:grid lg:grid-cols-3 gap-5 justify-items-center w-full absolute lg:-bottom-32 hidden">
@@ -84,7 +87,7 @@
 						class="rounded-xl mb-4 w-94 h-44 xl:w-96 xl:h-48 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 					/>
-					<p class="lg:text-md xl:text-lg">Top 6 juegos RPG de Switch</p>
+					<p class="lg:text-md xl:text-lg font-semibold">Top 6 juegos RPG de Switch</p>
 				</router-link>
 
 				<router-link to="/mejores-consolas-2021" class=" text-center ">
@@ -94,7 +97,7 @@
 						class="rounded-xl mb-4 w-94 h-44 xl:w-96 xl:h-48 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 					/>
-					<p class="lg:text-md xl:text-lg">Mejores consolas de este 2021</p>
+					<p class="lg:text-md xl:text-lg font-semibold">Mejores consolas de este 2021</p>
 				</router-link>
 
 				<router-link to="/mejores-juegos-en-oferta-de-playstation" class=" text-center ">
@@ -104,7 +107,7 @@
 						class="rounded-xl mb-4 w-94 h-44 xl:w-96 xl:h-48 shadow-2xl  hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 					/>
-					<p class="lg:text-md xl:text-lg">Mejores Ofertas de Playstation Noviembre</p>
+					<p class="lg:text-md xl:text-lg font-semibold">Mejores Ofertas de Playstation Noviembre</p>
 				</router-link>
 			</div>
 		</div>
@@ -117,7 +120,7 @@
 					class="rounded-xl mb-4 w-80 h-44 xl:w-96 xl:h-52 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 				/>
-				<p class="lg:text-md xl:text-lg">Top 6 juegos RPG de Switch</p>
+				<p class="font-semibold">Top 6 juegos RPG de Switch</p>
 			</router-link>
 
 			<router-link to="/mejores-consolas-2021" class="text-center mb-4">
@@ -127,7 +130,7 @@
 					class="rounded-xl mb-4 w-80 h-44 shadow-2xl hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 				/>
-				<p class="text-base">Mejores consolas de este 2021</p>
+				<p class="font-semibold">Mejores consolas de este 2021</p>
 			</router-link>
 
 			<router-link to="/mejores-juegos-en-oferta-de-playstation" class=" text-center mb-4">
@@ -137,42 +140,78 @@
 					class="rounded-xl mb-4 w-80 h-44 shadow-2xl  hover:shadow-3xl transition duration-500 ease-in-out transform hover:-translate-y-1 
 						hover:scale-110 cursor-pointer"
 				/>
-				<p class="text-base">Mejores Ofertas de Playstation Noviembre</p>
+				<p class="font-semibold">Mejores Ofertas de Playstation Noviembre</p>
 			</router-link>
 		</div>
 
-		<!-- ELIGE TU CONSOLA -->
+		<!-- GIFT CARDS -->
 		<div class="container w-full mt-24 lg:mt-48 border-t-2 border-b-2 border-gray-300 py-6">
-			<TitleH2 title="Elige tu consola para jugar" class="w-96 lg:w-104" />
+			<TitleH2 title="Consigue tu Gift Cards" class="w-80 md:w-100" />
 			<div
-				class="grid grid-cols-2 grid-row-2 mt-10 justify-items-center items-end gap-y-2 lg:grid-cols-4 grid-row-0"
+				class="mt-10 grid justify-items-center gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 xl:gap-x-20 2xl:px-10"
 			>
-				<div class="text-center p-4 hover:text-red-700 duration-300">
-					<router-link to="/consola-playstation-5">
-						<img src="/img/consolas/ps5.png" alt="image nintedo switch" class="h-40" />
-						<p class="mt-5">Playsation 5</p>
-					</router-link>
+				<div class="flex flex-col items-center bg-white rounded-xl shadow-lg p-3 w-80 h-96">
+					<img
+						src="/img/gift cards/ps gift cards.png"
+						alt="Playstation gift card"
+						loading="lazy"
+						class="w-4/5 h-64 rounded-xl"
+					/>
+
+					<div class="text-left w-4/5 mt-3">
+						<p class="text-lg font-semibold">Playstation Store Gift Card</p>
+						<p class="text-red-700 font-bold">10$ - 100$</p>
+					</div>
+
+					<BtnGiftCards card="Hola buenas, quisiera comprar una gift card de Playstation Store" />
 				</div>
 
-				<div class="text-center p-4 hover:text-red-700 duration-300">
-					<router-link to="/consola-playstation-4">
-						<img src="/img/consolas/ps4-pro.png" alt="image nintedo switch" class="h-40" />
-						<p class="mt-5">Playsation 4</p>
-					</router-link>
+				<div class="flex flex-col items-center bg-white rounded-xl shadow-lg p-3 w-80 h-96">
+					<img
+						src="/img/gift cards/nintendo gift cards.png"
+						alt="Playstation gift card"
+						loading="lazy"
+						class="w-4/5 h-64 rounded-xl"
+					/>
+
+					<div class="text-left w-4/5 mt-3">
+						<p class="text-lg font-semibold ">Nintedo eShop Gift Card</p>
+						<p class="text-red-700 font-bold">10$ - 100$</p>
+					</div>
+
+					<BtnGiftCards card="Hola buenas, quisiera comprar una gift card de Nintedo " />
 				</div>
 
-				<div class="text-center p-4 hover:text-red-700 duration-300">
-					<router-link to="/consola-nintendo-switch">
-						<img src="/img/consolas/nintendo-switch.png" alt="image nintedo switch" class="h-28 w-full" />
-						<p class="mt-5">Nintendo Switch</p>
-					</router-link>
+				<div class="flex flex-col items-center bg-white rounded-xl shadow-lg p-3 w-80 h-96">
+					<img
+						src="/img/gift cards/ps plus gift cards.png"
+						alt="Playstation gift card"
+						loading="lazy"
+						class="w-4/5 h-52 rounded-xl mt-6"
+					/>
+
+					<div class="text-left w-4/5 mt-4">
+						<p class="text-lg font-semibold">Playstation Plus Gift Card</p>
+						<p class="text-red-700 font-bold">1 mes - 3 meses - 12 meses</p>
+					</div>
+
+					<BtnGiftCards card="Hola buenas, quisiera comprar una gift card de Playstation Plus" />
 				</div>
 
-				<div class="text-center p-4 hover:text-red-700 duration-300">
-					<router-link to="/consola-nintendo-switch">
-						<img src="/img/consolas/nintendo-switch-lite.png" alt="image nintedo switch-lite" class="h-28 w-full" />
-						<p class="mt-5">Nintendo Switch Lite</p>
-					</router-link>
+				<div class="flex flex-col items-center bg-white rounded-xl shadow-lg p-3 w-80 h-96">
+					<img
+						src="/img/gift cards/nintendo membership.png"
+						alt="Playstation gift card"
+						loading="lazy"
+						class="w-4/5 h-48 rounded-xl mt-6"
+					/>
+
+					<div class="text-left w-4/5 mt-8">
+						<p class="text-lg font-semibold">Nintendo Membership</p>
+						<p class="text-red-700 font-bold">3 meses - 12 meses</p>
+					</div>
+
+					<BtnGiftCards card="Hola buenas, quisiera comprar una membresia online de Nintendo" />
 				</div>
 			</div>
 		</div>
@@ -220,8 +259,7 @@ import SliderPhone from '@/components/Slideshow/SliderPhone.vue';
 import Producto from '@/components/Producto.vue';
 import NewsElement from '@/components/carousel/Element.vue';
 import TitleH2 from '@/components/Utilidades/TitleH2.vue';
-
-import useGames from '@/composables/useGames.js';
+import BtnGiftCards from '@/components/buttons/BtnGiftCards.vue';
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/solid';
 import { computed, onMounted } from 'vue';
@@ -238,6 +276,7 @@ export default {
 		ChevronLeftIcon,
 		ChevronRightIcon,
 		TitleH2,
+		BtnGiftCards,
 	},
 
 	setup() {

@@ -69,17 +69,33 @@
 			</div>
 
 			<div v-for="dualsense in dualsenses.data" :key="dualsense.id">
-				<img :src="dualsense.image_url" loading="lazy" :alt="`image ${dualsense.name}`" class="lg:h-104" />
+				<div v-if="dualsense.stock > 0">
+					<img :src="dualsense.image_url" loading="lazy" :alt="`image ${dualsense.name}`" class="lg:h-104" />
 
-				<div class="text-center">
-					<p class="text-2xl">{{ dualsense.name }}</p>
-					<p class="text-lg text-red-700 font-bold my-2">{{ dualsense.price }} $</p>
+					<div class="text-center">
+						<p class="text-2xl">{{ dualsense.name }}</p>
+						<p class="text-lg text-red-700 font-bold my-2">{{ dualsense.price }} $</p>
 
-					<button class="rounded-full hover:ring-2 ring-red-700 p-1" @click="addCart(dualsense)">
-						<p class="rounded-full font-bold text-white py-2 px-5 bg-red-700 text-sm md:text-lg">
-							Agregar al carrito
-						</p>
-					</button>
+						<button class="rounded-full hover:ring-2 ring-red-700 p-1" @click="addCart(dualsense)">
+							<p class="rounded-full font-bold text-white py-2 px-5 bg-red-700 text-sm md:text-lg">
+								Agregar al carrito
+							</p>
+						</button>
+					</div>
+				</div>
+				<div v-else>
+					<div v-for="dualsense in dualsenses.data" :key="dualsense.id">
+						<img :src="dualsense.image_url" loading="lazy" :alt="`image ${dualsense.name}`" class="lg:h-104" />
+
+						<div class="text-center">
+							<p class="text-2xl">{{ dualsense.name }}</p>
+							<p class="text-lg text-red-700 font-bold my-2">{{ dualsense.price }} $</p>
+
+							<div class="mt-4">
+								<p class="text-red-600 font-bold text-lg">No disponible</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -122,18 +138,33 @@
 				:key="joycon.id"
 				class="flex flex-col justify-center bg-white p-5 rounded-xl shadow-lg"
 			>
-				<img :src="joycon.image_url" loading="lazy" :alt="`image ${joycon.name}`" />
+				<div v-if="joycon.stock > 0">
+					<img :src="joycon.image_url" loading="lazy" :alt="`image ${joycon.name}`" />
 
-				<div>
-					<p class="text-2xl mb-5">{{ joycon.name }}</p>
+					<div>
+						<p class="text-2xl mb-5">{{ joycon.name }}</p>
 
-					<p class="text-red-700 font-bold text-lg">{{ joycon.price }} $</p>
+						<p class="text-red-700 font-bold text-lg">{{ joycon.price }} $</p>
 
-					<button class="rounded-full hover:ring-2 ring-red-700 p-1 mt-4 w-full" @click="addCart(joycon)">
-						<p class="rounded-full font-bold text-white py-2 px-5 bg-red-700 text-xs md:text-sm">
-							Agregar al carrito
-						</p>
-					</button>
+						<button class="rounded-full hover:ring-2 ring-red-700 p-1 mt-4 w-full" @click="addCart(joycon)">
+							<p class="rounded-full font-bold text-white py-2 px-5 bg-red-700 text-xs md:text-sm">
+								Agregar al carrito
+							</p>
+						</button>
+					</div>
+				</div>
+				<div v-else>
+					<img :src="joycon.image_url" loading="lazy" :alt="`image ${joycon.name}`" />
+
+					<div>
+						<p class="text-2xl mb-5">{{ joycon.name }}</p>
+
+						<p class="text-red-700 font-bold text-lg">{{ joycon.price }} $</p>
+
+						<div class="mt-4">
+							<p class="text-red-600 font-bold text-lg">No disponible</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
