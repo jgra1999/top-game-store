@@ -98,7 +98,7 @@ const routes = [
 		component: () => import('../views/posts/news/TheNewsThree.vue'),
 	},
 	{
-		path: '/noticia-god-of-war-ragnarok',
+		path: '/noticia-juego-multiversus',
 		name: 'TheNewsFour',
 		component: () => import('../views/posts/news/TheNewsFour.vue'),
 	},

@@ -23,12 +23,7 @@
 		</div>
 
 		<div class="w-full h-64 lg:h-108 my-10">
-			<img
-				src="/img/news/multiversus.jpg"
-				class="w-full h-full"
-				loading="lazy"
-				alt="imagen god of war ragnarok"
-			/>
+			<img src="/img/news/MultiVersus.jpg" class="w-full h-full" loading="lazy" alt="imagen multiversus juego" />
 		</div>
 
 		<div>

@@ -15,10 +15,10 @@
 
 				<div id="carousel__lista" class="overflow-hidden">
 					<NewsElement
-						url="/noticia-god-of-war-ragnarok"
+						url="/noticia-juego-multiversus"
 						title="Multiversus"
 						console="Playstation, Xbox, PC"
-						img="./img/news/multiversus.jpg"
+						img="./img/news/MultiVersus.jpg"
 					/>
 
 					<NewsElement

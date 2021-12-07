@@ -42,23 +42,6 @@
 			</p>
 		</div>
 
-		<div class="w-full xl:w-2/4 mx-auto mt-5 lg:my-10">
-			<blockquote class="twitter-tweet w-full h-full" data-lang="es" data-theme="dark">
-				<p lang="en" dir="ltr">
-					We&#39;re looking for a gameplay engineer
-					<a href="https://twitter.com/insomniacgames?ref_src=twsrc%5Etfw">@insomniacgames</a> to focus on our
-					hero, <a href="https://twitter.com/hashtag/Wolverine?src=hash&amp;ref_src=twsrc%5Etfw">#Wolverine</a>. If
-					you&#39;re into creating cuts, slashes, gouges, severs, gashes, stabs, *snikts* and everything else that
-					goes with moving and playing as Logan (there&#39;s a lot more!), link to apply below!
-					<a href="https://t.co/6B6whF5ceE">https://t.co/6B6whF5ceE</a>
-				</p>
-				&mdash; Drew Murray (@DrewMaru29)
-				<a href="https://twitter.com/DrewMaru29/status/1456734836110999557?ref_src=twsrc%5Etfw"
-					>5 de noviembre de 2021</a
-				>
-			</blockquote>
-		</div>
-
 		<!-- <div class="w-full xl:w-3/4 mx-auto h-64 sm:h-72 md:h-96 lg:h-100 xl:h-102 mt-5 lg:my-10">
 			<iframe
 				class="w-full h-full rounded"

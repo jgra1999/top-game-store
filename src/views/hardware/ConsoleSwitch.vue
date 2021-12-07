@@ -120,7 +120,7 @@
 					</router-link>
 				</div>
 				<img
-					src="/img/hardware/switch/joy-cons banner.png"
+					src="/img/hardware/switch/Joy-cons banner.png"
 					loading="lazy"
 					alt="Switch console"
 					class="w-header"
