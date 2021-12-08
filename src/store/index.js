@@ -227,6 +227,14 @@ export default createStore({
 				stock: stockItem,
 			});
 		},
+
+		updateStockAccesories({ commit }, params = {}) {
+			let { idItem = 0, stockItem = 0 } = params;
+			let url = 'accesory/' + idItem;
+			api.put(url, {
+				stock: stockItem,
+			});
+		},
 	},
 
 	getters: {

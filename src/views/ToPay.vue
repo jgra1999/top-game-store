@@ -139,7 +139,7 @@
 			</div>
 
 			<!-- Metodos de pago -->
-			<div class="py-5 px-4">
+			<div class="py-5 lg:px-4">
 				<h5 class="font-bold text-xl">Elige tu método de pago</h5>
 
 				<div class="mt-5 grid grid-cols-1 gap-5 p-5">
@@ -152,7 +152,7 @@
 							<p class="text-xs text-gray-400">
 								Por favor, transfiera el monto expresado en Bolivares a la siguiente cuenta.
 							</p>
-							<div class="mt-2 w-full flex gap-x-10">
+							<div class="mt-2 w-full flex flex-wrap gap-5 sm:gap-10">
 								<div>
 									<p class="text-sm">
 										0105-0670-12-0670169242
@@ -183,7 +183,7 @@
 							<p class="text-xs text-gray-400">
 								Por favor, transfiera el monto expresado en Bolivares a la siguiente cuenta.
 							</p>
-							<div class="mt-2 w-full flex gap-x-10">
+							<div class="mt-2 w-full flex flex-wrap gap-5 sm:gap-10">
 								<div>
 									<p class="text-sm">
 										Banco: Mercantil
@@ -214,7 +214,7 @@
 							<p class="text-xs text-gray-400">
 								Por favor, transfiera el monto a uno de estos correos electronicos.
 							</p>
-							<div class="mt-2 w-full flex gap-x-10">
+							<div class="mt-2 w-full flex flex-wrap gap-5 sm:gap-10">
 								<div>
 									<p class="text-sm">
 										lawiirc@gmail.com
@@ -229,7 +229,8 @@
 						</div>
 					</div>
 					<p class="mt-2 text-xs text-gray-400">
-						NOTA: Haz capture al comprobante del pago independientemente del metodo que hayas usado.
+						NOTA: Espera que el pedido sea confirmado y realiza el pago, haz capture al comprobante del pago
+						independientemente del método que utilices.
 					</p>
 				</div>
 				<div class="mt-8">
@@ -347,6 +348,16 @@ export default {
 					const stockItem = orderArray[i].stock - orderArray[i].cantidad;
 
 					store.dispatch('updateStock', {
+						idItem,
+						stockItem,
+					});
+				}
+
+				for (let i = 0; i < orderArray.length; i++) {
+					const idItem = orderArray[i].id;
+					const stockItem = orderArray[i].stock - orderArray[i].cantidad;
+
+					store.dispatch('updateStockAccesories', {
 						idItem,
 						stockItem,
 					});
