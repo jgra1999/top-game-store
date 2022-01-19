@@ -7,11 +7,11 @@
 
 	<article class="mt-4 md:mt-10 container mx-auto my-20 w-4/5 text-lg">
 		<p>
-			En TopGames disfrutamos al máximo los juegos de rol, actualmente los RPG han evolucionado en gran cantidad,
-			tanto en características gráficas como en jugabilidad con el pasar del tiempo. En esta lista te mencionamos
-			juegos de aventuras con un <strong> toque clásico como Octopath Traveler </strong> y otros que cautivaron
-			al público moderno como lo hizo <strong>The Witcher 3: Wild Hunt</strong>. A continuación, te dejamos una
-			lista con los mejores 6 juegos rpg disponibles en Nintendo Switch.
+			En top games disfrutamos al máximo los juegos de rol, actualmente los RPG han evolucionado en gran
+			cantidad, tanto en características gráficas como en jugabilidad con el pasar del tiempo. En esta lista te
+			mencionamos juegos de aventuras con un <strong> toque clásico como Octopath Traveler </strong> y otros que
+			cautivaron al público moderno como lo hizo <strong>The Witcher 3: Wild Hunt</strong>. A continuación, te
+			dejamos una lista con los mejores 6 juegos rpg disponibles en Nintendo Switch.
 		</p>
 
 		<br />

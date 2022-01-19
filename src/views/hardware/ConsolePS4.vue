@@ -26,7 +26,7 @@
 					más aclamados de la historia, creados por PlayStation Studios.
 				</p>
 				<BtnConsoles
-					console="Hola buenas tardes, estoy interesado en la PS4?"
+					console="Hola buenas tardes, estoy interesado en la PS4"
 					border="ring-white"
 					button="bg-white"
 				/>
@@ -47,7 +47,7 @@
 					detalle visual desde los servicios compatibles con 4K.
 				</p>
 				<BtnConsoles
-					console="Hola buenas tardes, estoy interesado en la PS4 PRO?"
+					console="Hola buenas tardes, estoy interesado en la PS4 PRO"
 					border="ring-white"
 					button="bg-white"
 				/>

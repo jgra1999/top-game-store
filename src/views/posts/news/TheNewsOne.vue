@@ -4,6 +4,7 @@
 		<div>
 			<div class="flex justify-between items-start md:items-center">
 				<div class="flex flex-col md:flex-row gap-y-2 md:gap-x-4 md:items-center text-white font-bold text-xs">
+					<span class="p-2 bg-red-700 rounded">Top Games Store</span>
 					<span class="p-2 bg-red-700 rounded">Noticias</span>
 					<span class="p-2 bg-red-700 rounded">Nintendo Switch</span>
 				</div>

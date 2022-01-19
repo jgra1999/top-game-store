@@ -1,10 +1,10 @@
 <template>
 	<nav class="bg-red-700 w-0 h-screen fixed z-10 mt-14 overflow-hidden lg:hidden" id="sidebar">
 		<!-- CATEGORIAS -->
-		<ul class="text-white divide-y divide-white mt-2">
+		<ul class="text-white divide-y divide-white mt-2" @click="subMenu">
 			<!-- JUEGOS -->
-			<li class="p-4 flex items-center justify-between text-lg">
-				<div class="flex">
+			<li class="p-4 flex items-center justify-between text-lg categoriaJuegoSidebar" id="categoriaJuegoSidebar">
+				<div class="flex categoriaJuegoSidebar">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="25"
@@ -16,9 +16,11 @@
 							d="M17.622 3c-1.913 0-2.558 1.382-5.623 1.382-3.009 0-3.746-1.382-5.623-1.382-5.209 0-6.376 10.375-6.376 14.348 0 2.145.817 3.652 2.469 3.652 3.458 0 2.926-5 6.915-5h5.23c3.989 0 3.457 5 6.915 5 1.652 0 2.471-1.506 2.471-3.651 0-3.973-1.169-14.349-6.378-14.349zm-10.622 10c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zm10-6c.552 0 1 .447 1 1 0 .553-.448 1-1 1s-1-.447-1-1c0-.553.448-1 1-1zm-2 4c-.552 0-1-.447-1-1 0-.553.448-1 1-1s1 .447 1 1c0 .553-.448 1-1 1zm2 2c-.552 0-1-.447-1-1 0-.553.448-1 1-1s1 .447 1 1c0 .553-.448 1-1 1zm2-2c-.552 0-1-.447-1-1 0-.553.448-1 1-1s1 .447 1 1c0 .553-.448 1-1 1zm-10.25-1c0 .965-.785 1.75-1.75 1.75s-1.75-.785-1.75-1.75.785-1.75 1.75-1.75 1.75.785 1.75 1.75z"
 						/>
 					</svg>
-					<button href="#" @click="subMenu" id="categoriaJuegoSidebar" class="text-lg">Juegos</button>
+					<span class="categoriaJuegoSidebar">Juegos</span>
 				</div>
-				<ChevronDownIcon class="fill-current text-white w-7 h-7" />
+				<span>
+					<ChevronDownIcon class="fill-current text-white w-7 h-7 categoriaJuegoSidebar" />
+				</span>
 			</li>
 			<!-- SUBMENU JUEGOS -->
 			<ul class="text-white divide-y divide-white h-0 overflow-hidden" id="submenuJuegos">
@@ -39,7 +41,7 @@
 				</li>
 			</ul>
 			<!-- HARDWARE -->
-			<li class="p-4 flex items-center justify-between text-lg">
+			<li class="p-4 flex items-center justify-between text-lg categoriaHardwareSidebar">
 				<div class="flex">
 					<svg
 						version="1.1"
@@ -87,9 +89,9 @@
 						</g>
 					</svg>
 
-					<button @click="subMenu" id="categoriaHardwareSidebar">Hardware</button>
+					<span class="categoriaHardwareSidebar">Hardware</span>
 				</div>
-				<ChevronDownIcon class="fill-current text-white w-7 h-7" />
+				<ChevronDownIcon class="fill-current text-white w-7 h-7 categoriaHardwareSidebar" />
 			</li>
 			<!-- SUBMENU HARDWARE -->
 			<ul class="text-white divide-y divide-white h-0 overflow-hidden" id="submenuHardware">
@@ -177,14 +179,14 @@ export default {
 
 	methods: {
 		subMenu(event) {
-			if (event.target.id === 'categoriaJuegoSidebar') {
+			if (event.target.matches('.categoriaJuegoSidebar')) {
 				const submenuJuegos = document.querySelector('#submenuJuegos');
 				submenuJuegos.classList.toggle('h-36');
 			} else {
 				submenuJuegos.classList.remove('h-36');
 			}
 
-			if (event.target.id === 'categoriaHardwareSidebar') {
+			if (event.target.matches('.categoriaHardwareSidebar')) {
 				const submenuHardware = document.querySelector('#submenuHardware');
 				submenuHardware.classList.toggle('h-36');
 			} else {

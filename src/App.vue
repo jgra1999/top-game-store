@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Navbar from '@/components/layout/Navbar.vue';
-import Footer from '@/components/layout/Footer.vue';
+import Navbar from '@/components/layout/TheNavbar.vue';
+import Footer from '@/components/layout/TheFooter.vue';
 import CartAlert from '@/components/layout/CartAlert.vue';
 import Whatsapp from '@/components/layout/Whatsapp.vue';
 

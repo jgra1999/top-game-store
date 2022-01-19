@@ -1,8 +1,8 @@
 <template>
-	<div class="bg-white p-5 pt-10 h-54 relative">
+	<footer class="bg-white p-5 pt-10 h-54 relative">
 		<div class="flex flex-col sm:flex-row sm:justify-between ">
 			<div class="text-left md:ml-10">
-				<p class=" text-lg md:text-2xl font-semibold mb-5">Top Games Store</p>
+				<h1 class=" text-lg md:text-2xl font-semibold mb-5">Top Games Store</h1>
 				<p class="font-semibold text-xs md:text-base  duration-300 cursor-pointer opcion">
 					Inicio
 				</p>
@@ -65,24 +65,28 @@
 						</svg>
 					</a>
 
-					<svg
-						class="inline-block fill-current  hover:text-red-700 w-5 h-5"
-						xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						viewBox="0 0 24 24"
+					<a
+						href="mailto:topgames.ve@gmail.com?subject=Hola%20quisiera%20consultar%20el%20catalogo%20de%20productos"
 					>
-						<path
-							d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"
-						/>
-					</svg>
+						<svg
+							class="inline-block fill-current  hover:text-red-700 w-5 h-5"
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+						>
+							<path
+								d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"
+							/>
+						</svg>
+					</a>
 				</div>
 			</div>
 		</div>
 		<div class="text-center mt-12 md:mt-20 text-xs font-semibold ">
 			©Top Game Store c.a - ©Todos los derechos reservados - 2021
 		</div>
-	</div>
+	</footer>
 </template>
 
 <script>

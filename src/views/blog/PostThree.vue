@@ -16,7 +16,7 @@
 		<br />
 
 		<p>
-			En base a estas ofertas aquí te dejamos un listado de los cuales nos parecen los mejores juegos que
+			En base a estas ofertas top games store te deja un listado de los cuales nos parecen los mejores juegos que
 			deberías adquirir si quieres aprovechar estas rebajas de noviembre.
 		</p>
 
